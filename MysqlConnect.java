@@ -3,7 +3,7 @@ import java.sql.*;
 import javax.swing.*;
 
 public class MysqlConnect {
-	Connection conn=null;
+	static Connection conn=null;
 
 public static Connection ConnectDB()
 {
@@ -12,7 +12,7 @@ public static Connection ConnectDB()
 	try
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/voting","root","Vanquish123");
+		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/voting","root","Vanquish123");
 		JOptionPane.showMessageDialog(null,"Connection Success");
 		return conn;
 	}
@@ -26,9 +26,7 @@ public static Connection ConnectDB()
 }
 public static void main(String[] args)
 {
-	MysqlConnect myconnection=new MysqlConnect();
-	myconnection.ConnectDB();
-	
+	MysqlConnect.ConnectDB();
 }
 	
 	
