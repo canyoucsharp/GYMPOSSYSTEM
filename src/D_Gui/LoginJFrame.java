@@ -56,7 +56,7 @@ public class LoginJFrame extends JFrame {
 		contentPane.add(lblLogin);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setBounds(10, 82, 46, 14);
+		lblPassword.setBounds(10, 82, 74, 15);
 		contentPane.add(lblPassword);
 		
 		Button button = new Button("Login");
