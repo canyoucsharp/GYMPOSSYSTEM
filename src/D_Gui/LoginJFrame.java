@@ -79,7 +79,7 @@ ResultSet rs=null;
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 430, 274);
+		setBounds(100, 100, 403, 238);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -124,15 +124,15 @@ ResultSet rs=null;
 				
 			}
 		});
-		button.setBounds(51, 171, 116, 22);
+		button.setBounds(51, 131, 116, 22);
 		contentPane.add(button);
 		
 		password = new JPasswordField();
-		password.setBounds(79, 80, 116, 17);
+		password.setBounds(133, 80, 116, 17);
 		contentPane.add(password);
 		
 		Username = new JTextField();
-		Username.setBounds(79, 36, 116, 17);
+		Username.setBounds(133, 37, 116, 17);
 		contentPane.add(Username);
 		Username.setColumns(10);
 		
@@ -145,7 +145,7 @@ ResultSet rs=null;
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		cancel.setBounds(205, 171, 116, 22);
+		cancel.setBounds(203, 131, 116, 22);
 		contentPane.add(cancel);
 	}
 }
