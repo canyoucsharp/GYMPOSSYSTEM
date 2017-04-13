@@ -2,12 +2,12 @@ package B_proj;
 
 public class Person {
 
-	String firstName;
-	String lastName;
-	int phoneNumber;
-	String address;
-	int age;
-	char sex;
+	private String firstName;
+	private String lastName;
+	private int phoneNumber;
+	private String address;
+	private int age;
+	private char sex;
 	
 	public String getFirstName() {
 		return firstName;
