@@ -56,26 +56,8 @@ ResultSet rs=null;
 	 * Create the frame.
 	 */
 	public LoginJFrame() {
+		
 		conn=MysqlConnect.ConnectDB();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
