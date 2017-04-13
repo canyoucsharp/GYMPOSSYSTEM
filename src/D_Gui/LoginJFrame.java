@@ -62,7 +62,7 @@ ResultSet rs=null;
 		
 		conn=MysqlConnect.ConnectDB();
 		
-		
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 403, 238);
 		contentPane = new JPanel();
@@ -97,6 +97,8 @@ ResultSet rs=null;
 						
 						JOptionPane.showMessageDialog(null, "Successfuly Logged in");
 						MainMenuJFrame MainMenu = new MainMenuJFrame();
+						dispose();
+						MainMenu.setVisible(true);
 						
 					}
 					else
