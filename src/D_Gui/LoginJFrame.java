@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.glass.events.KeyEvent;
+
 import M_Database.MysqlConnect;
 
 import java.awt.GridBagLayout;
@@ -26,11 +28,13 @@ import javax.swing.JPasswordField;
 
 import java.sql.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 
-public class LoginJFrame extends JFrame {
+public class
+LoginJFrame extends JFrame {
 Connection conn=null;
 PreparedStatement pst=null;
 ResultSet rs=null;
@@ -78,20 +82,11 @@ ResultSet rs=null;
 		lblPassword.setBounds(10, 82, 74, 15);
 		contentPane.add(lblPassword);
 		
-		but1.addKeyListener(new KeyListener() {
-		    // listen to keys
-		    public void keyPressed(KeyEvent e){
-		        // find ENTER key press
-		        if(e.getKeyCode() == KeyEvent.VK_ENTER){
-		            goto button;
-		        }
-		    }
-		}
 		
+	
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				button:
 				try
 				{
 					String query="select * from salesrep where username=? and password=?";
@@ -123,6 +118,7 @@ ResultSet rs=null;
 				
 			}
 		});
+		
 		button.setBounds(133, 135, 116, 22);
 		contentPane.add(button);
 		
