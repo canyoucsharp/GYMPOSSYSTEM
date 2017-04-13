@@ -91,7 +91,7 @@ ResultSet rs=null;
 					if(rs.next())
 					{
 						
-						JOptionPane.showMessageDialog(null, "logging in");
+						JOptionPane.showMessageDialog(null, "Successfuly Logged in");
 					}
 					else
 					{
