@@ -1,13 +1,13 @@
 package B_proj;
 
 public class Person {
-
 	private String firstName;
 	private String lastName;
 	private int phoneNumber;
 	private String address;
 	private int age;
 	private char sex;
+	private int licenseNum;
 	
 	public String getFirstName() {
 		return firstName;
@@ -44,5 +44,11 @@ public class Person {
 	}
 	public void setSex(char sex) {
 		this.sex = sex;
+	}
+	public int getLicenseNum() {
+		return licenseNum;
+	}
+	public void setLicenseNum(int licenseNum) {
+		this.licenseNum = licenseNum;
 	}
 }
