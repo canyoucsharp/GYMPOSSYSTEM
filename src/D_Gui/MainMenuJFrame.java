@@ -48,7 +48,7 @@ public class MainMenuJFrame extends JFrame {
 		});
 		btnAdmin.setBounds(44, 13, 174, 44);
 		//if(isAdmin())
-		//contentPane.add(btnAdmin);
+		contentPane.add(btnAdmin);
 		
 		JButton btnScanUser = new JButton("Scan User");
 		btnScanUser.setBounds(44, 82, 174, 44);

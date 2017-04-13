@@ -106,7 +106,7 @@ ResultSet rs=null;
 				
 			}
 		});
-		button.setBounds(51, 131, 116, 22);
+		button.setBounds(133, 135, 116, 22);
 		contentPane.add(button);
 		
 		password = new JPasswordField();
@@ -121,13 +121,6 @@ ResultSet rs=null;
 		JLabel label = new JLabel("Password");
 		label.setBounds(10, 82, 46, 14);
 		contentPane.add(label);
-		
-		Button cancel = new Button("Cancel");
-		cancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		cancel.setBounds(203, 131, 116, 22);
-		contentPane.add(cancel);
+
 	}
 }
