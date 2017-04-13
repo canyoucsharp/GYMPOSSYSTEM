@@ -1,5 +1,5 @@
 package B_proj;
 
-public class customerBo {
+public class CustomerBo {
 
 }
