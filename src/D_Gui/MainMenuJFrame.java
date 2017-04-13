@@ -44,7 +44,7 @@ public class MainMenuJFrame extends JFrame {
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("Test");
+				//Open Up new panel for Admins Only
 			}
 		});
 		btnAdmin.setBounds(44, 13, 174, 44);
