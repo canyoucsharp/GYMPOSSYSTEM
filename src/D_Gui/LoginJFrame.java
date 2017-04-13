@@ -99,6 +99,7 @@ ResultSet rs=null;
 						MainMenu.setVisible(true);
 						JOptionPane.showMessageDialog(null, "Successfuly Logged in");
 						
+						
 					}
 					else
 					{
