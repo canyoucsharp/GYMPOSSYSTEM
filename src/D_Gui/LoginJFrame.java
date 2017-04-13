@@ -27,6 +27,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
+
 public class LoginJFrame extends JFrame {
 Connection conn=null;
 PreparedStatement pst=null;
@@ -92,6 +93,7 @@ ResultSet rs=null;
 					{
 						
 						JOptionPane.showMessageDialog(null, "Successfuly Logged in");
+						MainMenuJFrame MainMenu = new MainMenuJFrame();
 					}
 					else
 					{
