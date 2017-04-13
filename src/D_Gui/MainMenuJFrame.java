@@ -49,7 +49,6 @@ public class MainMenuJFrame extends JFrame {
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//Open Up new panel for Admins Only
-				dispose();
 			}
 		});
 		btnAdmin.setBounds(44, 13, 174, 44);

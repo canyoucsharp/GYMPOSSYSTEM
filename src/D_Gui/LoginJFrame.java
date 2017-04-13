@@ -94,10 +94,9 @@ ResultSet rs=null;
 					
 					if(rs.next())
 					{
-						
-						JOptionPane.showMessageDialog(null, "Successfuly Logged in");
 						MainMenuJFrame MainMenu = new MainMenuJFrame();
 						dispose();
+						JOptionPane.showMessageDialog(null, "Successfuly Logged in");
 						MainMenu.setVisible(true);
 						
 					}
