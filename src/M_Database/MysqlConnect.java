@@ -1,11 +1,12 @@
 package M_Database;
 
-import java.sql.DriverManager;
 import java.sql.*;
 import javax.swing.*;
 
 public class MysqlConnect {
- static Connection conn=null;
+ public static Connection conn=null;
+ public	static PreparedStatement pst=null;
+ public	static ResultSet rs=null;
 
 public static Connection ConnectDB()
 {

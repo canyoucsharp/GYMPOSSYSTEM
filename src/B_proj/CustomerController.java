@@ -16,33 +16,33 @@ public class CustomerController {
 		CustomerDb.init(cusObj);
 	}
 	public void updateFirstName(String firstName){
-		CustomerDb.pushFirstName(firstName);
+		CustomerDb.pushFirstName(firstName, cusObj);
 	}
 	public void updateLastName(String lastName){
-		CustomerDb.pushLastName(lastName);
+		CustomerDb.pushLastName(lastName, cusObj);
 	}
-	public void updatePhoneNumber(int number)
+	public void updatePhoneNumber(String number)
 	{
-		CustomerDb.pushNumber(number);
+		CustomerDb.pushNumber(number, cusObj);
 	}
 	public void updateAddress(String Address)
 	{
-		CustomerDb.pushAddress(Address);
+		CustomerDb.pushAddress(Address, cusObj);
 	}
 	public void updateAge(String Age){
-		CustomerDb.pushAge(Age);
+		CustomerDb.pushAge(Age, cusObj);
 	}
-	public void updateSex(char Sex){
-		CustomerDb.pushSex(Sex);
+	public void updateSex(String Sex){
+		CustomerDb.pushSex(Sex, cusObj);
 	}
-	public void updateLicense(int newlicenseNumber){
-		CustomerDb.pushLicenseNumber(newlicenseNumber);
+	public void updateLicense(String newlicenseNumber){
+		CustomerDb.pushLicenseNumber(newlicenseNumber, cusObj);
 	}
 	public void updateSubId(int newSubId){
-		CustomerDb.pushSubId(newSubId);
+		CustomerDb.pushSubId(newSubId, cusObj);
 	}
 	public void updateRepId(int newRepId){
-		CustomerDb.pushRepId(newRepId);
+		CustomerDb.pushRepId(newRepId, cusObj);
 	}
 	
 	
@@ -55,7 +55,7 @@ public class CustomerController {
 	public String displayLastName(){
 		return(cusObj.getLastName());
 	}
-	public int displayPhoneNumber(){
+	public String displayPhoneNumber(){
 		return(cusObj.getPhoneNumber());
 	}
 	public String displayAddress(){
@@ -66,14 +66,14 @@ public class CustomerController {
 	}
 	public String displaySex(){
 		switch(cusObj.getSex()){
-			case 'M':
+			case "M":
 				return("Male");
-		case 'F':
+		case "F":
 				return("Female");
 			}
 		return ("Error");
 		}
-	public int displayLicenseNumber()
+	public String displayLicenseNumber()
 	{
 		return(cusObj.getLicenseNum());
 	}
