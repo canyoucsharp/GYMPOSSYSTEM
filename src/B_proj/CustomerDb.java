@@ -25,8 +25,8 @@ public class CustomerDb {
 				cusObj.setAge(MysqlConnect.rs.getInt("age"));
 				cusObj.setSex(MysqlConnect.rs.getString("sex"));
 				cusObj.setLicenseNum(MysqlConnect.rs.getString("license_num"));
-				cusObj.setSubId(MysqlConnect.rs.getInt("license_num"));
-				cusObj.setRepId(MysqlConnect.rs.getInt("license_num"));
+				cusObj.setSubId(MysqlConnect.rs.getInt("sub_id"));
+				cusObj.setRepId(MysqlConnect.rs.getInt("rep_id"));
 
 			}
 		} catch (Exception e) {
