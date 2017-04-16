@@ -15,21 +15,61 @@ public static void main(String args[]) throws SQLException
 {
 	CustomerDb mycusdb=new CustomerDb();
 	Customer mycus=new Customer();
+	Subscription newSub=new Subscription();
+	
+	//mycusdb.init(mycus);
+	//mycusdb.pushFirstName("michael", mycus);
+	//mycusdb.init(mycus);
+	//System.out.println(mycus.getFirstName());
 	mycus.setId(22);
 	mycusdb.init(mycus);
-	mycusdb.pushFirstName("michael", mycus);
-	mycusdb.init(mycus);
-	System.out.println(mycus.getFirstName());
+	mycus.setFirstName("joshua");
+	System.out.println(mycus.getLastName());
+	mycus.setId(11);
+	mycusdb.registerCustomer(mycus, newSub);
 }
 
+public void registerCustomer(Customer cusObj,Subscription newSub) throws SQLException
+{
+	try
+	{
+	myConnector=new MysqlConnect();
+	conn= myConnector.ConnectDB();
+	String insertTableSQL = "INSERT INTO clients"
+			+ "(client_id, first_name, last_name, phone_number,address,age,sex,license_num,sub_id,rep_id) " + "VALUES"
+			+ "(?,?,?,?,?,?,?,?,?,?)";
+	
+	pst = conn.prepareStatement(insertTableSQL);
+	pst.setInt   (1, cusObj.getId());
+	pst.setString(2, cusObj.getFirstName());
+	pst.setString(3, cusObj.getLastName());
+	pst.setString(4, cusObj.getPhoneNumber());
+	pst.setString(5, cusObj.getAddress());
+	pst.setInt   (6, cusObj.getAge());
+	pst.setString(7, cusObj.getSex());
+	pst.setString(8, cusObj.getLicenseNum());
+	pst.setInt   (9,newSub.subid);
+	pst.setInt   (10,cusObj.repId);
+	pst.executeUpdate();
+	}
+	catch (Exception e) {
+		System.out.println(e);
+	}
+	finally {
+			pst.close();
+			conn.close();
+			}
+	
+	
+	
+}
 
 public  void init(Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
-		myConnector=new MysqlConnect();
-		conn= myConnector.ConnectDB();
-
+	myConnector=new MysqlConnect();
+	conn= myConnector.ConnectDB();
 		
-		try {
+	try {
 			String query = "select * from clients where client_id = ?";
 			pst = conn.prepareStatement(query);
 			pst.setInt(1, cusObj.getId());
