@@ -4,15 +4,12 @@ import java.sql.*;
 import javax.swing.*;
 
 public class MysqlConnect {
- public static Connection conn=null;
- public	static PreparedStatement pst=null;
- public	static ResultSet rs=null;
+ private Connection conn=null;
+ 
 
-public static Connection ConnectDB()
+public Connection ConnectDB()
 {
- 
- 
- try
+try
  {
   Class.forName("com.mysql.jdbc.Driver");
   conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/nyfitness","root","Vanquish123");

@@ -1,48 +1,52 @@
 package B_proj;
 
+import java.sql.SQLException;
+
 public class CustomerController {
 	Customer cusObj;
 	int monthlyCost;
+	CustomerDb cusDb;
 	
 	
 	CustomerController(){
 		cusObj=new Customer();
+		cusDb=new CustomerDb();
 		}
 	
 	
 	// Actions
-	public void searchCustomer(int id){
+	public void searchCustomer(int id) throws SQLException{
 		cusObj.setId(id);
-		CustomerDb.init(cusObj);
+		cusDb.init(cusObj);
 	}
-	public void updateFirstName(String firstName){
-		CustomerDb.pushFirstName(firstName, cusObj);
+	public void updateFirstName(String firstName) throws SQLException{
+		cusDb.pushFirstName(firstName, cusObj);
 	}
-	public void updateLastName(String lastName){
-		CustomerDb.pushLastName(lastName, cusObj);
+	public void updateLastName(String lastName) throws SQLException{
+		cusDb.pushLastName(lastName, cusObj);
 	}
-	public void updatePhoneNumber(String number)
+	public void updatePhoneNumber(String number) throws SQLException
 	{
-		CustomerDb.pushNumber(number, cusObj);
+		cusDb.pushNumber(number, cusObj);
 	}
-	public void updateAddress(String Address)
+	public void updateAddress(String Address) throws SQLException
 	{
-		CustomerDb.pushAddress(Address, cusObj);
+		cusDb.pushAddress(Address, cusObj);
 	}
-	public void updateAge(String Age){
-		CustomerDb.pushAge(Age, cusObj);
+	public void updateAge(String Age) throws SQLException{
+		cusDb.pushAge(Age, cusObj);
 	}
-	public void updateSex(String Sex){
-		CustomerDb.pushSex(Sex, cusObj);
+	public void updateSex(String Sex) throws SQLException{
+		cusDb.pushSex(Sex, cusObj);
 	}
-	public void updateLicense(String newlicenseNumber){
-		CustomerDb.pushLicenseNumber(newlicenseNumber, cusObj);
+	public void updateLicense(String newlicenseNumber) throws SQLException{
+		cusDb.pushLicenseNumber(newlicenseNumber, cusObj);
 	}
-	public void updateSubId(int newSubId){
-		CustomerDb.pushSubId(newSubId, cusObj);
+	public void updateSubId(int newSubId) throws SQLException{
+		cusDb.pushSubId(newSubId, cusObj);
 	}
-	public void updateRepId(int newRepId){
-		CustomerDb.pushRepId(newRepId, cusObj);
+	public void updateRepId(int newRepId) throws SQLException{
+		cusDb.pushRepId(newRepId, cusObj);
 	}
 	
 	
