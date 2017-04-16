@@ -29,7 +29,9 @@ public class CustomerDb {
 		mycus.setId(11);
 		mycusdb.registerCustomer(mycus, newSub);
 	}
-
+	//during registration every customer must be paired with a subscription
+	//even if if the customer isnt ready to subscribe you are allowed to
+	//leave the fields blank
 	public void registerCustomer(Customer cusObj, Subscription newSub) throws SQLException {
 		try {
 			myConnector = new MysqlConnect();
@@ -103,7 +105,11 @@ public class CustomerDb {
 		}
 
 	}
-
+	/*Hello The queries below seem extremely redundant I feel this can be fixed with ENUM
+	 * and a case statement.Is there any particular reason you need these Briano??????
+	 * for example we can have pushField(ENUM whichField,String newField,Customer cusObj)
+	 * 
+	 */
 	public void pushFirstName(String firstName, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
