@@ -13,7 +13,8 @@ try
  {
   Class.forName("com.mysql.jdbc.Driver");
   conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/nyfitness","root","Vanquish123");
-  JOptionPane.showMessageDialog(null,"Connection Success");
+  //JOptionPane.showMessageDialog(null,"Connection Success");
+  System.out.println("Connection open");
   return conn;
  }
  catch(Exception e)

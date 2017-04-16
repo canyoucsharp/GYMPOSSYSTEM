@@ -44,6 +44,7 @@ public class EmployeeDb {
 			rs.close();
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -65,6 +66,7 @@ public class EmployeeDb {
 
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -84,6 +86,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -103,6 +106,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -122,6 +126,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -141,6 +146,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -160,6 +166,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -179,6 +186,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -198,6 +206,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -217,6 +226,7 @@ public class EmployeeDb {
 		} finally {
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -238,6 +248,7 @@ public class EmployeeDb {
 
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}
@@ -259,6 +270,7 @@ public class EmployeeDb {
 
 			pst.close();
 			conn.close();
+			System.out.println("Connection closed");
 		}
 
 	}

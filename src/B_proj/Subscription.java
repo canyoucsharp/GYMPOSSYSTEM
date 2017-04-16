@@ -2,51 +2,76 @@ package B_proj;
 
 public class Subscription  {
 	int subid;
-	String substatus;
-	String contractbegin;
-	String contractend;
-	String contractremaining;
-	String plantype;
+	String subStatus;
+	String contractBegin;
+	String contractEnd;
+	String contractRemaining;
+	String planType;
 	
 	
 	public Subscription() {
-		this.substatus="off";
+		this.subStatus="off";
 	}
+
+
 	public int getSubid() {
 		return subid;
 	}
+
+
 	public void setSubid(int subid) {
 		this.subid = subid;
 	}
-	public String getSubstatus() {
-		return substatus;
-	}
-	public void setSubstatus(String substatus) {
-		this.substatus = substatus;
-	}
-	public String getContractbegin() {
-		return contractbegin;
-	}
-	public void setContractbegin(String contractbegin) {
-		this.contractbegin = contractbegin;
-	}
-	public String getContractend() {
-		return contractend;
-	}
-	public void setContractend(String contractend) {
-		this.contractend = contractend;
-	}
-	public String getContractremaining() {
-		return contractremaining;
-	}
-	public void setContractremaining(String contractremaining) {
-		this.contractremaining = contractremaining;
-	}
-	public String getPlantype() {
-		return plantype;
-	}
-	public void setPlantype(String plantype) {
-		this.plantype = plantype;
+
+
+	public String getSubStatus() {
+		return subStatus;
 	}
 
+
+	public void setSubStatus(String subStatus) {
+		this.subStatus = subStatus;
+	}
+
+
+	public String getContractBegin() {
+		return contractBegin;
+	}
+
+
+	public void setContractBegin(String contractBegin) {
+		this.contractBegin = contractBegin;
+	}
+
+
+	public String getContractEnd() {
+		return contractEnd;
+	}
+
+
+	public void setContractEnd(String contractEnd) {
+		this.contractEnd = contractEnd;
+	}
+
+
+	public String getContractRemaining() {
+		return contractRemaining;
+	}
+
+
+	public void setContractRemaining(String contractRemaining) {
+		this.contractRemaining = contractRemaining;
+	}
+
+
+	public String getPlanType() {
+		return planType;
+	}
+
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+	}
 }
+
+	
