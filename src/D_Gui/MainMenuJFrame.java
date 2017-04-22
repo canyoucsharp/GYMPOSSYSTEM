@@ -1,22 +1,15 @@
 package D_Gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.event.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.*;
 
 public class MainMenuJFrame extends JFrame {
-
-	private JPanel contentPane;
-
 	/**
 	 * Launch the application.
 	 */
@@ -39,17 +32,17 @@ public class MainMenuJFrame extends JFrame {
 	public MainMenuJFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 277, 386);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setResizable(false);
 		
+		AdminJFrame Admin = new AdminJFrame();
+		
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AdminJFrame Admin = new AdminJFrame();
-				setEnabled(false);
 				Admin.setVisible(true);
 			}
 		});

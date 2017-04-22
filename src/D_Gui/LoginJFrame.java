@@ -1,31 +1,24 @@
 package D_Gui;
-import javax.swing.*;
-import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
-import M_Database.MysqlConnect;
-
-import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import javax.swing.JTextField;
-import javax.swing.JFormattedTextField;
-import java.awt.CardLayout;
-import java.awt.Canvas;
-import java.awt.Button;
-import javax.swing.JEditorPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-import java.sql.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JButton;
+import com.sun.glass.events.KeyEvent;
+
+import M_Database.MysqlConnect;
 
 
 public class LoginJFrame extends JFrame {
@@ -76,20 +69,10 @@ ResultSet rs=null;
 		lblPassword.setBounds(10, 82, 74, 15);
 		contentPane.add(lblPassword);
 		
-		but1.addKeyListener(new KeyListener() {
-		    // listen to keys
-		    public void keyPressed(KeyEvent e){
-		        // find ENTER key press
-		        if(e.getKeyCode() == KeyEvent.VK_ENTER){
-		            goto button;
-		        }
-		    }
-		}
 		
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				button:
 				try
 				{
 					String query="select * from salesrep where username=? and password=?";

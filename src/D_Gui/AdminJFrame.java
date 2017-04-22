@@ -1,14 +1,15 @@
 package D_Gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class AdminJFrame extends JFrame {
 
@@ -17,6 +18,13 @@ public class AdminJFrame extends JFrame {
 	private JTextField UserCapacitytext;
 	private JTextField CancelationFeetext;
 	private JTextField ChangePasswordtext;
+	private JButton btnCancel;
+	private boolean Cancelbutton;
+	
+	public boolean gettercancelbutton()
+	{
+		return Cancelbutton;
+	}
 
 	/**
 	 * Launch the application.
@@ -38,7 +46,7 @@ public class AdminJFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public AdminJFrame() {
-		setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(this.HIDE_ON_CLOSE);
 		setBounds(100, 100, 436, 311);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -82,7 +90,16 @@ public class AdminJFrame extends JFrame {
 		ChangePasswordtext.setColumns(10);
 		
 		JButton btnUpdate = new JButton("Update");
-		btnUpdate.setBounds(135, 204, 97, 25);
+		btnUpdate.setBounds(57, 205, 97, 25);
 		contentPane.add(btnUpdate);
+		
+		btnCancel = new JButton("Cancel");
+		btnCancel.setBounds(208, 205, 97, 25);
+		contentPane.add(btnCancel);
+		btnCancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+			}
+		});
 	}
 }
