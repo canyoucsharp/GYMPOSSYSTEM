@@ -6,11 +6,14 @@ public class CustomerController {
 	Customer cusObj;
 	int monthlyCost;
 	CustomerDb cusDb;
-	
+	Subscription subObj;
+	SubscriptionDb subDb;
 	
 	CustomerController(){
 		cusObj=new Customer();
 		cusDb=new CustomerDb();
+		subObj=new Subscription();
+		subDb=new SubscriptionDb();
 		}
 	
 	
