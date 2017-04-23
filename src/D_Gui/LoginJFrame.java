@@ -76,20 +76,9 @@ ResultSet rs=null;
 		lblPassword.setBounds(10, 82, 74, 15);
 		contentPane.add(lblPassword);
 		
-		but1.addKeyListener(new KeyListener() {
-		    // listen to keys
-		    public void keyPressed(KeyEvent e){
-		        // find ENTER key press
-		        if(e.getKeyCode() == KeyEvent.VK_ENTER){
-		            goto button;
-		        }
-		    }
-		}
-		
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				button:
 				try
 				{
 					String query="select * from salesrep where username=? and password=?";

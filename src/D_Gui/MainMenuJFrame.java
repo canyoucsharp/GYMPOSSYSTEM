@@ -45,12 +45,14 @@ public class MainMenuJFrame extends JFrame {
 		contentPane.setLayout(null);
 		setResizable(false);
 		
+		AdminJFrame AdminUI = new AdminJFrame();
+		ScanUserJFrame ScanUserUI = new ScanUserJFrame();
+		NewUserJFrame NewUserUI = new NewUserJFrame();
+		
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				AdminJFrame Admin = new AdminJFrame();
-				setEnabled(false);
-				Admin.setVisible(true);
+				AdminUI.setVisible(true);
 			}
 		});
 		btnAdmin.setBounds(44, 13, 174, 44);
@@ -60,10 +62,20 @@ public class MainMenuJFrame extends JFrame {
 		JButton btnScanUser = new JButton("Scan User");
 		btnScanUser.setBounds(44, 82, 174, 44);
 		contentPane.add(btnScanUser);
+		btnScanUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ScanUserUI.setVisible(true);
+			}
+		});
 		
 		JButton btnNewUser = new JButton("New User");
 		btnNewUser.setBounds(44, 195, 174, 44);
 		contentPane.add(btnNewUser);
+		btnNewUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				NewUserUI.setVisible(true);
+			}
+		});
 		
 		JButton btnViewSalesRep = new JButton("View Sales Rep");
 		btnViewSalesRep.setBounds(44, 265, 174, 44);
