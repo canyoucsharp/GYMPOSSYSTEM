@@ -38,7 +38,9 @@ public class MainMenuJFrame extends JFrame {
 		contentPane.setLayout(null);
 		setResizable(false);
 		
+		
 		AdminJFrame Admin = new AdminJFrame();
+		ScanUserJFrame ScanUser = new ScanUserJFrame();
 		
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
@@ -53,6 +55,11 @@ public class MainMenuJFrame extends JFrame {
 		JButton btnScanUser = new JButton("Scan User");
 		btnScanUser.setBounds(44, 82, 174, 44);
 		contentPane.add(btnScanUser);
+		btnScanUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ScanUser.setVisible(true);
+			}
+		});
 		
 		JButton btnNewUser = new JButton("New User");
 		btnNewUser.setBounds(44, 195, 174, 44);
