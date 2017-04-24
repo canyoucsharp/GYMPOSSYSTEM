@@ -1,24 +1,31 @@
 package D_Gui;
-import java.awt.Button;
+import javax.swing.*;
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import com.sun.glass.events.KeyEvent;
-
 import M_Database.MysqlConnect;
+
+import java.awt.GridBagLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
+import java.awt.CardLayout;
+import java.awt.Canvas;
+import java.awt.Button;
+import javax.swing.JEditorPane;
+import javax.swing.JPasswordField;
+
+import java.sql.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
 
 
 public class LoginJFrame extends JFrame {
@@ -50,8 +57,8 @@ ResultSet rs=null;
 	 * Create the frame.
 	 */
 	public LoginJFrame() {
-		
-		conn=MysqlConnect.ConnectDB();
+		MysqlConnect myConnector=new MysqlConnect();
+		conn=myConnector.ConnectDB();
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,7 +75,6 @@ ResultSet rs=null;
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setBounds(10, 82, 74, 15);
 		contentPane.add(lblPassword);
-		
 		
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {

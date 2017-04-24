@@ -1,15 +1,28 @@
 package D_Gui;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import java.awt.*;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import B_proj.CustomerController;
+
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+
 public class MainMenuJFrame extends JFrame {
+
+
+
+	
+	private JPanel contentPane;
+
 	/**
 	 * Launch the application.
 	 */
@@ -32,20 +45,20 @@ public class MainMenuJFrame extends JFrame {
 	public MainMenuJFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 277, 386);
-		JPanel contentPane = new JPanel();
+		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setResizable(false);
 		
-		
-		AdminJFrame Admin = new AdminJFrame();
-		ScanUserJFrame ScanUser = new ScanUserJFrame();
+		AdminJFrame AdminUI = new AdminJFrame();
+		ScanUserJFrame ScanUserUI = new ScanUserJFrame();
+		NewUserJFrame NewUserUI = new NewUserJFrame();
 		
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Admin.setVisible(true);
+				AdminUI.setVisible(true);
 			}
 		});
 		btnAdmin.setBounds(44, 13, 174, 44);
@@ -57,13 +70,18 @@ public class MainMenuJFrame extends JFrame {
 		contentPane.add(btnScanUser);
 		btnScanUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ScanUser.setVisible(true);
+				ScanUserUI.setVisible(true);
 			}
 		});
 		
 		JButton btnNewUser = new JButton("New User");
 		btnNewUser.setBounds(44, 195, 174, 44);
 		contentPane.add(btnNewUser);
+		btnNewUser.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				NewUserUI.setVisible(true);
+			}
+		});
 		
 		JButton btnViewSalesRep = new JButton("View Sales Rep");
 		btnViewSalesRep.setBounds(44, 265, 174, 44);
