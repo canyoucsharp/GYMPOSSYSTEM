@@ -82,7 +82,9 @@ public class CustomerController {
 		cusDb.pushRepId(newRepId, cusObj);
 	}
 	
-	
+	public void updateDateOfBirth(String dob) throws SQLException{
+		cusDb.pushDateOfBirth(dob,cusObj);
+	}
 	
 	
 	//Displays
@@ -131,5 +133,8 @@ public class CustomerController {
 	
 	public int displaysignupRepId(){
 		return(cusObj.getRepId());
+	}
+	public String displayDateOfBirth(){
+		return(cusObj.getDob());
 	}
 }

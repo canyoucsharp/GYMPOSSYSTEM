@@ -292,5 +292,9 @@ public class CustomerDb {
 		}
 
 	}
+	public void pushDateOfBirth(String dob, Customer cusObj) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

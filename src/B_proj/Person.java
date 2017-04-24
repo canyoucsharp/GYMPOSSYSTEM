@@ -1,12 +1,14 @@
 package B_proj;
 
 public class Person {
+
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
 	private String address;
 	private String sex;
 	private String licenseNum;
+	private String dob;
 	private int age;
 	private int id;
 	public String getFirstName() {
@@ -57,7 +59,12 @@ public class Person {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
 	
 
 }
