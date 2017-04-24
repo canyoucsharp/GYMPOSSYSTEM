@@ -10,7 +10,7 @@ public class EmployeeController {
 	}
 	
 	
-	public void UpdateHourlyRate(int newRate) throws SQLException{
+	public void updateHourlyRate(int newRate) throws SQLException{
 		empDbObj.pushHourlyRate(newRate, empObj);
 	}
 	public void updateFirstName(String firstName) throws SQLException{
@@ -39,11 +39,11 @@ public class EmployeeController {
 	
 	//DISPLAY FUNCTIONS
 	
-	public int DisplayHourlyRate(){
+	public int displayHourlyRate(){
 		return(empObj.getHourlyRate());
 	}
 	
-	public int DisplaySales(){
+	public int displaySales(){
 		return(empObj.getSales());
 	}
 	public String displayFirstName(){

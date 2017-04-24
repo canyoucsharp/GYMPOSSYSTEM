@@ -3,20 +3,50 @@ package B_proj;
 import java.sql.SQLException;
 
 public class CustomerController {
-	Customer cusObj;
-	int monthlyCost;
-	CustomerDb cusDb;
-	Subscription subObj;
-	SubscriptionDb subDb;
-	
-	CustomerController(){
-		cusObj=new Customer();
-		cusDb=new CustomerDb();
-		subObj=new Subscription();
-		subDb=new SubscriptionDb();
-		}
-	
-	
+    private Customer cusObj;
+    private CustomerDb cusDb;
+    private Subscription newSub;
+    private SubscriptionDb newSubDb;
+    int monthlyCost;
+    
+    
+    public Customer getCusObj() {
+        return cusObj;
+    }
+
+
+    public Subscription getNewSub() {
+        return newSub;
+    }
+
+
+    public void setNewSub(Subscription newSub) {
+        this.newSub = newSub;
+    }
+
+
+    public SubscriptionDb getNewSubDb() {
+        return newSubDb;
+    }
+
+
+    public void setNewSubDb(SubscriptionDb newSubDb) {
+        this.newSubDb = newSubDb;
+    }
+
+
+    public void setCusObj(Customer cusObj) {
+        this.cusObj = cusObj;
+    }
+
+        public CustomerController(){
+            cusObj=new Customer();
+            cusDb=new CustomerDb();
+            newSub=new Subscription();
+            newSubDb=new SubscriptionDb();
+
+        }
+
 	// Actions
 	public void searchCustomer(int id) throws SQLException{
 		cusObj.setId(id);
