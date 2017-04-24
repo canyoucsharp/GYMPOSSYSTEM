@@ -64,14 +64,19 @@ public class UserInfoJFrame extends JFrame {
 		setResizable(false);
 		Customer myCus=myCont.getCusObj();
 		Subscription mySub=myCont.getNewSub();
+		setContentPane(contentPane);
 		if(myCus.getFirstName()==null)
 		{
 			setContentPane(Errorpage);
 			JOptionPane.showMessageDialog(null,"No user Found" );
+			JLabel lblError = new JLabel("Error");
+			lblError.setBounds(10, 11, 147, 14);
+			lblError.add(contentPane);
 			throw new NotFoundException("No user Found");
 		}
 		
-		setContentPane(contentPane);
+		else
+		{
 		
 		JLabel lblName = new JLabel("Name: "+myCus.getFirstName()+ ", " + myCus.getLastName());
 		lblName.setBounds(10, 11, 147, 14);
@@ -108,6 +113,7 @@ public class UserInfoJFrame extends JFrame {
 		JLabel lblLiscenseNumber = new JLabel("Liscense Number: " + key);
 		lblLiscenseNumber.setBounds(10, 211, 212, 14);
 		contentPane.add(lblLiscenseNumber);
+		}
 	}
 
 
