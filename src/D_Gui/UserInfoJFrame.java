@@ -20,6 +20,7 @@ public class UserInfoJFrame extends JFrame {
 
 	private int keyitem = 0;
 	private JPanel contentPane;
+	private ErrorJPanel Errorpage;
 
 	/**
 	 * Launch the application.
@@ -58,7 +59,6 @@ public class UserInfoJFrame extends JFrame {
 		setBounds(100, 100, 362, 335);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		keyitem = key;
 		setResizable(false);
@@ -66,9 +66,12 @@ public class UserInfoJFrame extends JFrame {
 		Subscription mySub=myCont.getNewSub();
 		if(myCus.getFirstName()==null)
 		{
+			setContentPane(Errorpage);
 			JOptionPane.showMessageDialog(null,"No user Found" );
 			throw new NotFoundException("No user Found");
 		}
+		
+		setContentPane(contentPane);
 		
 		JLabel lblName = new JLabel("Name: "+myCus.getFirstName()+ ", " + myCus.getLastName());
 		lblName.setBounds(10, 11, 147, 14);
