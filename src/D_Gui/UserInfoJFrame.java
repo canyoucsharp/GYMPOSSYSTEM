@@ -78,11 +78,11 @@ public class UserInfoJFrame extends JFrame {
 		lblContractLength.setBounds(10, 36, 147, 14);
 		contentPane.add(lblContractLength);
 		
-		JLabel lblSubscriptionType = new JLabel("Subscription Type: ");
+		JLabel lblSubscriptionType = new JLabel("Subscription Type: " + mySub.getPlanType());
 		lblSubscriptionType.setBounds(10, 61, 147, 14);
 		contentPane.add(lblSubscriptionType);
 		
-		JLabel lblMonthlyPay = new JLabel("Monthly Pay: ");
+		JLabel lblMonthlyPay = new JLabel("Monthly Pay: " + myCont.displaysubscriptionType());
 		lblMonthlyPay.setBounds(10, 86, 147, 14);
 		contentPane.add(lblMonthlyPay);
 		
@@ -90,11 +90,11 @@ public class UserInfoJFrame extends JFrame {
 		lblYearsSubscribed.setBounds(10, 111, 147, 14);
 		contentPane.add(lblYearsSubscribed);
 		
-		JLabel lblSex = new JLabel("Sex: ");
+		JLabel lblSex = new JLabel("Sex: " + myCont.displaySex());
 		lblSex.setBounds(10, 136, 147, 14);
 		contentPane.add(lblSex);
 		
-		JLabel lblPhone = new JLabel("Phone: ");
+		JLabel lblPhone = new JLabel("Phone: " + myCont.displayPhoneNumber());
 		lblPhone.setBounds(10, 161, 147, 14);
 		contentPane.add(lblPhone);
 		
