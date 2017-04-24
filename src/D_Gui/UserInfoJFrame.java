@@ -2,11 +2,19 @@ package D_Gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import B_proj.Customer;
+import B_proj.CustomerController;
+import B_proj.NotFoundException;
+import B_proj.Subscription;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class UserInfoJFrame extends JFrame {
 
@@ -17,10 +25,21 @@ public class UserInfoJFrame extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		CustomerController myCont=new CustomerController();
+		try {
+			myCont.searchCustomer(23);
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Customer myCus=myCont.getCusObj();
+		
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UserInfoJFrame frame = new UserInfoJFrame(123);
+					UserInfoJFrame frame = new UserInfoJFrame(23,myCont);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +53,7 @@ public class UserInfoJFrame extends JFrame {
 	 * Create the frame.
 	 */
 	
-	public UserInfoJFrame(int key) {
+	public UserInfoJFrame(int key,CustomerController myCont) throws NotFoundException {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 362, 335);
 		contentPane = new JPanel();
@@ -43,8 +62,15 @@ public class UserInfoJFrame extends JFrame {
 		contentPane.setLayout(null);
 		keyitem = key;
 		setResizable(false);
+		Customer myCus=myCont.getCusObj();
+		Subscription mySub=myCont.getNewSub();
+		if(myCus.getFirstName()==null)
+		{
+			JOptionPane.showMessageDialog(null,"No user Found" );
+			throw new NotFoundException("No user Found");
+		}
 		
-		JLabel lblName = new JLabel("Name: ");
+		JLabel lblName = new JLabel("Name: "+myCus.getFirstName()+ ", " + myCus.getLastName());
 		lblName.setBounds(10, 11, 147, 14);
 		contentPane.add(lblName);
 		

@@ -5,6 +5,7 @@ import java.awt.Dialog.ModalityType;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowFocusListener;
+import java.sql.SQLException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,12 +13,17 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import B_proj.Customer;
+import B_proj.CustomerController;
+import B_proj.NotFoundException;
+
 import javax.swing.JTextField;
 
 public class ScanUserJFrame extends JFrame {
-
+	private CustomerController myCusController;
 	UserInfoJFrame userinfo;
-	int key = 0;
+	int key = 23;
 	private JPanel contentPane;
 	private JTextField ScanUsertextField;
 
@@ -41,6 +47,9 @@ public class ScanUserJFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public ScanUserJFrame() {
+		 myCusController=new CustomerController();
+		 
+		
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 422, 133);
 		contentPane = new JPanel();
@@ -54,8 +63,20 @@ public class ScanUserJFrame extends JFrame {
 		ScanUsertextField.setColumns(10);
 		setResizable(false);
 		setAlwaysOnTop(true);
+		CustomerController myCont=new CustomerController();
+		try {
+			myCont.searchCustomer(23);
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		
-		userinfo = new UserInfoJFrame(key);
+		try {
+			userinfo = new UserInfoJFrame(key,myCont);
+		} catch (NotFoundException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		//Action for enter key
 		Action action = new AbstractAction()
 		{
@@ -64,14 +85,32 @@ public class ScanUserJFrame extends JFrame {
 		    {
 		        //Scan User
 		    	key = Integer.valueOf(ScanUsertextField.getText());
-		    	if (key != 0)
-		    		userinfo.dispose();
 		    	
-		    	userinfo = new UserInfoJFrame(key);
-		    	userinfo.setVisible(true);
-		    	//Resets Text Field
-		    	ScanUsertextField.setText("");
-		    	ScanUsertextField.requestFocus();
+		    	if (key != 23)
+		    		userinfo.dispose();
+		    	try {
+					myCusController.searchCustomer(key);
+					userinfo.dispose();
+					Customer newCus=myCusController.getCusObj();
+					try {
+						userinfo = new UserInfoJFrame(key,myCusController);
+					} catch (NotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+					userinfo.setVisible(true);
+					//Resets Text Field
+					ScanUsertextField.setText("");
+					ScanUsertextField.requestFocus();
+			    	
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					userinfo.setVisible(false);
+				}
+			
+		    	
 		    	
 		    }
 		};

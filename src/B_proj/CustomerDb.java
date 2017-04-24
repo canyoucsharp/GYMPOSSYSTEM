@@ -10,24 +10,29 @@ public class CustomerDb {
 	private MysqlConnect myConnector;
 	private PreparedStatement pst;
 	private ResultSet rs = null;
+	
+	
 
 	public static void main(String args[]) throws SQLException {
 		CustomerDb mycusdb = new CustomerDb();
 		Customer mycus = new Customer();
 		Subscription newSub = new Subscription();
-		SubscriptionDb newDb=new SubscriptionDb();
-		newDb.addSubscription(newSub);
+		mycus.setId(11);
+		mycusdb.init(mycus);
+		
+		//SubscriptionDb newDb=new SubscriptionDb();
+		//newDb.addSubscription(newSub);
 
 		// mycusdb.init(mycus);
 		// mycusdb.pushFirstName("michael", mycus);
 		// mycusdb.init(mycus);
 		// System.out.println(mycus.getFirstName());
-		mycus.setId(22);
-		mycusdb.init(mycus);
-		mycus.setFirstName("joshua");
-		System.out.println(mycus.getLastName());
-		mycus.setId(11);
-		mycusdb.registerCustomer(mycus, newSub);
+		//mycus.setId(22);
+		//mycusdb.init(mycus);
+		//mycus.setFirstName("joshua");
+		//System.out.println(mycus.getLastName());
+		//mycus.setId(11);
+		//mycusdb.registerCustomer(mycus, newSub);
 	}
 	//during registration every customer must be paired with a subscription
 	//even if if the customer isnt ready to subscribe you are allowed to
@@ -89,8 +94,10 @@ public class CustomerDb {
 				cusObj.setLicenseNum(rs.getString("license_num"));
 				cusObj.setSubId(rs.getInt("sub_id"));
 				cusObj.setRepId(rs.getInt("rep_id"));
-
-			}
+				}
+			
+			
+		
 		}
 
 		catch (Exception e) {
@@ -220,8 +227,7 @@ public class CustomerDb {
 		String updateTableSQL = "UPDATE clients SET sex = ? " + " WHERE client_id = ?";
 		try {
 			pst = conn.prepareStatement(updateTableSQL);
-			pst.setString(1, sex);
-			pst.setInt(2, cusObj.getId());
+
 			pst.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
