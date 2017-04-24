@@ -50,7 +50,12 @@ public class CustomerController {
 	// Actions
 	public void searchCustomer(int id) throws SQLException{
 		cusObj.setId(id);
-		cusDb.init(cusObj);
+		try {
+			cusDb.init(cusObj);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void updateFirstName(String firstName) throws SQLException{
 		cusDb.pushFirstName(firstName, cusObj);

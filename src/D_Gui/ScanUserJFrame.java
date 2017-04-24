@@ -46,7 +46,7 @@ public class ScanUserJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ScanUserJFrame() {
+	public ScanUserJFrame() throws NotFoundException {
 		 myCusController=new CustomerController();
 		 
 		
@@ -96,8 +96,14 @@ public class ScanUserJFrame extends JFrame {
 						userinfo = new UserInfoJFrame(key,myCusController);
 					} catch (NotFoundException e1) {
 						// TODO Auto-generated catch block
+						
 						e1.printStackTrace();
 					}
+					
+					
+			
+					
+					
 					
 					userinfo.setVisible(true);
 					//Resets Text Field

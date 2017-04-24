@@ -23,7 +23,12 @@ public class CustomerDb {
 		// mycusdb.init(mycus);
 		// System.out.println(mycus.getFirstName());
 		mycus.setId(22);
-		mycusdb.init(mycus);
+		try {
+			mycusdb.init(mycus);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		mycus.setFirstName("joshua");
 		System.out.println(mycus.getLastName());
 		mycus.setId(11);
@@ -66,7 +71,7 @@ public class CustomerDb {
 
 	}
 
-	public void init(Customer cusObj) throws SQLException {
+	public void init(Customer cusObj) throws SQLException,NotFoundException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();
@@ -91,11 +96,20 @@ public class CustomerDb {
 				cusObj.setRepId(rs.getInt("rep_id"));
 
 			}
+			else
+			{
+				
+				JOptionPane.showMessageDialog(null,"No user Found" );
+				throw new NotFoundException("No user Found");
+			}
+			
 		}
+		
 
 		catch (Exception e) {
 			System.out.println(e);
 		}
+		
 
 		finally {
 			rs.close();
