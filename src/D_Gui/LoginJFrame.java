@@ -78,6 +78,7 @@ ResultSet rs=null;
 		
 		Button button = new Button("Login");
 		button.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				try
 				{

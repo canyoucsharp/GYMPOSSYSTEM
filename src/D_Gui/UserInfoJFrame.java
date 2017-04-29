@@ -20,7 +20,6 @@ public class UserInfoJFrame extends JFrame {
 
 	private int keyitem = 0;
 	private JPanel contentPane;
-	private ErrorJPanel Errorpage;
 
 	/**
 	 * Launch the application.
@@ -67,7 +66,7 @@ public class UserInfoJFrame extends JFrame {
 		setContentPane(contentPane);
 		if(myCus.getFirstName()==null)
 		{
-			setContentPane(Errorpage);
+			setContentPane(contentPane);
 			JOptionPane.showMessageDialog(null,"No user Found" );
 			JLabel lblError = new JLabel("Error");
 			lblError.setBounds(10, 11, 147, 14);

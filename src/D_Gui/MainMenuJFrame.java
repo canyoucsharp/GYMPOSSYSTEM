@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import B_proj.CustomerController;
+import B_proj.NotFoundException;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -52,7 +53,13 @@ public class MainMenuJFrame extends JFrame {
 		setResizable(false);
 		
 		AdminJFrame AdminUI = new AdminJFrame();
-		ScanUserJFrame ScanUserUI = new ScanUserJFrame();
+		ScanUserJFrame ScanUserUI;
+		try {
+			ScanUserUI = new ScanUserJFrame();
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		NewUserJFrame NewUserUI = new NewUserJFrame();
 		
 		JButton btnAdmin = new JButton("Admin");

@@ -1,18 +1,51 @@
 package M_Database;
 
 import java.sql.*;
+import java.util.ResourceBundle;
+
 import javax.swing.*;
 
+
 public class MysqlConnect {
- private Connection conn=null;
+private static String hostName;
+private static String port;
+private static String userName;
+private static String password;
  
+private Connection conn=null;
+ public static void SelectDatabase() throws DataBaseException {
+		ResourceBundle	 bundle = ResourceBundle.getBundle("DataBase");
+		
+		
+		if ( bundle.containsKey("HostName") ) {
+			hostName = bundle.getString("HostName");
+		 }
+		
+		if ( bundle.containsKey("Port") ) {
+			port = bundle.getString("Port");
+		}
+		
+		if ( bundle.containsKey("UserName") ) {
+			userName = bundle.getString("UserName");
+		}
+		if ( bundle.containsKey("Password") ) {
+			password = bundle.getString("Password");
+		}
+
+	}
 
 public Connection ConnectDB()
 {
+	try {
+		SelectDatabase();
+	} catch (DataBaseException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
 try
  {
   Class.forName("com.mysql.jdbc.Driver");
-  conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/nyfitness","root","Vanquish123");
+  conn=DriverManager.getConnection("jdbc:mysql://"+hostName+port+"/nyfitness",userName,password);
   //JOptionPane.showMessageDialog(null,"Connection Success");
   System.out.println("Connection open");
   return conn;
