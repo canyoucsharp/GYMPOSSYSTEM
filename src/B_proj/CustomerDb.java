@@ -44,8 +44,8 @@ public class CustomerDb {
 			conn.setAutoCommit(false);
 			newDb.addSubscription(conn,newSub);
 			String insertTableSQL = "INSERT INTO clients"
-					+ "(client_id, first_name, last_name, phone_number,address,age,sex,license_num,sub_id,rep_id) "
-					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?)";
+					+ "(client_id, first_name, last_name, phone_number,address,age,sex,license_num,sub_id,rep_id,dob,picture) "
+					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			pst = conn.prepareStatement(insertTableSQL);
 			pst.setInt   (1, cusObj.getId());
@@ -58,6 +58,8 @@ public class CustomerDb {
 			pst.setString(8, cusObj.getLicenseNum());
 			pst.setInt   (9, newSub.subid);
 			pst.setInt   (10, cusObj.repId);
+			pst.setString(11, cusObj.getDob());
+			pst.setString(12, cusObj.getPictureLink());
 			pst.executeUpdate();
 			conn.commit();
 			JOptionPane.showMessageDialog(null,"Registration Success");
@@ -99,6 +101,8 @@ public class CustomerDb {
 				cusObj.setLicenseNum(rs.getString("license_num"));
 				cusObj.setSubId(rs.getInt("sub_id"));
 				cusObj.setRepId(rs.getInt("rep_id"));
+				cusObj.setDob(rs.getString("dob"));
+				cusObj.setPictureLink(rs.getString("picture"));
 
 			}
 			else
@@ -312,12 +316,41 @@ public class CustomerDb {
 		}
 
 	}
-	public void pushDateOfBirth(String dob, Customer cusObj) {
+	public void pushDateOfBirth(String dob, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		myConnector = new MysqlConnect();
+		conn = myConnector.ConnectDB();
+		String updateTableSQL = "UPDATE clients SET dob = ? " + " WHERE client_id = ?";
+		try {
+			pst = conn.prepareStatement(updateTableSQL);
+			pst.setString(1,dob);
+			pst.setInt(2, cusObj.getId());
+			pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			pst.close();
+			conn.close();
+			System.out.println("Connection closed");
+		}
 	}
-	public void pushPictureLink(String pictureLink, Customer cusObj) {
+	public void pushPictureLink(String pictureLink, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
+		myConnector = new MysqlConnect();
+		conn = myConnector.ConnectDB();
+		String updateTableSQL = "UPDATE clients SET picture = ? " + " WHERE client_id = ?";
+		try {
+			pst = conn.prepareStatement(updateTableSQL);
+			pst.setString(1,pictureLink);
+			pst.setInt(2, cusObj.getId());
+			pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			pst.close();
+			conn.close();
+			System.out.println("Connection closed");
+		}
 		
 	}
 
