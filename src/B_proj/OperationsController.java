@@ -12,6 +12,13 @@ public class OperationsController {
 	public int displayLocationCost(){
 		return(opObj.getLocationCost());
 	}
-	
-	
+	public int displayAccountsPayable(){
+		return(opObj.getAccountsPayable());
+	}
+	public int displayMaxOccupancy(){
+		return(opObj.getMaxOccupancy());
+	}
+	public double displayMonthlyCost(){
+		return(opObj.getMonthlyCost());
+	}
 }

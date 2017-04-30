@@ -91,7 +91,7 @@ public class CustomerController {
 		cusDb.pushDateOfBirth(dob,cusObj);
 	}
 	public void updatePictureLink(String pictureLink) throws SQLException{
-		cusDb.pushPictureLink(String pictureLink);
+		cusDb.pushPictureLink(pictureLink);
 	}
 	
 	
@@ -144,6 +144,9 @@ public class CustomerController {
 	}
 	public String displayDateOfBirth(){
 		return(cusObj.getDob());
+	}
+	public String displayPictureLink(){
+		return(cusObj.getPictureLink());
 	}
 	
 	public void newCustomer(String firstName,String lastName,String sex,String dob,String phone,String picture,String address,int age,int repId) throws SQLException{

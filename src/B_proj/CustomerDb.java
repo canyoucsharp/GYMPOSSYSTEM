@@ -316,7 +316,7 @@ public class CustomerDb {
 		// TODO Auto-generated method stub
 		
 	}
-	public void pushPictureLink(String pictureLink) {
+	public void pushPictureLink(String pictureLink, Customer cusObj) {
 		// TODO Auto-generated method stub
 		
 	}
