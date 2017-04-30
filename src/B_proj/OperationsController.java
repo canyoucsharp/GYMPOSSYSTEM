@@ -52,5 +52,14 @@ public class OperationsController {
 	public void updateRoi(int roi){
 		opDbObj.pushRoi(roi,opObj);
 	}
-	
+	public void updateElectric(double electric)
+	{
+		opDbObj.pushElectric(electric,opObj);
+	}
+	public void updateWater(double water){
+		opDbObj.pushWater(water,opObj);
+	}
+	public void updateGash(double gas){
+		opDbObj.pushGas(gas,opObj);
+	}
 }
