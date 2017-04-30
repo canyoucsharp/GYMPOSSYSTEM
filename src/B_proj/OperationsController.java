@@ -1,7 +1,7 @@
 package B_proj;
 
 public class OperationsController {
-	private Operations opObj;
+	private static Operations opObj;
 	private OperationsDb opDbObj;
 	
 	OperationsController(){
@@ -9,6 +9,8 @@ public class OperationsController {
 		opDbObj=new OperationsDb();
 	}
 	
+	
+	//display 
 	public int displayLocationCost(){
 		return(opObj.getLocationCost());
 	}
@@ -18,10 +20,28 @@ public class OperationsController {
 	public int displayMaxOccupancy(){
 		return(opObj.getMaxOccupancy());
 	}
-	public double displayMonthlyCost(){
+	public static double displayMonthlyCost(){
 		return(opObj.getMonthlyCost());
 	}
 	public double displayRoi(){
 		return(opObj.getRoi());
+	}
+	
+	//update functions
+	
+	public void updateLocationCost(int locationCost){
+		opDbObj.pushLocationCost(locationCost,opObj);
+	}
+	
+	public void updateAccountsPayable(int accountsPayable)
+	{
+		opDbObj.pushAccountsPayable(accountsPayable,opObj);
+	}
+	public void updateMaxOccupancy(int maxOccupancy)
+	{
+		opDbObj.pushMaxOccupancy(maxOccupancy,opObj);
+	}
+	public void updateRoi(int roi){
+		opDbObj.pushRoi(roi,opObj);
 	}
 }

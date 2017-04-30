@@ -9,7 +9,7 @@ public class EmployeeController {
 	empDbObj=new EmployeeDb();
 	}
 	
-	
+	//update functions
 	public void updateHourlyRate(int newRate) throws SQLException{
 		empDbObj.pushHourlyRate(newRate, empObj);
 	}

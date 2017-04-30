@@ -7,7 +7,7 @@ public class CustomerController {
     private CustomerDb cusDb;
     private Subscription newSub;
     private SubscriptionDb newSubDb;
-    int monthlyCost;
+    double monthlyCost;
     
     
     public Customer getCusObj() {
@@ -91,7 +91,7 @@ public class CustomerController {
 		cusDb.pushDateOfBirth(dob,cusObj);
 	}
 	public void updatePictureLink(String pictureLink) throws SQLException{
-		cusDb.pushPictureLink(pictureLink);
+		cusDb.pushPictureLink(pictureLink,cusObj);
 	}
 	
 	
@@ -125,6 +125,7 @@ public class CustomerController {
 		return(cusObj.getLicenseNum());
 	}
 	public String displaysubscriptionType(){
+		monthlyCost=OperationsController.displayMonthlyCost();
 		int subType= cusObj.getSubId();
 		switch(subType){
 		case 0:
