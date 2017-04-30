@@ -21,4 +21,7 @@ public class OperationsController {
 	public double displayMonthlyCost(){
 		return(opObj.getMonthlyCost());
 	}
+	public double displayRoi(){
+		return(opObj.getRoi());
+	}
 }

@@ -41,5 +41,13 @@ public class Operations {
 		this.calculateMonthlyCost();
 		return monthlyCost;
 	}
+
+	public double getRoi() {
+		return roi;
+	}
+
+	public void setRoi(double roi) {
+		this.roi = roi;
+	}
 	
 }
