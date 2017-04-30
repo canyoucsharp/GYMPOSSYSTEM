@@ -7,9 +7,11 @@ public class Operations {
 	private int maxOccupancy;
 	private double monthlyCost;
 	private double roi;
+	
 	Operations(){
 		utilityObj=new Utility();
 	}
+	
 	public int getLocationCost() {
 		return locationCost;
 	}
@@ -33,6 +35,11 @@ public class Operations {
 		roi+=1;
 		monthlyCost*=roi;
 		monthlyCost/=maxOccupancy;
+	}
+
+	public double getMonthlyCost() {
+		this.calculateMonthlyCost();
+		return monthlyCost;
 	}
 	
 }

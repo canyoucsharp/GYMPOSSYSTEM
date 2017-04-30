@@ -142,4 +142,14 @@ public class CustomerController {
 	public String displayDateOfBirth(){
 		return(cusObj.getDob());
 	}
+	
+	public void newCustomer(String firstName,String lastName,String sex,String dob,String phone,String picture,String address,int age,int repId) throws SQLException{
+		cusObj=new Customer();
+        cusDb=new CustomerDb();
+        newSub=new Subscription();
+        newSubDb=new SubscriptionDb();
+        
+        cusObj.initNew(firstName,lastName,sex,dob,phone,picture,address,age,repId);
+        cusDb.registerCustomer(cusObj, newSub);
+	}
 }
