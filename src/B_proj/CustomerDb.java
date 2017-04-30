@@ -15,8 +15,7 @@ public class CustomerDb {
 		CustomerDb mycusdb = new CustomerDb();
 		Customer mycus = new Customer();
 		Subscription newSub = new Subscription();
-		SubscriptionDb newDb=new SubscriptionDb();
-		newDb.addSubscription(newSub);
+		//newDb.addSubscription(newSub);
 
 		// mycusdb.init(mycus);
 		// mycusdb.pushFirstName("michael", mycus);
@@ -38,10 +37,12 @@ public class CustomerDb {
 	//even if if the customer isnt ready to subscribe you are allowed to
 	//leave the fields blank
 	public void registerCustomer(Customer cusObj, Subscription newSub) throws SQLException {
+		SubscriptionDb newDb=new SubscriptionDb();
 		try {
 			myConnector = new MysqlConnect();
 			conn = myConnector.ConnectDB();
-			
+			conn.setAutoCommit(false);
+			newDb.addSubscription(conn,newSub);
 			String insertTableSQL = "INSERT INTO clients"
 					+ "(client_id, first_name, last_name, phone_number,address,age,sex,license_num,sub_id,rep_id) "
 					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?)";
@@ -58,10 +59,14 @@ public class CustomerDb {
 			pst.setInt   (9, newSub.subid);
 			pst.setInt   (10, cusObj.repId);
 			pst.executeUpdate();
+			conn.commit();
 			JOptionPane.showMessageDialog(null,"Registration Success");
+			
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			conn.rollback();
+			
 		} finally {
 			pst.close();
 			conn.close();
@@ -100,7 +105,8 @@ public class CustomerDb {
 			{
 				
 				JOptionPane.showMessageDialog(null,"No user Found" );
-				throw new NotFoundException("No user Found");
+
+
 			}
 			
 		}

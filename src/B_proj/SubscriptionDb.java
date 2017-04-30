@@ -8,16 +8,13 @@ import javax.swing.JOptionPane;
 
 
 public class SubscriptionDb {
-	private Connection conn;
-	private MysqlConnect myConnector;
 	private PreparedStatement pst;
 	private ResultSet rs = null;
 	
-	public void addSubscription(Subscription newSub) throws SQLException
+	public void addSubscription(Connection conn,Subscription newSub) throws SQLException
 	{
 		try {
-			myConnector = new MysqlConnect();
-			conn = myConnector.ConnectDB();
+			
 			String insertTableSQL = "INSERT INTO subscription"
 					+ "(sub_id,sub_status,contract_begin,contract_end,contract_remaining,plan_type) "
 					+ "VALUES" + "(?,?,?,?,?,?)";
@@ -44,16 +41,14 @@ public class SubscriptionDb {
 			System.out.println(e.getMessage());
 		} 
 		
-			finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
-		}
 	}
+	
 	
 	
 	public void init(Subscription newSub) throws SQLException {
 		// TODO Auto-generated method stub
+		Connection conn;
+		MysqlConnect myConnector;
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();
 
