@@ -19,8 +19,7 @@ import javax.swing.*;
 
 public class MainMenuJFrame extends JFrame {
 
-
-
+	ScanUserJFrame ScanUserUI;
 	
 	private JPanel contentPane;
 
@@ -51,15 +50,15 @@ public class MainMenuJFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setResizable(false);
-		
-		AdminJFrame AdminUI = new AdminJFrame();
-		ScanUserJFrame ScanUserUI;
+
 		try {
 			ScanUserUI = new ScanUserJFrame();
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		AdminJFrame AdminUI = new AdminJFrame();
 		NewUserJFrame NewUserUI = new NewUserJFrame();
 		
 		JButton btnAdmin = new JButton("Admin");
@@ -77,6 +76,7 @@ public class MainMenuJFrame extends JFrame {
 		contentPane.add(btnScanUser);
 		btnScanUser.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				ScanUserUI.setVisible(true);
 			}
 		});
