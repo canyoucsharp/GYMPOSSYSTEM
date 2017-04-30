@@ -90,6 +90,9 @@ public class CustomerController {
 	public void updateDateOfBirth(String dob) throws SQLException{
 		cusDb.pushDateOfBirth(dob,cusObj);
 	}
+	public void updatePictureLink(String pictureLink) throws SQLException{
+		cusDb.pushPictureLink(String pictureLink);
+	}
 	
 	
 	//Displays
@@ -147,7 +150,6 @@ public class CustomerController {
 		cusObj=new Customer();
         cusDb=new CustomerDb();
         newSub=new Subscription();
-        newSubDb=new SubscriptionDb();
         
         cusObj.initNew(firstName,lastName,sex,dob,phone,picture,address,age,repId);
         cusDb.registerCustomer(cusObj, newSub);
