@@ -26,7 +26,15 @@ public class OperationsController {
 	public double displayRoi(){
 		return(opObj.getRoi());
 	}
-	
+	public double displayElectric(){
+		return(opObj.getElectric());
+	}
+	public double displayWater(){
+		return(opObj.getWater());
+	}
+	public double displayGas(){
+		return(opObj.getGas());
+	}
 	//update functions
 	
 	public void updateLocationCost(int locationCost){
@@ -44,4 +52,5 @@ public class OperationsController {
 	public void updateRoi(int roi){
 		opDbObj.pushRoi(roi,opObj);
 	}
+	
 }

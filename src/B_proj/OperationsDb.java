@@ -22,4 +22,19 @@ public class OperationsDb {
 		
 	}
 
+	public void pushElectric(double electric, Operations opObj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void pushWater(double water, Operations opObj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void pushGas(double gas, Operations opObj) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

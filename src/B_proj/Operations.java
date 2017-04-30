@@ -2,16 +2,35 @@ package B_proj;
 
 public class Operations {
 	private int locationCost;
-	private Utility utilityObj;
 	private int accountsPayable;
 	private int maxOccupancy;
 	private double monthlyCost;
 	private double roi;
+	private int electric;
+	private int gas;
+	private int water;
 	
 	Operations(){
-		utilityObj=new Utility();
 	}
 	
+	public int getElectric() {
+		return electric;
+	}
+	public void setElectric(int electric) {
+		this.electric = electric;
+	}
+	public int getGas() {
+		return gas;
+	}
+	public void setGas(int gas) {
+		this.gas = gas;
+	}
+	public int getWater() {
+		return water;
+	}
+	public void setWater(int water) {
+		this.water = water;
+	}
 	public int getLocationCost() {
 		return locationCost;
 	}
@@ -31,7 +50,7 @@ public class Operations {
 		this.maxOccupancy = maxOccupancy;
 	}
 	public void calculateMonthlyCost(){
-		monthlyCost=(locationCost+accountsPayable+utilityObj.totalUtilities());
+		monthlyCost=(locationCost+accountsPayable+electric+gas+water);
 		roi+=1;
 		monthlyCost*=roi;
 		monthlyCost/=maxOccupancy;
