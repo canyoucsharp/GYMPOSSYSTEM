@@ -33,7 +33,7 @@ public class SubscriptionDb {
 			newSub.setSubid(rs.getInt(1));
 				    	
 			}
-			JOptionPane.showMessageDialog(null,"Sucessfull Subscription");
+			
 			
 				   
 				
