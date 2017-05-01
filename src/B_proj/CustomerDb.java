@@ -44,7 +44,7 @@ public class CustomerDb {
 			conn.setAutoCommit(false);
 			newDb.addSubscription(conn,newSub);
 			String insertTableSQL = "INSERT INTO clients"
-					+ "(client_id, first_name, last_name, phone_number,address,age,sex,license_num,sub_id,rep_id,dob,picture) "
+					+ "(client_id, first_name, last_name, phone_number,address,dob,sex,license_num,sub_id,rep_id,age,picture) "
 					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			pst = conn.prepareStatement(insertTableSQL);
@@ -53,12 +53,12 @@ public class CustomerDb {
 			pst.setString(3, cusObj.getLastName());
 			pst.setString(4, cusObj.getPhoneNumber());
 			pst.setString(5, cusObj.getAddress());
-			pst.setInt   (6, cusObj.getAge());
+			pst.setString(6, cusObj.getDob());
 			pst.setString(7, cusObj.getSex());
 			pst.setString(8, cusObj.getLicenseNum());
 			pst.setInt   (9, newSub.subid);
 			pst.setInt   (10, cusObj.repId);
-			pst.setString(11, cusObj.getDob());
+			pst.setString(11,"select datediff(current_date, dob) from clients");
 			pst.setString(12, cusObj.getPictureLink());
 			pst.executeUpdate();
 			conn.commit();
