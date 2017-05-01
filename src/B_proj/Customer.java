@@ -25,8 +25,9 @@ public class Customer extends Person {
 	public void setPictureLink(String pictureLink) {
 		this.pictureLink = pictureLink;
 	}
+	
 
-	public void initNew(String firstName,String lastName,String sex,String dob,String phone,String picture,String address,int age,int repId) {
+	public void initNew(String firstName,String lastName,String sex,String dob,String phone,String picture,String address,int age,int repId, String lis_num, int id) {
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		this.setSex(sex);
@@ -36,6 +37,8 @@ public class Customer extends Person {
 		this.setAddress(address);
 		this.setAge(age);
 		this.setRepId(repId);
+		this.setLicenseNum(lis_num);
+		this.setId(id);
 		
 	}
 }

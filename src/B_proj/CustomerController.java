@@ -125,7 +125,7 @@ public class CustomerController {
 		return(cusObj.getLicenseNum());
 	}
 	public String displaysubscriptionType(){
-		monthlyCost=OperationsController.displayMonthlyCost();
+		monthlyCost=0;
 		int subType= cusObj.getSubId();
 		switch(subType){
 		case 0:
@@ -150,12 +150,12 @@ public class CustomerController {
 		return(cusObj.getPictureLink());
 	}
 	
-	public void newCustomer(String firstName,String lastName,String sex,String dob,String phone,String picture,String address,int age,int repId) throws SQLException{
+	public void newCustomer(String firstName,String lastName,String sex,String dob,String phone,String picture,String address,int age,int repId,String lisnum, int id) throws SQLException{
 		cusObj=new Customer();
         cusDb=new CustomerDb();
         newSub=new Subscription();
         
-        cusObj.initNew(firstName,lastName,sex,dob,phone,picture,address,age,repId);
+        cusObj.initNew(firstName,lastName,sex,dob,phone,picture,address,age,repId, lisnum, id);
         cusDb.registerCustomer(cusObj, newSub);
 	}
 }

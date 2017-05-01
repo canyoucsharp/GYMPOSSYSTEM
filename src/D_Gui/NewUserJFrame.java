@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,12 +17,16 @@ import javax.swing.border.EmptyBorder;
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
+import B_proj.CustomerController;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
 public class NewUserJFrame extends JFrame {
 
+	CustomerController NewCus = new CustomerController();
+	
 	private JPanel contentPane;
 	private JTextField FirstNametextField;
 	private JTextField LastNametextField;
@@ -29,6 +34,8 @@ public class NewUserJFrame extends JFrame {
 	private JTextField PhoneNumbertextField;
 	private JTextField CCNumbertextField;
 	private JTextField PictureLinktextField;
+	private JTextField AddressTextField;
+	private JTextField AgeTextField;
 
 	/**
 	 * Launch the application.
@@ -51,7 +58,7 @@ public class NewUserJFrame extends JFrame {
 	 */
 	public NewUserJFrame() {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 228, 397);
+		setBounds(100, 100, 228, 477);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -77,8 +84,8 @@ public class NewUserJFrame extends JFrame {
 		LastNametextField.setColumns(10);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.addItem("Male");
-		comboBox.addItem("Female");
+		comboBox.addItem("M");
+		comboBox.addItem("F");
 		comboBox.setBounds(90, 70, 86, 20);
 		contentPane.add(comboBox);
 		
@@ -126,13 +133,44 @@ public class NewUserJFrame extends JFrame {
 		PictureLinktextField.setColumns(10);
 		
 		JButton btnRegister = new JButton("Register");
-		btnRegister.setBounds(64, 324, 89, 23);
+		btnRegister.setBounds(60, 414, 89, 23);
 		contentPane.add(btnRegister);
+		
+		
+		AddressTextField = new JTextField();
+		AddressTextField.setBounds(90, 277, 86, 20);
+		contentPane.add(AddressTextField);
+		AddressTextField.setColumns(10);
+		
+		
+		
+		
+		JLabel lblAddress = new JLabel("Address: ");
+		lblAddress.setBounds(10, 280, 70, 14);
+		contentPane.add(lblAddress);
+		
+		JLabel lblAge = new JLabel("Age: ");
+		lblAge.setBounds(10, 322, 70, 14);
+		contentPane.add(lblAge);
+		
+		AgeTextField = new JTextField();
+		AgeTextField.setBounds(90, 319, 86, 20);
+		contentPane.add(AgeTextField);
+		AgeTextField.setColumns(10);
+		
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				//Call statement to push data to DataBase
 				
+				String Sex = comboBox.getSelectedItem().toString();
+				int Age = Integer.parseInt(AgeTextField.getText());
+				try {
+					NewCus.newCustomer(FirstNametextField.getText(), LastNametextField.getText(), Sex, DOBtextField.getText(), PhoneNumbertextField.getText(), "http://i.imgur.com/gYGx7O0.jpg", AddressTextField.getText(), Age, 1, "44", 44);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				//Resets fields once registered
 				PictureLinktextField.setText("");
@@ -141,6 +179,9 @@ public class NewUserJFrame extends JFrame {
 				DOBtextField.setText("");
 				LastNametextField.setText("");
 				FirstNametextField.setText("");
+				AgeTextField.setText("");
+				AddressTextField.setText("");
+				dispose();
 				
 			}
 		});
