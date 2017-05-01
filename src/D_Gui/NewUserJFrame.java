@@ -36,6 +36,7 @@ public class NewUserJFrame extends JFrame {
 	private JTextField PictureLinktextField;
 	private JTextField AddressTextField;
 	private JTextField AgeTextField;
+	private JTextField ClientIdtextField;
 
 	/**
 	 * Launch the application.
@@ -58,7 +59,7 @@ public class NewUserJFrame extends JFrame {
 	 */
 	public NewUserJFrame() {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 228, 477);
+		setBounds(100, 100, 261, 477);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -66,79 +67,79 @@ public class NewUserJFrame extends JFrame {
 		setResizable(false);
 		
 		JLabel lblFirstName = new JLabel("First Name:");
-		lblFirstName.setBounds(10, 11, 70, 14);
+		lblFirstName.setBounds(10, 17, 102, 14);
 		contentPane.add(lblFirstName);
 		
 		FirstNametextField = new JTextField();
-		FirstNametextField.setBounds(90, 8, 86, 20);
+		FirstNametextField.setBounds(146, 11, 86, 20);
 		contentPane.add(FirstNametextField);
 		FirstNametextField.setColumns(10);
 		
 		JLabel lblLastName = new JLabel("Last Name: ");
-		lblLastName.setBounds(10, 42, 70, 14);
+		lblLastName.setBounds(10, 48, 102, 14);
 		contentPane.add(lblLastName);
 		
 		LastNametextField = new JTextField();
-		LastNametextField.setBounds(90, 39, 86, 20);
+		LastNametextField.setBounds(146, 42, 86, 20);
 		contentPane.add(LastNametextField);
 		LastNametextField.setColumns(10);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.addItem("M");
 		comboBox.addItem("F");
-		comboBox.setBounds(90, 70, 86, 20);
+		comboBox.setBounds(146, 73, 86, 20);
 		contentPane.add(comboBox);
 		
 		JLabel lblSex = new JLabel("Sex: ");
-		lblSex.setBounds(10, 73, 46, 14);
+		lblSex.setBounds(10, 79, 102, 14);
 		contentPane.add(lblSex);
 		
 		JLabel lblDob = new JLabel("DOB: ");
-		lblDob.setBounds(10, 117, 46, 14);
+		lblDob.setBounds(10, 123, 102, 14);
 		contentPane.add(lblDob);
 		
 		//Need to set-up date format************
 		DOBtextField = new JTextField();
-		DOBtextField.setBounds(90, 114, 86, 20);
+		DOBtextField.setBounds(146, 117, 86, 20);
 		contentPane.add(DOBtextField);
 		DOBtextField.setColumns(10);
 		
 		JLabel lblPhone = new JLabel("Phone: ");
-		lblPhone.setBounds(10, 154, 46, 14);
+		lblPhone.setBounds(10, 160, 102, 14);
 		contentPane.add(lblPhone);
 		
 		
 		//Need to set-up phone number format************
 		PhoneNumbertextField = new JTextField();
-		PhoneNumbertextField.setBounds(90, 151, 86, 20);
+		PhoneNumbertextField.setBounds(146, 154, 86, 20);
 		contentPane.add(PhoneNumbertextField);
 		PhoneNumbertextField.setColumns(10);
 		
-		JLabel lblCcNumber = new JLabel("CC Number: ");
-		lblCcNumber.setBounds(10, 201, 70, 14);
-		contentPane.add(lblCcNumber);
+		JLabel lblLiscNumber = new JLabel("Driver's Liscense: ");
+		lblLiscNumber.setBounds(10, 207, 115, 14);
+		contentPane.add(lblLiscNumber);
 		
 		CCNumbertextField = new JTextField();
-		CCNumbertextField.setBounds(90, 198, 86, 20);
+		CCNumbertextField.setBounds(146, 201, 86, 20);
 		contentPane.add(CCNumbertextField);
 		CCNumbertextField.setColumns(10);
 		
 		JLabel lblPictureLink = new JLabel("Picture Link: ");
-		lblPictureLink.setBounds(10, 241, 70, 14);
+		lblPictureLink.setBounds(10, 247, 102, 14);
 		contentPane.add(lblPictureLink);
 		
 		PictureLinktextField = new JTextField();
-		PictureLinktextField.setBounds(90, 238, 86, 20);
+		PictureLinktextField.setBounds(146, 241, 86, 20);
 		contentPane.add(PictureLinktextField);
 		PictureLinktextField.setColumns(10);
 		
 		JButton btnRegister = new JButton("Register");
-		btnRegister.setBounds(60, 414, 89, 23);
+		btnRegister.setBounds(79, 414, 89, 23);
 		contentPane.add(btnRegister);
 		
 		
 		AddressTextField = new JTextField();
-		AddressTextField.setBounds(90, 277, 86, 20);
+		AddressTextField.setBounds(146, 280, 86, 20);
 		contentPane.add(AddressTextField);
 		AddressTextField.setColumns(10);
 		
@@ -146,17 +147,26 @@ public class NewUserJFrame extends JFrame {
 		
 		
 		JLabel lblAddress = new JLabel("Address: ");
-		lblAddress.setBounds(10, 280, 70, 14);
+		lblAddress.setBounds(10, 286, 102, 14);
 		contentPane.add(lblAddress);
 		
 		JLabel lblAge = new JLabel("Age: ");
-		lblAge.setBounds(10, 322, 70, 14);
+		lblAge.setBounds(10, 328, 102, 14);
 		contentPane.add(lblAge);
 		
 		AgeTextField = new JTextField();
-		AgeTextField.setBounds(90, 319, 86, 20);
+		AgeTextField.setBounds(146, 322, 86, 20);
 		contentPane.add(AgeTextField);
 		AgeTextField.setColumns(10);
+		
+		JLabel lblClientId = new JLabel("Client Id: ");
+		lblClientId.setBounds(10, 365, 102, 14);
+		contentPane.add(lblClientId);
+		
+		ClientIdtextField = new JTextField();
+		ClientIdtextField.setBounds(146, 362, 86, 20);
+		contentPane.add(ClientIdtextField);
+		ClientIdtextField.setColumns(10);
 		
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -165,8 +175,19 @@ public class NewUserJFrame extends JFrame {
 				
 				String Sex = comboBox.getSelectedItem().toString();
 				int Age = Integer.parseInt(AgeTextField.getText());
+				int ClientId = Integer.parseInt(ClientIdtextField.getText());
+				String picturelink;
+				if (PictureLinktextField.getText() == "")
+				{
+					picturelink = "http://clipartix.com/wp-content/uploads/2016/08/Pictures-of-questions-marks-clipart.png";
+				}
+				else
+				{
+					picturelink = PictureLinktextField.getText();
+				}
+				
 				try {
-					NewCus.newCustomer(FirstNametextField.getText(), LastNametextField.getText(), Sex, DOBtextField.getText(), PhoneNumbertextField.getText(), "http://i.imgur.com/gYGx7O0.jpg", AddressTextField.getText(), Age, 1, "44", 44);
+					NewCus.newCustomer(FirstNametextField.getText(), LastNametextField.getText(), Sex, DOBtextField.getText(), PhoneNumbertextField.getText(), picturelink, AddressTextField.getText(), Age, 1, CCNumbertextField.getText(), ClientId);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -14,6 +14,7 @@ import B_proj.NotFoundException;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
@@ -41,8 +42,9 @@ public class MainMenuJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
 	 */
-	public MainMenuJFrame() {
+	public MainMenuJFrame() throws IOException {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 277, 386);
 		contentPane = new JPanel();

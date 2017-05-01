@@ -5,6 +5,7 @@ import java.awt.Dialog.ModalityType;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowFocusListener;
+import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.swing.*;
@@ -45,8 +46,9 @@ public class ScanUserJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws IOException 
 	 */
-	public ScanUserJFrame() throws NotFoundException {
+	public ScanUserJFrame() throws NotFoundException, IOException {
 		 myCusController=new CustomerController();
 		 
 		
@@ -97,6 +99,9 @@ public class ScanUserJFrame extends JFrame {
 					} catch (NotFoundException e1) {
 						// TODO Auto-generated catch block
 						
+						e1.printStackTrace();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 					

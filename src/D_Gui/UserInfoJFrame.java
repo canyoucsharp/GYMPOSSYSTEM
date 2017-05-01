@@ -2,8 +2,14 @@ package D_Gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -27,7 +33,7 @@ public class UserInfoJFrame extends JFrame {
 	public static void main(String[] args) {
 		CustomerController myCont=new CustomerController();
 		try {
-			myCont.searchCustomer(23);
+			myCont.searchCustomer(44);
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -51,11 +57,12 @@ public class UserInfoJFrame extends JFrame {
 	
 	/**
 	 * Create the frame.
+	 * @throws IOException 
 	 */
 	
-	public UserInfoJFrame(int key,CustomerController myCont) throws NotFoundException {
+	public UserInfoJFrame(int key,CustomerController myCont) throws NotFoundException, IOException {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 362, 335);
+		setBounds(100, 100, 265, 420);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -64,6 +71,7 @@ public class UserInfoJFrame extends JFrame {
 		Customer myCus=myCont.getCusObj();
 		Subscription mySub=myCont.getNewSub();
 		setContentPane(contentPane);
+		
 		if(myCus.getFirstName()==null)
 		{
 			setContentPane(contentPane);
@@ -101,17 +109,35 @@ public class UserInfoJFrame extends JFrame {
 		lblSex.setBounds(10, 136, 147, 14);
 		contentPane.add(lblSex);
 		
-		JLabel lblPhone = new JLabel("Phone: " + myCont.displayPhoneNumber());
+		JLabel lblPhone = new JLabel("Phone: " + myCont.displayPhoneNumber() );
 		lblPhone.setBounds(10, 161, 147, 14);
 		contentPane.add(lblPhone);
 		
-		JLabel lblDateOfBirth = new JLabel("Date of Birth: ");
+		JLabel lblDateOfBirth = new JLabel("Date of Birth: " + myCont.displayDateOfBirth());
 		lblDateOfBirth.setBounds(10, 186, 147, 14);
 		contentPane.add(lblDateOfBirth);
 		
-		JLabel lblLiscenseNumber = new JLabel("Liscense Number: " + key);
+		JLabel lblLiscenseNumber = new JLabel("Liscense Number: " + myCont.displayLicenseNumber());
 		lblLiscenseNumber.setBounds(10, 211, 212, 14);
 		contentPane.add(lblLiscenseNumber);
+		
+		JLabel Agelbl = new JLabel("Age: " + myCont.displayAge());
+		Agelbl.setBounds(10, 236, 147, 14);
+		contentPane.add(Agelbl);
+		
+		String path = myCont.displayPictureLink();
+		URL url = new URL(path);
+		BufferedImage image = ImageIO.read(url);
+		
+		
+		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
+
+		label.setBounds(40, 261, 176, 119);
+		contentPane.add(label);
+		
+		
+		
+	
 		}
 	}
 
@@ -119,6 +145,4 @@ public class UserInfoJFrame extends JFrame {
 	public int getKeyitem() {
 		return keyitem;
 	}
-
-
 }
