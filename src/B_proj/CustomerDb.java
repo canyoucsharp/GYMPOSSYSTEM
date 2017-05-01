@@ -58,7 +58,7 @@ public class CustomerDb {
 			pst.setString(8, cusObj.getLicenseNum());
 			pst.setInt   (9, newSub.subid);
 			pst.setInt   (10, cusObj.repId);
-			pst.setString(11,"select datediff(current_date, dob) from clients");
+			pst.setInt   (11,cusObj.getAge());
 			pst.setString(12, cusObj.getPictureLink());
 			pst.executeUpdate();
 			conn.commit();
