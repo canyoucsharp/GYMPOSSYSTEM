@@ -88,8 +88,7 @@ public class ScanUserJFrame extends JFrame {
 		        //Scan User
 		    	key = Integer.valueOf(ScanUsertextField.getText());
 		    	
-		    	if (key != 23)
-		    		userinfo.dispose();
+		    	userinfo.dispose();
 		    	try {
 					myCusController.searchCustomer(key);
 					userinfo.dispose();

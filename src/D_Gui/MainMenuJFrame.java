@@ -52,14 +52,14 @@ public class MainMenuJFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setResizable(false);
-
+		
 		try {
 			ScanUserUI = new ScanUserJFrame();
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		AdminJFrame AdminUI = new AdminJFrame();
 		NewUserJFrame NewUserUI = new NewUserJFrame();
 		
