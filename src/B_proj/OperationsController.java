@@ -4,17 +4,17 @@ public class OperationsController {
 	private static Operations opObj;
 	private OperationsDb opDbObj;
 	
-	OperationsController(){
+	public OperationsController(){
 		opObj=new Operations();
 		opDbObj=new OperationsDb();
 	}
 	
 	
 	//display 
-	public int displayLocationCost(){
+	public double displayLocationCost(){
 		return(opObj.getLocationCost());
 	}
-	public int displayAccountsPayable(){
+	public double displayAccountsPayable(){
 		return(opObj.getAccountsPayable());
 	}
 	public int displayMaxOccupancy(){
@@ -37,11 +37,11 @@ public class OperationsController {
 	}
 	//update functions
 	
-	public void updateLocationCost(int locationCost){
+	public void updateLocationCost(double locationCost){
 		opDbObj.pushLocationCost(locationCost,opObj);
 	}
 	
-	public void updateAccountsPayable(int accountsPayable)
+	public void updateAccountsPayable(double accountsPayable)
 	{
 		opDbObj.pushAccountsPayable(accountsPayable,opObj);
 	}

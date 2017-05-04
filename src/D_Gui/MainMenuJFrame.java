@@ -42,9 +42,9 @@ public class MainMenuJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws IOException 
+	 * @throws Exception 
 	 */
-	public MainMenuJFrame() throws IOException {
+	public MainMenuJFrame() throws Exception {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 277, 386);
 		contentPane = new JPanel();

@@ -2,12 +2,12 @@ package B_proj;
 
 public class OperationsDb {
 
-	public void pushLocationCost(int locationCost, Operations opObj) {
+	public void pushLocationCost(double locationCost, Operations opObj) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void pushAccountsPayable(int accountsPayable, Operations opObj) {
+	public void pushAccountsPayable(double accountsPayable, Operations opObj) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -17,7 +17,7 @@ public class OperationsDb {
 		
 	}
 
-	public void pushRoi(int roi, Operations opObj) {
+	public void pushRoi(double roi, Operations opObj) {
 		// TODO Auto-generated method stub
 		
 	}

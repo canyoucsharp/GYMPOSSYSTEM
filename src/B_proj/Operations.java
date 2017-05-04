@@ -1,43 +1,43 @@
 package B_proj;
 
 public class Operations {
-	private int locationCost;
-	private int accountsPayable;
+	private double locationCost;
+	private double accountsPayable;
 	private int maxOccupancy;
 	private double monthlyCost;
 	private double roi;
-	private int electric;
-	private int gas;
-	private int water;
+	private double electric;
+	private double gas;
+	private double water;
 	
 	Operations(){
 	}
 	
-	public int getElectric() {
+	public double getElectric() {
 		return electric;
 	}
 	public void setElectric(int electric) {
 		this.electric = electric;
 	}
-	public int getGas() {
+	public double getGas() {
 		return gas;
 	}
 	public void setGas(int gas) {
 		this.gas = gas;
 	}
-	public int getWater() {
+	public double getWater() {
 		return water;
 	}
 	public void setWater(int water) {
 		this.water = water;
 	}
-	public int getLocationCost() {
+	public double getLocationCost() {
 		return locationCost;
 	}
 	public void setLocationCost(int locationCost) {
 		this.locationCost = locationCost;
 	}
-	public int getAccountsPayable() {
+	public double getAccountsPayable() {
 		return accountsPayable;
 	}
 	public void setAccountsPayable(int accountsPayable) {
