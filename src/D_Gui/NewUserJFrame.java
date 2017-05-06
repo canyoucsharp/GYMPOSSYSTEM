@@ -38,7 +38,6 @@ public class NewUserJFrame extends JFrame {
 	private JTextField AddressTextField;
 	private JTextField AgeTextField;
 	private JTextField ClientIdtextField;
-	private JTextField SubTypetextField;
 
 	/**
 	 * Launch the application.
@@ -61,7 +60,7 @@ public class NewUserJFrame extends JFrame {
 	 */
 	public NewUserJFrame() {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 512, 477);
+		setBounds(100, 100, 528, 477);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -184,8 +183,9 @@ public class NewUserJFrame extends JFrame {
 		contentPane.add(lblNewCustomerInfo);
 		
 		JLabel SubTypelbl = new JLabel("Subscription Type:");
-		SubTypelbl.setBounds(284, 76, 102, 14);
+		SubTypelbl.setBounds(284, 76, 115, 14);
 		contentPane.add(SubTypelbl);
+		SubTypelbl.setVisible(false);
 		
 		
 		JLabel SubActivelbl = new JLabel("Subsription");
@@ -193,17 +193,34 @@ public class NewUserJFrame extends JFrame {
 		contentPane.add(SubActivelbl);
 		
 		JComboBox SubActiveCombo = new JComboBox();
-		SubActiveCombo.setBounds(410, 35, 65, 20);
+		SubActiveCombo.setBounds(409, 35, 85, 20);
 		contentPane.add(SubActiveCombo);
-		SubActiveCombo.addItem("Active");
 		SubActiveCombo.addItem("Inactive");
+		SubActiveCombo.addItem("Active");
+		
+		JComboBox SubTypecomboBox = new JComboBox();
+		SubTypecomboBox.setBounds(409, 73, 85, 20);
+		contentPane.add(SubTypecomboBox);
+		SubTypecomboBox.addItem("1 Year");
+		SubTypecomboBox.addItem("2 Year");
+		SubTypecomboBox.addItem("3 Year");
+		
+		
 		
 		SubActiveCombo.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				if (SubActiveCombo.getSelectedItem() == "Active")
+				{
+					SubTypelbl.setVisible(true);
+				}
+				else
+				{
+					SubTypelbl.setVisible(false);
+
+				}
 			}
 			
 		});
