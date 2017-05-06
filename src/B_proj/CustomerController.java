@@ -137,6 +137,8 @@ public class CustomerController {
 		return(cusObj.getLicenseNum());
 	}
 	public String displaysubscriptionType(double monthlyCost){
+	
+		
 		switch(subType){
 		case 0:
 			return("Canceled");
@@ -168,13 +170,13 @@ public class CustomerController {
         cusDb.registerCustomer(cusObj, newSub);
 	}
 	
-	public void newSubscription(int clientid,String subStatus,String contractBegin,String contractEnd,String planType,String contractLength) throws SQLException
-	{	newSub=new Subscription();
-		newSubDb=new SubscriptionDb();
-		newSub.initNew(subStatus, contractBegin, contractEnd, planType,contractLength);
-		newSubDb.newSub(clientid, newSub);
-	
-	}
+	public void newSubscription(int clientid,String subStatus,String planType,String contractLength) throws SQLException
+    {    newSub=new Subscription();
+        newSubDb=new SubscriptionDb();
+        newSub.initNew(subStatus, planType,contractLength);
+        newSubDb.newSub(clientid, newSub);
+
+    }
 	
 	
 	//Subscription
