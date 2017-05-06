@@ -180,4 +180,11 @@ public class OperationsDb {
 
 	}
 
+
+
+	public void init(Operations opObj) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

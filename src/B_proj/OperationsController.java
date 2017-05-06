@@ -9,8 +9,18 @@ public class OperationsController {
 	public OperationsController(){
 		opObj=new Operations();
 		opDbObj=new OperationsDb();
+		this.init();
 	}
 	
+	public void init()
+	{
+		try {
+			opDbObj.init(opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	//display 
 	public double displayLocationCost(){
