@@ -7,11 +7,19 @@ public class Subscription  {
 	String contractEnd;
 	String planType;
 	String contractRemaining;
+	int contractLengthInYears;
 	
-	public void initNew(String subStatus,String contractBegin,String contractEnd ,String planType) {
+	public int getContractLengthInYears() {
+		return contractLengthInYears;
+	}
+	public void setContractLengthInYears(int contractLengthInYears) {
+		this.contractLengthInYears = contractLengthInYears;
+	}
+	public void initNew(String subStatus,String contractBegin,String contractEnd ,String planType,int contractLength) {
 		this.setSubStatus(subStatus);
 		this.setContractBegin(contractBegin);
 		this.setContractEnd(contractEnd);
+		this.setContractLengthInYears(contractLengthInYears);
 	}
 	public Subscription() {
 		this.subStatus="off";

@@ -159,10 +159,10 @@ public class CustomerController {
         cusDb.registerCustomer(cusObj, newSub);
 	}
 	
-	public void newSubscription(int clientid,String subStatus,String contractBegin,String contractEnd,String planType) throws SQLException
+	public void newSubscription(int clientid,String subStatus,String contractBegin,String contractEnd,String planType,int contractLength) throws SQLException
 	{	newSub=new Subscription();
 		newSubDb=new SubscriptionDb();
-		newSub.initNew(subStatus, contractBegin, contractEnd, planType);
+		newSub.initNew(subStatus, contractBegin, contractEnd, planType,contractLength);
 		newSubDb.newSub(clientid, newSub);
 	
 	}
