@@ -180,6 +180,13 @@ public class CustomerController {
 	
 	//Subscription
 	
+	public String displayContractBegin (){
+		return(newSub.getContractBegin());
+	}
+	
+	public String displayContractEnd(){
+		return(newSub.getContractEnd());
+	}
 	
 	
 	
