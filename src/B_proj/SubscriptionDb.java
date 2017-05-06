@@ -45,7 +45,7 @@ public class SubscriptionDb {
 	
 	
 	
-	public void init(Subscription newSub) throws SQLException {
+	public void init(Customer newCus,Subscription newSub) throws SQLException {
 		// TODO Auto-generated method stub
 		Connection conn;
 		MysqlConnect myConnector;
@@ -53,9 +53,9 @@ public class SubscriptionDb {
 		conn = myConnector.ConnectDB();
 
 		try {
-			String query = "select * from clients where client_id = ?";
+			String query = "select * from subscription,clients where clients.sub_id = subscription.sub_id and client_id = ?";
 			pst = conn.prepareStatement(query);
-			pst.setInt(1, newSub.getSubid());
+			pst.setInt(1, newCus.getId());
 			pst.executeQuery();
 			rs = pst.executeQuery();
 

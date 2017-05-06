@@ -52,6 +52,7 @@ public class CustomerController {
 		cusObj.setId(id);
 		try {
 			cusDb.init(cusObj);
+			newSubDb.init(cusObj, newSub);
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

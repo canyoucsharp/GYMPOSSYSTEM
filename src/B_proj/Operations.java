@@ -1,6 +1,7 @@
 package B_proj;
 
 public class Operations {
+	private int operationID;
 	private double locationCost;
 	private double accountsPayable;
 	private int maxOccupancy;
@@ -13,6 +14,14 @@ public class Operations {
 	Operations(){
 	}
 	
+	public int getOperationID() {
+		return operationID;
+	}
+
+	public void setOperationID(int operationID) {
+		this.operationID = operationID;
+	}
+
 	public double getElectric() {
 		return electric;
 	}

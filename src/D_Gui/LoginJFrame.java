@@ -56,7 +56,7 @@ ResultSet rs=null;
 	/**
 	 * Create the frame.
 	 */
-	public LoginJFrame() {
+	public LoginJFrame() throws SQLException {
 		MysqlConnect myConnector=new MysqlConnect();
 		conn=myConnector.ConnectDB();
 		
@@ -107,6 +107,20 @@ ResultSet rs=null;
 				catch(Exception ep)
 				{
 					JOptionPane.showMessageDialog(null, ep);
+				}
+				finally
+				{
+					
+					try {
+						pst.close();
+						rs.close();
+						conn.close();
+						System.out.println("Connection closed");
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
 				}
 				
 			}
