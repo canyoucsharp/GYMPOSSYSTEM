@@ -85,7 +85,7 @@ public class UserInfoJFrame extends JFrame {
 		else
 		{
 		
-		JLabel lblName = new JLabel("Name: "+myCus.getFirstName()+ ", " + myCus.getLastName());
+		JLabel lblName = new JLabel("Name: "+myCont.displayFirstName()+ ", " + myCont.displayLastName());
 		lblName.setBounds(10, 11, 147, 14);
 		contentPane.add(lblName);
 		
@@ -97,7 +97,7 @@ public class UserInfoJFrame extends JFrame {
 		lblSubscriptionType.setBounds(10, 61, 147, 14);
 		contentPane.add(lblSubscriptionType);
 		
-		JLabel lblMonthlyPay = new JLabel("Monthly Pay: " + myCont.displaysubscriptionType());
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType());
 		lblMonthlyPay.setBounds(10, 86, 147, 14);
 		contentPane.add(lblMonthlyPay);
 		
