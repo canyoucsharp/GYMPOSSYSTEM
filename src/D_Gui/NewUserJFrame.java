@@ -27,6 +27,7 @@ public class NewUserJFrame extends JFrame {
 
 	CustomerController NewCus = new CustomerController();
 	
+	
 	private JPanel contentPane;
 	private JTextField FirstNametextField;
 	private JTextField LastNametextField;
@@ -37,6 +38,7 @@ public class NewUserJFrame extends JFrame {
 	private JTextField AddressTextField;
 	private JTextField AgeTextField;
 	private JTextField ClientIdtextField;
+	private JTextField SubTypetextField;
 
 	/**
 	 * Launch the application.
@@ -59,7 +61,7 @@ public class NewUserJFrame extends JFrame {
 	 */
 	public NewUserJFrame() {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 261, 477);
+		setBounds(100, 100, 512, 477);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -67,69 +69,69 @@ public class NewUserJFrame extends JFrame {
 		setResizable(false);
 		
 		JLabel lblFirstName = new JLabel("First Name:");
-		lblFirstName.setBounds(10, 17, 102, 14);
+		lblFirstName.setBounds(10, 38, 102, 14);
 		contentPane.add(lblFirstName);
 		
 		FirstNametextField = new JTextField();
-		FirstNametextField.setBounds(146, 11, 86, 20);
+		FirstNametextField.setBounds(146, 32, 86, 20);
 		contentPane.add(FirstNametextField);
 		FirstNametextField.setColumns(10);
 		
 		JLabel lblLastName = new JLabel("Last Name: ");
-		lblLastName.setBounds(10, 48, 102, 14);
+		lblLastName.setBounds(10, 69, 102, 14);
 		contentPane.add(lblLastName);
 		
 		LastNametextField = new JTextField();
-		LastNametextField.setBounds(146, 42, 86, 20);
+		LastNametextField.setBounds(146, 63, 86, 20);
 		contentPane.add(LastNametextField);
 		LastNametextField.setColumns(10);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.addItem("M");
 		comboBox.addItem("F");
-		comboBox.setBounds(146, 73, 86, 20);
+		comboBox.setBounds(146, 94, 86, 20);
 		contentPane.add(comboBox);
 		
 		JLabel lblSex = new JLabel("Sex: ");
-		lblSex.setBounds(10, 79, 102, 14);
+		lblSex.setBounds(10, 100, 102, 14);
 		contentPane.add(lblSex);
 		
 		JLabel lblDob = new JLabel("DOB: ");
-		lblDob.setBounds(10, 123, 102, 14);
+		lblDob.setBounds(10, 144, 102, 14);
 		contentPane.add(lblDob);
 		
 		//Need to set-up date format************
 		DOBtextField = new JTextField();
-		DOBtextField.setBounds(146, 117, 86, 20);
+		DOBtextField.setBounds(146, 138, 86, 20);
 		contentPane.add(DOBtextField);
 		DOBtextField.setColumns(10);
 		
 		JLabel lblPhone = new JLabel("Phone: ");
-		lblPhone.setBounds(10, 160, 102, 14);
+		lblPhone.setBounds(10, 181, 102, 14);
 		contentPane.add(lblPhone);
 		
 		
 		//Need to set-up phone number format************
 		PhoneNumbertextField = new JTextField();
-		PhoneNumbertextField.setBounds(146, 154, 86, 20);
+		PhoneNumbertextField.setBounds(146, 175, 86, 20);
 		contentPane.add(PhoneNumbertextField);
 		PhoneNumbertextField.setColumns(10);
 		
 		JLabel lblLiscNumber = new JLabel("Driver's Liscense: ");
-		lblLiscNumber.setBounds(10, 207, 115, 14);
+		lblLiscNumber.setBounds(10, 228, 115, 14);
 		contentPane.add(lblLiscNumber);
 		
 		CCNumbertextField = new JTextField();
-		CCNumbertextField.setBounds(146, 201, 86, 20);
+		CCNumbertextField.setBounds(146, 222, 86, 20);
 		contentPane.add(CCNumbertextField);
 		CCNumbertextField.setColumns(10);
 		
 		JLabel lblPictureLink = new JLabel("Picture Link: ");
-		lblPictureLink.setBounds(10, 247, 102, 14);
+		lblPictureLink.setBounds(10, 268, 102, 14);
 		contentPane.add(lblPictureLink);
 		
 		PictureLinktextField = new JTextField();
-		PictureLinktextField.setBounds(146, 241, 86, 20);
+		PictureLinktextField.setBounds(146, 262, 86, 20);
 		contentPane.add(PictureLinktextField);
 		PictureLinktextField.setColumns(10);
 		
@@ -139,7 +141,7 @@ public class NewUserJFrame extends JFrame {
 		
 		
 		AddressTextField = new JTextField();
-		AddressTextField.setBounds(146, 280, 86, 20);
+		AddressTextField.setBounds(146, 301, 86, 20);
 		contentPane.add(AddressTextField);
 		AddressTextField.setColumns(10);
 		
@@ -147,26 +149,66 @@ public class NewUserJFrame extends JFrame {
 		
 		
 		JLabel lblAddress = new JLabel("Address: ");
-		lblAddress.setBounds(10, 286, 102, 14);
+		lblAddress.setBounds(10, 307, 102, 14);
 		contentPane.add(lblAddress);
 		
 		JLabel lblAge = new JLabel("Age: ");
-		lblAge.setBounds(10, 328, 102, 14);
+		lblAge.setBounds(10, 349, 102, 14);
 		contentPane.add(lblAge);
 		
 		AgeTextField = new JTextField();
-		AgeTextField.setBounds(146, 322, 86, 20);
+		AgeTextField.setBounds(146, 343, 86, 20);
 		contentPane.add(AgeTextField);
 		AgeTextField.setColumns(10);
 		
 		JLabel lblClientId = new JLabel("Client Id: ");
-		lblClientId.setBounds(10, 365, 102, 14);
+		lblClientId.setBounds(10, 386, 102, 14);
 		contentPane.add(lblClientId);
 		
 		ClientIdtextField = new JTextField();
-		ClientIdtextField.setBounds(146, 362, 86, 20);
+		ClientIdtextField.setBounds(146, 383, 86, 20);
 		contentPane.add(ClientIdtextField);
 		ClientIdtextField.setColumns(10);
+		
+		JSeparator separator = new JSeparator();
+		separator.setOrientation(SwingConstants.VERTICAL);
+		separator.setBounds(271, 17, 25, 368);
+		contentPane.add(separator);
+		
+		JLabel lblSubscriptionInfo = new JLabel("Subscription Info");
+		lblSubscriptionInfo.setBounds(350, 13, 125, 14);
+		contentPane.add(lblSubscriptionInfo);
+		
+		JLabel lblNewCustomerInfo = new JLabel("New Customer Info");
+		lblNewCustomerInfo.setBounds(79, 13, 109, 14);
+		contentPane.add(lblNewCustomerInfo);
+		
+		JLabel SubTypelbl = new JLabel("Subscription Type:");
+		SubTypelbl.setBounds(284, 76, 102, 14);
+		contentPane.add(SubTypelbl);
+		
+		
+		JLabel SubActivelbl = new JLabel("Subsription");
+		SubActivelbl.setBounds(284, 38, 102, 14);
+		contentPane.add(SubActivelbl);
+		
+		JComboBox SubActiveCombo = new JComboBox();
+		SubActiveCombo.setBounds(410, 35, 65, 20);
+		contentPane.add(SubActiveCombo);
+		SubActiveCombo.addItem("Active");
+		SubActiveCombo.addItem("Inactive");
+		
+		SubActiveCombo.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		
 		
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
