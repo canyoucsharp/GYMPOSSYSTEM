@@ -160,7 +160,7 @@ public class CustomerController {
 	}
 	
 	public void newSubscription(String subStatus,String contractBegin,String contractEnd,String planType)
-	{
+	{	newSub=new Subscription();
 		newSub.initNew(subStatus, contractBegin, contractEnd, planType);
 	}
 }
