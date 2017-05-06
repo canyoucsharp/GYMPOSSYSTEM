@@ -11,17 +11,11 @@ import java.util.Date;
 import java.awt.*;
 
 import javax.swing.*;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 import B_proj.CustomerController;
-
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JComboBox;
 
 public class NewUserJFrame extends JFrame {
 
@@ -201,9 +195,15 @@ public class NewUserJFrame extends JFrame {
 		JComboBox SubTypecomboBox = new JComboBox();
 		SubTypecomboBox.setBounds(409, 73, 85, 20);
 		contentPane.add(SubTypecomboBox);
-		SubTypecomboBox.addItem("1 Year");
-		SubTypecomboBox.addItem("2 Year");
-		SubTypecomboBox.addItem("3 Year");
+		SubTypecomboBox.addItem("Standard");
+		SubTypecomboBox.addItem("Deluxe");
+		SubTypecomboBox.addItem("Super Deluxe");
+		
+		JLabel Lengthlbl = new JLabel("Length: ");
+		Lengthlbl.setBounds(337, 118, 96, 14);
+		contentPane.add(Lengthlbl);
+		Lengthlbl.setVisible(false);
+		SubTypecomboBox.setVisible(false);
 		
 		
 		
@@ -215,15 +215,41 @@ public class NewUserJFrame extends JFrame {
 				if (SubActiveCombo.getSelectedItem() == "Active")
 				{
 					SubTypelbl.setVisible(true);
+					SubTypecomboBox.setVisible(true);
+					Lengthlbl.setVisible(true);
+					
 				}
 				else
 				{
 					SubTypelbl.setVisible(false);
+					SubTypecomboBox.setVisible(false);
+					Lengthlbl.setVisible(false);
 
 				}
 			}
 			
 		});
+		
+		SubTypecomboBox.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (SubTypecomboBox.getSelectedItem() == "Standard")
+				{
+					Lengthlbl.setText("Length: 1 Year");
+				}
+				else if(SubTypecomboBox.getSelectedItem() == "Deluxe")
+				{
+					Lengthlbl.setText("Length: 2 Year");
+				}
+				else if(SubTypecomboBox.getSelectedItem() == "Super Deluxe")
+				{
+					Lengthlbl.setText("Length: 3 Year");
+				}
+			
+			}
+			});
 		
 		
 		
@@ -249,6 +275,7 @@ public class NewUserJFrame extends JFrame {
 					NewCus.newCustomer(FirstNametextField.getText(), LastNametextField.getText(), Sex, DOBtextField.getText(), PhoneNumbertextField.getText(), picturelink, AddressTextField.getText(), Age, 1, CCNumbertextField.getText(), ClientId);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
+					JOptionPane.showMessageDialog(null,"Error Resgistering New Customer");
 					e.printStackTrace();
 				}
 				
