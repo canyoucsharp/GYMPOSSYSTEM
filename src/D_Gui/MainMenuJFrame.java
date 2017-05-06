@@ -60,6 +60,7 @@ public class MainMenuJFrame extends JFrame {
 			e.printStackTrace();
 		}
 
+		NewSalesRepJFrame NewEmployeeframe = new NewSalesRepJFrame();
 		AdminJFrame AdminUI = new AdminJFrame();
 		NewUserJFrame NewUserUI = new NewUserJFrame();
 		
@@ -95,5 +96,10 @@ public class MainMenuJFrame extends JFrame {
 		JButton btnViewSalesRep = new JButton("View Sales Rep");
 		btnViewSalesRep.setBounds(44, 265, 174, 44);
 		contentPane.add(btnViewSalesRep);
+		btnViewSalesRep.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				NewEmployeeframe.setVisible(true);
+			}
+		});
 	}
 }

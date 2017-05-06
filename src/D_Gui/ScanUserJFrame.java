@@ -91,7 +91,6 @@ public class ScanUserJFrame extends JFrame {
 		    	userinfo.dispose();
 		    	try {
 					myCusController.searchCustomer(key);
-					userinfo.dispose();
 					Customer newCus=myCusController.getCusObj();
 					try {
 						userinfo = new UserInfoJFrame(key,myCusController);

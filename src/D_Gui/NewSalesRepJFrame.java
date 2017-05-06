@@ -21,6 +21,8 @@ public class NewSalesRepJFrame extends JFrame {
 	private JTextField DOBtextField;
 	private JTextField LicensetextField;
 	boolean admin;
+	private JTextField AddresstextField;
+	private JTextField PhoneNumbertextField;
 
 	/**
 	 * Launch the application.
@@ -43,7 +45,7 @@ public class NewSalesRepJFrame extends JFrame {
 	 */
 	public NewSalesRepJFrame() {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setBounds(100, 100, 224, 300);
+		setBounds(100, 100, 224, 359);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -77,16 +79,16 @@ public class NewSalesRepJFrame extends JFrame {
 		DOBtextField.setColumns(10);
 		
 		JLabel lblLicense = new JLabel("License #: ");
-		lblLicense.setBounds(10, 125, 79, 14);
+		lblLicense.setBounds(10, 221, 79, 14);
 		contentPane.add(lblLicense);
 		
 		LicensetextField = new JTextField();
-		LicensetextField.setBounds(99, 122, 86, 20);
+		LicensetextField.setBounds(99, 218, 86, 20);
 		contentPane.add(LicensetextField);
 		LicensetextField.setColumns(10);
 		
 		JToggleButton tglbtnIsAnAdmin = new JToggleButton("Is an Admin?");
-		tglbtnIsAnAdmin.setBounds(40, 165, 121, 23);
+		tglbtnIsAnAdmin.setBounds(44, 262, 121, 23);
 		contentPane.add(tglbtnIsAnAdmin);
 		tglbtnIsAnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -99,9 +101,29 @@ public class NewSalesRepJFrame extends JFrame {
 		
 		
 		JButton btnRegister = new JButton("Register");
-		btnRegister.setBounds(55, 237, 89, 23);
+		btnRegister.setBounds(60, 296, 89, 23);
 		contentPane.add(btnRegister);
+		
+		JLabel lblAddress = new JLabel("Address: ");
+		lblAddress.setBounds(10, 117, 79, 14);
+		contentPane.add(lblAddress);
+		
+		AddresstextField = new JTextField();
+		AddresstextField.setBounds(99, 114, 86, 20);
+		contentPane.add(AddresstextField);
+		AddresstextField.setColumns(10);
+		
+		JLabel lblPhoneNumber = new JLabel("Phone Number:");
+		lblPhoneNumber.setBounds(10, 156, 79, 14);
+		contentPane.add(lblPhoneNumber);
+		
+		PhoneNumbertextField = new JTextField();
+		PhoneNumbertextField.setBounds(99, 153, 86, 20);
+		contentPane.add(PhoneNumbertextField);
+		PhoneNumbertextField.setColumns(10);
 		setResizable(false);
+		
+		//Register Action//
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				//add action to push info to database
