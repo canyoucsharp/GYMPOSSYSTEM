@@ -155,8 +155,12 @@ public class CustomerController {
 		cusObj=new Customer();
         cusDb=new CustomerDb();
         newSub=new Subscription();
-        
         cusObj.initNew(firstName,lastName,sex,dob,phone,picture,address,age,repId, lisnum, id);
         cusDb.registerCustomer(cusObj, newSub);
+	}
+	
+	public void newSubscription(String subStatus,String contractBegin,String contractEnd,String planType)
+	{
+		newSub.initNew(subStatus, contractBegin, contractEnd, planType);
 	}
 }

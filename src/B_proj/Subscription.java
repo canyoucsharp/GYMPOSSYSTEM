@@ -5,10 +5,13 @@ public class Subscription  {
 	String subStatus;
 	String contractBegin;
 	String contractEnd;
-	String contractRemaining;
 	String planType;
 	
-	
+	public void initNew(String subStatus,String contractBegin,String contractEnd ,String planType) {
+		this.setSubStatus(subStatus);
+		this.setContractBegin(contractBegin);
+		this.setContractEnd(contractEnd);
+	}
 	public Subscription() {
 		this.subStatus="off";
 	}

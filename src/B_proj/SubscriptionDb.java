@@ -83,7 +83,6 @@ public class SubscriptionDb {
 				newSub.setContractBegin(rs.getString("contract_begin"));
 				newSub.setContractEnd(rs.getString("contract_end"));
 				Integer contractRemaining=(int) getDateDiff(newSub.getContractEnd(),TimeUnit.DAYS);
-				System.out.println(contractRemaining);
 				newSub.setContractRemaining(contractRemaining.toString());
 				newSub.setPlanType(rs.getString("plan_type"));
 				
