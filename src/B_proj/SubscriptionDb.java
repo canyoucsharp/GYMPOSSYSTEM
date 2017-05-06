@@ -2,8 +2,16 @@ package B_proj;
 
 import M_Database.MysqlConnect;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
+
 
 
 
@@ -16,16 +24,15 @@ public class SubscriptionDb {
 		try {
 			
 			String insertTableSQL = "INSERT INTO subscription"
-					+ "(sub_id,sub_status,contract_begin,contract_end,contract_remaining,plan_type) "
-					+ "VALUES" + "(?,?,?,?,?,?)";
+					+ "(sub_id,sub_status,contract_begin,contract_end,plan_type) "
+					+ "VALUES" + "(?,?,?,?,?)";
 
 			pst = conn.prepareStatement(insertTableSQL);
 			pst.setInt   (1, newSub.getSubid());
 			pst.setString(2, newSub.getSubStatus());
 			pst.setString(3, newSub.getContractBegin());
 			pst.setString(4, newSub.getContractEnd());
-			pst.setString(5, newSub.getContractRemaining());
-			pst.setString(6, newSub.getPlanType());
+			pst.setString(5, newSub.getPlanType());
 			pst.executeUpdate();
 			ResultSet rs = pst.getGeneratedKeys();
 			if(rs.next())
@@ -43,7 +50,16 @@ public class SubscriptionDb {
 		
 	}
 	
-	
+	public static long getDateDiff( String sdate2, TimeUnit timeUnit) throws ParseException {
+	    
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+		Date date1 = new Date();
+		dateFormat.format(date1);
+		Date date2= new SimpleDateFormat("yyyy-MM-dd").parse(sdate2); 
+		long diffInMillies = date2.getTime() - date1.getTime();
+	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
+	    
+	}
 	
 	public void init(Customer newCus,Subscription newSub) throws SQLException {
 		// TODO Auto-generated method stub
@@ -53,18 +69,22 @@ public class SubscriptionDb {
 		conn = myConnector.ConnectDB();
 
 		try {
-			String query = "select * from subscription,clients where clients.sub_id = subscription.sub_id and client_id = ?";
+			String query = "select * from subscription,clients"
+					+ " where clients.sub_id = subscription.sub_id and client_id = ?";
 			pst = conn.prepareStatement(query);
 			pst.setInt(1, newCus.getId());
 			pst.executeQuery();
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
-
+				
+				
 				newSub.setSubStatus(rs.getString("sub_status"));
 				newSub.setContractBegin(rs.getString("contract_begin"));
 				newSub.setContractEnd(rs.getString("contract_end"));
-				newSub.setContractRemaining(rs.getString("contract_remaining"));
+				Integer contractRemaining=(int) getDateDiff(newSub.getContractEnd(),TimeUnit.DAYS);
+				System.out.println(contractRemaining);
+				newSub.setContractRemaining(contractRemaining.toString());
 				newSub.setPlanType(rs.getString("plan_type"));
 				
 
