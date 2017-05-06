@@ -2,6 +2,8 @@ package B_proj;
 
 import java.sql.SQLException;
 
+import com.sun.org.apache.xpath.internal.operations.Number;
+
 public class CustomerController {
     private Customer cusObj;
     private CustomerDb cusDb;
@@ -60,26 +62,33 @@ public class CustomerController {
 	}
 	public void updateFirstName(String firstName) throws SQLException{
 		cusDb.pushFirstName(firstName, cusObj);
+		cusObj.setFirstName(firstName);
 	}
 	public void updateLastName(String lastName) throws SQLException{
 		cusDb.pushLastName(lastName, cusObj);
+		cusObj.setLastName(lastName);
 	}
 	public void updatePhoneNumber(String number) throws SQLException
 	{
 		cusDb.pushNumber(number, cusObj);
+		cusObj.setPhoneNumber(number);
 	}
-	public void updateAddress(String Address) throws SQLException
+	public void updateAddress(String address) throws SQLException
 	{
-		cusDb.pushAddress(Address, cusObj);
+		cusDb.pushAddress(address, cusObj);
+		cusObj.setAddress(address);
 	}
-	public void updateAge(String Age) throws SQLException{
-		cusDb.pushAge(Age, cusObj);
+	public void updateAge(String age) throws SQLException{
+		cusDb.pushAge(age, cusObj);
+		cusObj.setAge(Integer.valueOf(age));
 	}
 	public void updateSex(String Sex) throws SQLException{
 		cusDb.pushSex(Sex, cusObj);
+		cusObj.setSex(Sex);
 	}
 	public void updateLicense(String newlicenseNumber) throws SQLException{
 		cusDb.pushLicenseNumber(newlicenseNumber, cusObj);
+		cusObj.setLicenseNum(newlicenseNumber);
 	}
 	public void updateSubId(int newSubId) throws SQLException{
 		cusDb.pushSubId(newSubId, cusObj);
@@ -90,9 +99,11 @@ public class CustomerController {
 	
 	public void updateDateOfBirth(String dob) throws SQLException{
 		cusDb.pushDateOfBirth(dob,cusObj);
+		cusObj.setDob(dob);
 	}
 	public void updatePictureLink(String pictureLink) throws SQLException{
 		cusDb.pushPictureLink(pictureLink,cusObj);
+		cusObj.setPictureLink(pictureLink);
 	}
 	
 	
@@ -125,9 +136,7 @@ public class CustomerController {
 	{
 		return(cusObj.getLicenseNum());
 	}
-	public String displaysubscriptionType(){
-		monthlyCost=0;
-		int subType= cusObj.getSubId();
+	public String displaysubscriptionType(double monthlyCost){
 		switch(subType){
 		case 0:
 			return("Canceled");
@@ -166,4 +175,17 @@ public class CustomerController {
 		newSubDb.newSub(clientid, newSub);
 	
 	}
+	
+	
+	//Subscription
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
