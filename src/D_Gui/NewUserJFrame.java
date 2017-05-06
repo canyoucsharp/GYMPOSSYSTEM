@@ -191,6 +191,7 @@ public class NewUserJFrame extends JFrame {
 		JLabel SubActivelbl = new JLabel("Subsription");
 		SubActivelbl.setBounds(284, 38, 102, 14);
 		contentPane.add(SubActivelbl);
+		SubActivelbl.setVisible(false);
 		
 		JComboBox SubActiveCombo = new JComboBox();
 		SubActiveCombo.setBounds(409, 35, 85, 20);
@@ -201,9 +202,10 @@ public class NewUserJFrame extends JFrame {
 		JComboBox SubTypecomboBox = new JComboBox();
 		SubTypecomboBox.setBounds(409, 73, 85, 20);
 		contentPane.add(SubTypecomboBox);
-		SubTypecomboBox.addItem("1 Year");
-		SubTypecomboBox.addItem("2 Year");
-		SubTypecomboBox.addItem("3 Year");
+		SubTypecomboBox.addItem("Standard");
+		SubTypecomboBox.addItem("Deluxe");
+		SubTypecomboBox.addItem("Super Deluxe");
+		SubTypecomboBox.setVisible(false);
 		
 		
 		
@@ -215,10 +217,14 @@ public class NewUserJFrame extends JFrame {
 				if (SubActiveCombo.getSelectedItem() == "Active")
 				{
 					SubTypelbl.setVisible(true);
+					SubTypecomboBox.setVisible(true);
+
 				}
 				else
 				{
 					SubTypelbl.setVisible(false);
+					SubTypecomboBox.setVisible(false);
+
 
 				}
 			}
