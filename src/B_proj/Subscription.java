@@ -6,6 +6,7 @@ public class Subscription  {
 	String contractBegin;
 	String contractEnd;
 	String planType;
+	String contractRemaining;
 	
 	public void initNew(String subStatus,String contractBegin,String contractEnd ,String planType) {
 		this.setSubStatus(subStatus);
