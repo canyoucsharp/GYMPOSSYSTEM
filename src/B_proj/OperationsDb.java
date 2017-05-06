@@ -13,7 +13,7 @@ public class OperationsDb {
 	private PreparedStatement pst;
 	private ResultSet rs = null;
 
-	public void pushLocationCost(double locationCost, Operations opObj) {
+	public void pushLocationCost(double locationCost, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();
@@ -134,7 +134,7 @@ public class OperationsDb {
 
 	
 
-	public void pushWater(double water, Operations opObj) {
+	public void pushWater(double water, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();

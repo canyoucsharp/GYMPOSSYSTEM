@@ -1,5 +1,7 @@
 package B_proj;
 
+import java.sql.SQLException;
+
 public class OperationsController {
 	private static Operations opObj;
 	private OperationsDb opDbObj;
@@ -38,28 +40,63 @@ public class OperationsController {
 	//update functions
 	
 	public void updateLocationCost(double locationCost){
-		opDbObj.pushLocationCost(locationCost,opObj);
+		try {
+			opDbObj.pushLocationCost(locationCost,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void updateAccountsPayable(double accountsPayable)
 	{
-		opDbObj.pushAccountsPayable(accountsPayable,opObj);
+		try {
+			opDbObj.pushAccountsPayable(accountsPayable,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void updateMaxOccupancy(int maxOccupancy)
 	{
-		opDbObj.pushMaxOccupancy(maxOccupancy,opObj);
+		try {
+			opDbObj.pushMaxOccupancy(maxOccupancy,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void updateRoi(int roi){
-		opDbObj.pushRoi(roi,opObj);
+		try {
+			opDbObj.pushRoi(roi,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void updateElectric(double electric)
 	{
-		opDbObj.pushElectric(electric,opObj);
+		try {
+			opDbObj.pushElectric(electric,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void updateWater(double water){
-		opDbObj.pushWater(water,opObj);
+		try {
+			opDbObj.pushWater(water,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void updateGash(double gas){
-		opDbObj.pushGas(gas,opObj);
+		try {
+			opDbObj.pushGas(gas,opObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
