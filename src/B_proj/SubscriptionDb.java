@@ -51,14 +51,11 @@ public class SubscriptionDb {
 		conn = myConnector.ConnectDB();
 		String updateTableSQL = "UPDATE clients SET,subStatus=?, contractBegin=?,contractEnd=?, planType = ? where client_id = ?";
 		try {
-			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date date1 = new Date();
-			dateFormat.format(date1);
-			String endDate=calcEndDate( newSub.getContractLengthInYears(),date1);
+			
 			pst = conn.prepareStatement(updateTableSQL);
 			pst.setString(1, newSub.getSubStatus());
-			pst.setString(2, date1.toString());
-			pst.setString(3, endDate);
+			pst.setString(2, newSub.getContractBegin());
+			pst.setString(3, newSub.getContractEnd());
 			pst.setString(4, newSub.getPlanType());
 			pst.executeUpdate();
 			JOptionPane.showMessageDialog(null,"Subscription Success");
@@ -73,17 +70,7 @@ public class SubscriptionDb {
 			
 		}
 		}
-	public String calcEndDate(int years,Date curDate)
-	{
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		int days=years*365;
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(curDate); // Now use sub date.
-		cal.add(Calendar.DATE,days );
-		Date newDate= cal.getTime();
-		dateFormat.format(newDate);
-		return newDate.toString();
-	}
+	
 
 	public static long getDateDiff(String sdate2, TimeUnit timeUnit) throws ParseException {
 
@@ -116,7 +103,6 @@ public class SubscriptionDb {
 				newSub.setSubStatus(rs.getString("sub_status"));
 				newSub.setContractBegin(rs.getString("contract_begin"));
 				newSub.setContractEnd(rs.getString("contract_end"));
-
 				Integer contractRemaining = (int) getDateDiff(newSub.getContractEnd(), TimeUnit.DAYS);
 				newSub.setContractRemaining(contractRemaining.toString());
 				newSub.setPlanType(rs.getString("plan_type"));

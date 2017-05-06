@@ -162,7 +162,7 @@ public class CustomerController {
 	public void newSubscription(int clientid,String subStatus,String contractBegin,String contractEnd,String planType,String contractLength) throws SQLException
 	{	newSub=new Subscription();
 		newSubDb=new SubscriptionDb();
-		newSub.initNew(subStatus, contractBegin, contractEnd, planType,contractLength);
+		newSub.initNew(subStatus, planType,contractLength);
 		newSubDb.newSub(clientid, newSub);
 	
 	}
