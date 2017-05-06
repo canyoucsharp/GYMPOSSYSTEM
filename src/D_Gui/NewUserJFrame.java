@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.*;
 
+import javax.security.sasl.SaslException;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -19,6 +20,7 @@ import B_proj.CustomerController;
 
 public class NewUserJFrame extends JFrame {
 
+	int SubTypenum = 0;
 	CustomerController NewCus = new CustomerController();
 	
 	
@@ -238,14 +240,17 @@ public class NewUserJFrame extends JFrame {
 				if (SubTypecomboBox.getSelectedItem() == "Standard")
 				{
 					Lengthlbl.setText("Length: 1 Year");
+					SubTypenum = 1;
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Deluxe")
 				{
 					Lengthlbl.setText("Length: 2 Year");
+					SubTypenum = 2;
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Super Deluxe")
 				{
 					Lengthlbl.setText("Length: 3 Year");
+					SubTypenum = 3;
 				}
 			
 			}
@@ -273,11 +278,28 @@ public class NewUserJFrame extends JFrame {
 				
 				try {
 					NewCus.newCustomer(FirstNametextField.getText(), LastNametextField.getText(), Sex, DOBtextField.getText(), PhoneNumbertextField.getText(), picturelink, AddressTextField.getText(), Age, 1, CCNumbertextField.getText(), ClientId);
+					
+					if (SubActiveCombo.getSelectedItem() == "Active")
+					{
+						try{
+							String Subnumber = ("" + SubTypenum);
+							String ActiveSub = (String) SubActiveCombo.getSelectedItem();
+							String SubType = (String) SubTypecomboBox.getSelectedItem();
+							NewCus.newSubscription(ClientId, ActiveSub, SubType, Subnumber);
+						}
+						catch (SQLException e)
+						{
+							JOptionPane.showMessageDialog(null,"Error Subscription Registration");
+							e.printStackTrace();
+						}
+					}
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null,"Error Resgistering New Customer");
 					e.printStackTrace();
 				}
+						
+				
 				
 				//Resets fields once registered
 				PictureLinktextField.setText("");
