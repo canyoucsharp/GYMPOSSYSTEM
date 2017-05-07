@@ -275,4 +275,9 @@ public class EmployeeDb {
 
 	}
 
+	public void pushAdmin(Boolean value, Employee empObj) throws SQLException{
+		// TODO Auto-generated method stub
+		
+	}
+
 }

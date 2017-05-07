@@ -70,4 +70,22 @@ public class EmployeeController {
 			}
 		return ("Error");
 		}
+	public Boolean checkAdmin(){//not sure how you're going to represent in GUI but both Check Admin/ Display ADmin do the same thing :)
+		return(empObj.isAdmin());
+	}
+	
+	public String displayAdmin(){
+		if(empObj.isAdmin())
+			return("Yes");
+		else
+			return("NO");
+	}
+	
+	public void updateAdmin(Boolean value)throws SQLException{
+		empDbObj.pushAdmin(value,empObj);
+		empObj.setAdmin(value);
+		
+	}
 }
+	
+

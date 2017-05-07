@@ -6,6 +6,7 @@ public class Employee extends Person{
 	int sales;
 	String username;
 	String password;
+	boolean isAdmin;
 	
 	public int getHourlyRate() {
 		return hourlyRate;
@@ -30,6 +31,12 @@ public class Employee extends Person{
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 	
 	
