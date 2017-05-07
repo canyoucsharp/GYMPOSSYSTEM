@@ -198,15 +198,20 @@ public class NewUserJFrame extends JFrame {
 		JComboBox SubTypecomboBox = new JComboBox();
 		SubTypecomboBox.setBounds(409, 73, 85, 20);
 		contentPane.add(SubTypecomboBox);
+		SubTypecomboBox.setVisible(false);
 		SubTypecomboBox.addItem("Standard");
 		SubTypecomboBox.addItem("Deluxe");
 		SubTypecomboBox.addItem("Super Deluxe");
 		
 		JLabel Lengthlbl = new JLabel("Length: ");
-		Lengthlbl.setBounds(337, 118, 96, 14);
+		Lengthlbl.setBounds(337, 118, 138, 14);
 		contentPane.add(Lengthlbl);
 		Lengthlbl.setVisible(false);
-		SubTypecomboBox.setVisible(false);
+		
+		JLabel Costlbl = new JLabel("Cost: ");
+		Costlbl.setBounds(340, 144, 135, 14);
+		contentPane.add(Costlbl);
+		Costlbl.setVisible(false);
 		
 		
 		
@@ -220,6 +225,7 @@ public class NewUserJFrame extends JFrame {
 					SubTypelbl.setVisible(true);
 					SubTypecomboBox.setVisible(true);
 					Lengthlbl.setVisible(true);
+					Costlbl.setVisible(true);
 					
 				}
 				else
@@ -227,6 +233,7 @@ public class NewUserJFrame extends JFrame {
 					SubTypelbl.setVisible(false);
 					SubTypecomboBox.setVisible(false);
 					Lengthlbl.setVisible(false);
+					Costlbl.setVisible(false);
 
 				}
 			}
@@ -240,18 +247,22 @@ public class NewUserJFrame extends JFrame {
 				// TODO Auto-generated method stub
 				if (SubTypecomboBox.getSelectedItem() == "Standard")
 				{
-					Lengthlbl.setText("Length: 1 Year");
-					SubTypenum = 1;
+					Lengthlbl.setText("Length: 12 Months");
+					SubTypenum = 2;
+					Costlbl.setText("Cost: "); //Getter for cost 12 months
+					
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Deluxe")
 				{
-					Lengthlbl.setText("Length: 2 Year");
-					SubTypenum = 2;
+					Lengthlbl.setText("Length: 24 Months");
+					SubTypenum = 1;
+					Costlbl.setText("Cost: "); //Getter for cost 24 months
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Super Deluxe")
 				{
-					Lengthlbl.setText("Length: 3 Year");
+					Lengthlbl.setText("Length: No Contract");
 					SubTypenum = 3;
+					Costlbl.setText("Cost: "); //Getter for cost No Contract
 				}
 			
 			}

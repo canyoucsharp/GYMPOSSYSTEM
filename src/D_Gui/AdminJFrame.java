@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import B_proj.CustomerController;
 import B_proj.OperationsController;
 
 import javax.swing.JLabel;
@@ -20,7 +21,8 @@ import javax.swing.JButton;
 public class AdminJFrame extends JFrame {
 
 
-	private OperationsController opControl = new OperationsController();;
+	private OperationsController opControl = new OperationsController();
+	private CustomerController myCont = new CustomerController();
 	private JPanel contentPane;
 	private JTextField OverHeadtext;
 	private JTextField UserCapacitytext;
@@ -146,6 +148,7 @@ public class AdminJFrame extends JFrame {
 		
 		String MonthlyCost = formatter.format(opControl.displayMonthlyCost());
 		MonthlyCoststextField.setText(MonthlyCost);
+		myCont.setCurrentRate(opControl.displayMonthlyCost());
 		
 		String Gas = formatter.format(opControl.displayGas());
 		GastextField.setText(Gas);

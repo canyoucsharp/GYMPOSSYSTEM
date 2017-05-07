@@ -95,7 +95,7 @@ ResultSet rs=null;
 					{
 						isAdmin=rs.getInt("isadmin");
 						repId=rs.getInt("rep_id");
-						MainMenuJFrame MainMenu = new MainMenuJFrame();
+						MainMenuJFrame MainMenu = new MainMenuJFrame(isAdmin);
 						dispose();
 						MainMenu.setVisible(true);
 						JOptionPane.showMessageDialog(null, "Successfuly Logged in");

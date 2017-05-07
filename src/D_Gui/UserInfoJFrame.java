@@ -102,6 +102,7 @@ public class UserInfoJFrame extends JFrame {
 		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myOperation.displayMonthlyCost());
 		lblMonthlyPay.setBounds(10, 86, 147, 14);
 		contentPane.add(lblMonthlyPay);
+		myCont.setCurrentRate(myOperation.displayMonthlyCost());
 		
 		JLabel lblSex = new JLabel("Sex: " + myCont.displaySex());
 		lblSex.setBounds(10, 186, 147, 14);

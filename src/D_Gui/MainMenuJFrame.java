@@ -31,7 +31,7 @@ public class MainMenuJFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenuJFrame frame = new MainMenuJFrame();
+					MainMenuJFrame frame = new MainMenuJFrame(1);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,9 +44,9 @@ public class MainMenuJFrame extends JFrame {
 	 * Create the frame.
 	 * @throws Exception 
 	 */
-	public MainMenuJFrame() throws Exception {
+	public MainMenuJFrame(int Admin_Status) throws Exception {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 268, 376);
+		setBounds(100, 100, 268, 352);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -71,8 +71,8 @@ public class MainMenuJFrame extends JFrame {
 			}
 		});
 		btnAdmin.setBounds(44, 13, 174, 44);
-		//if(isAdmin())
-		contentPane.add(btnAdmin);
+		if(Admin_Status == 1) //Check Admin Status
+			contentPane.add(btnAdmin);
 		
 		JButton btnScanUser = new JButton("Scan User");
 		btnScanUser.setBounds(44, 82, 174, 44);
@@ -94,7 +94,7 @@ public class MainMenuJFrame extends JFrame {
 		});
 		
 		JButton btnViewSalesRep = new JButton("View Sales Rep");
-		btnViewSalesRep.setBounds(44, 265, 174, 44);
+		btnViewSalesRep.setBounds(44, 250, 174, 44);
 		contentPane.add(btnViewSalesRep);
 		btnViewSalesRep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
