@@ -71,10 +71,10 @@ public class CustomerController {
 		}
 	}
 	
-	public String displayPlanType(){ //not sure when you would use this over displaySubType but just for good measure
+	public String displayPlanTypeSub(){ //not sure when you would use this over displaySubType but just for good measure
 		return(newSub.getPlanType());
 	}
-	public void updatePlanType(String type){
+	public void updatePlanTypeSub(String type){
 		newSubDb.pushPlanType(type);
 		newSub.setPlanType(type);
 	}
