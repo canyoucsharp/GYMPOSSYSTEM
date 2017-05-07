@@ -4,7 +4,7 @@ public class Operations {
 	private int operationID;
 	private double locationCost;
 	private double accountsPayable;
-	private int maxOccupancy;
+	private double maxOccupancy;
 	private double monthlyCost;
 	private double roi;
 	private double electric;
@@ -55,8 +55,8 @@ public class Operations {
 	public int getMaxOccupancy() {
 		return maxOccupancy;
 	}
-	public void setMaxOccupancy(int maxOccupancy) {
-		this.maxOccupancy = maxOccupancy;
+	public void setMaxOccupancy(double d) {
+		this.maxOccupancy = d;
 	}
 	public void calculateMonthlyCost(){
 		monthlyCost=(locationCost+accountsPayable+electric+gas+water);

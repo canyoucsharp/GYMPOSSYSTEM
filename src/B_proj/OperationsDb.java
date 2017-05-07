@@ -199,7 +199,7 @@ public class OperationsDb {
 
 				if (rs.next()) {
 
-					operObj.setAccountsPayable(rs.getDouble("accountsPayable");
+					operObj.setAccountsPayable(rs.getDouble("accountsPayable"));
 					operObj.setElectric(rs.getDouble("electric"));
 					operObj.setGas(rs.getDouble("gas"));
 					operObj.setWater(rs.getDouble("water"));
