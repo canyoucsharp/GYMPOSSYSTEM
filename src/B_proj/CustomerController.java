@@ -1,6 +1,8 @@
 package B_proj;
 
 import java.sql.SQLException;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import com.sun.org.apache.xpath.internal.operations.Number;
 
@@ -183,20 +185,40 @@ public class CustomerController {
 	public String displayContractBegin (){
 		return(newSub.getContractBegin());
 	}
-	
+	public void updateContractBegin(String begin){
+		newSubDb.pushContractBegin(begin);
+		newSub.setContractBegin(begin);
+	}
 	public String displayContractEnd(){
 		return(newSub.getContractEnd());
+	}
+	public void updateContractEnd(String end){
+		newSubDb.pushContractEnd(end);
+		newSub.setContractEnd(end);
 	}
 	
 	public String displaySubStatus(){
 		return(newSub.getSubStatus());
 	}
+	public void updateSubStatus(String status){
+		newSubDb.pushSubStatus(status);
+		newSub.setSubStatus(status);
+	}
 	
 	public String displayPlanType(){ //not sure when you would use this over displaySubType but just for good measure
 		return(newSub.getPlanType());
 	}
-	
-	
+	public void updatePlanType(String type){
+		newSubDb.pushPlanType(type);
+		newSub.setPlanType(type);
+	}
+	public long displaySubRemaining(){
+		return(newSub.getContractRemaining());
+	}
+	public void updateSubRemaining(long remaining){
+		newSubDb.pushSubRemaining(remaining);
+		newSub.setContractRemaining(remaining);
+	}
 	
 	
 	

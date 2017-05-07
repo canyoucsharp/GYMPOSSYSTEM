@@ -119,4 +119,35 @@ public class SubscriptionDb {
 		long diffInMillies = enddate.getTime() - date1.getTime();
 	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
 	}
+
+
+	public void pushContractBegin(String begin) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void pushContractEnd(String end) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void pushSubStatus(String status) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void pushPlanType(String type) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void pushSubRemaining(long remaining) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
