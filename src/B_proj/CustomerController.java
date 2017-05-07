@@ -157,16 +157,12 @@ public class CustomerController {
 	}
 	public String displaysubscriptionType(double monthlyCost){
 		String x =memInfo.getPlanType();
-		switch(Integer.valueOf(x)){
-		case 0:
-			return("Canceled");
-		case 1:
-			return(monthlyCost+" for 24 Months");
-		case 2:
-			return((monthlyCost*2)+"for 12 Months");
-		case 3:
-			return((monthlyCost*3)+" No Contract ");
-		}
+		
+		if(Integer.valueOf(x)==0)
+			return(memInfo.getPlanDescription());
+		else if (Integer.valueOf(x)>0)
+			return(memInfo.getPlanRate()+memInfo.getPlanDescription());
+		
 		return("Error");
 	}
 	
