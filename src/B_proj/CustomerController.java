@@ -184,6 +184,10 @@ public class CustomerController {
 	}
 	
 	public void newPayment(String cardNum,int provider,String security,String expiration){
+		newPayInfo=new PaymentInfo();
+		newPayDb=new PaymentDb();
+		newPayInfo.init(cardNum, provider, security, expiration);
+		newPayDb.init(cusObj,newPayInfo);
 		
 		
 	}
@@ -231,6 +235,13 @@ public class CustomerController {
 	
 	
 	// Payment info
+	
+	public String displayCreditCardNum(){
+		return(newPayInfo.getCreditCardNum());
+	}
+	public String displayProvider(){
+		return(newPayInfo.getProvider());
+	}
 	
 	
 	
