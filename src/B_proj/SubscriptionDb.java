@@ -99,7 +99,6 @@ public class SubscriptionDb {
 				Date endDate=new SimpleDateFormat("yyyy-MM-dd").parse(newSub.getContractEnd()); 
 				newSub.setPlanType(rs.getString("plan_type"));
 				long contractRemaining=getContractRemaining(endDate,TimeUnit.DAYS);
-				System.out.println(contractRemaining);
 				newSub.setContractRemaining(contractRemaining);
 
 			}
