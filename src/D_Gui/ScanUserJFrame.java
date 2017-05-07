@@ -65,20 +65,7 @@ public class ScanUserJFrame extends JFrame {
 		ScanUsertextField.setColumns(10);
 		setResizable(false);
 		setAlwaysOnTop(true);
-		CustomerController myCont=new CustomerController();
-		try {
-			myCont.searchCustomer(23);
-		} catch (SQLException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
 		
-		try {
-			userinfo = new UserInfoJFrame(key,myCont);
-		} catch (NotFoundException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
 		//Action for enter key
 		Action action = new AbstractAction()
 		{
@@ -87,10 +74,13 @@ public class ScanUserJFrame extends JFrame {
 		    {
 		        //Scan User
 		    	key = Integer.valueOf(ScanUsertextField.getText());
-		    	
+		    	if(userinfo!=null)
+		    	{
 		    	userinfo.dispose();
+		    	}
 		    	try {
-					myCusController.searchCustomer(key);
+					myCusController=new CustomerController();
+		    		myCusController.searchCustomer(key);
 					Customer newCus=myCusController.getCusObj();
 					try {
 						userinfo = new UserInfoJFrame(key,myCusController);
