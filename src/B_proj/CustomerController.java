@@ -156,7 +156,7 @@ public class CustomerController {
 		return(cusObj.getLicenseNum());
 	}
 	public String displaysubscriptionType(double monthlyCost){
-		String x =newSub.getPlanType();
+		String x =memInfo.getPlanType();
 		switch(Integer.valueOf(x)){
 		case 0:
 			return("Canceled");
