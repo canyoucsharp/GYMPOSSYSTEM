@@ -225,6 +225,7 @@ public class NewUserJFrame extends JFrame {
 		JLabel lblCardNumber = new JLabel("Card Number");
 		lblCardNumber.setBounds(316, 181, 159, 14);
 		contentPane.add(lblCardNumber);
+		lblCardNumber.setVisible(false);
 		
 		CreditCardNumberpasswordField = new JPasswordField();
 		CreditCardNumberpasswordField.setBounds(317, 206, 158, 20);
@@ -240,14 +241,17 @@ public class NewUserJFrame extends JFrame {
 		CardHoldersName.setBounds(317, 265, 158, 20);
 		contentPane.add(CardHoldersName);
 		CardHoldersName.setColumns(10);
+		CardHoldersName.setVisible(false);
 		
 		JLabel lblCVVnumber = new JLabel("CVV Number");
 		lblCVVnumber.setBounds(316, 304, 159, 14);
 		contentPane.add(lblCVVnumber);
+		lblCVVnumber.setVisible(false);
 		
 		CVVpasswordField = new JPasswordField();
 		CVVpasswordField.setBounds(316, 329, 50, 20);
 		contentPane.add(CVVpasswordField);
+		CVVpasswordField.setVisible(false);
 		
 		
 		
@@ -263,8 +267,11 @@ public class NewUserJFrame extends JFrame {
 					Lengthlbl.setVisible(true);
 					Costlbl.setVisible(true);
 					
+					lblCardNumber.setVisible(true);
 					CreditCardNumberpasswordField.setVisible(true);
 					lblCardHoldersName.setVisible(true);
+					CardHoldersName.setVisible(true);
+					lblCVVnumber.setVisible(true);
 				}
 				else
 				{
@@ -274,8 +281,11 @@ public class NewUserJFrame extends JFrame {
 					Costlbl.setVisible(false);
 
 					
+					lblCardNumber.setVisible(false);
 					CreditCardNumberpasswordField.setVisible(false);
 					lblCardHoldersName.setVisible(false);
+					CardHoldersName.setVisible(false);
+					lblCVVnumber.setVisible(false);
 				}
 			}
 			
