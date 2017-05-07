@@ -4,7 +4,8 @@ public class Membership {
 	private String planType;
 	private String planDescription;
 	private double planRate;
-	
+	private double currentRate;
+	//
 
 	public String getPlanType() {
 		return planType;
@@ -21,8 +22,8 @@ public class Membership {
 	public double getPlanRate() {
 		return planRate;
 	}
-	public void setPlanRate(double planRate) {
-		this.planRate = planRate;
+	public void setPlanRate(double pRate) {
+		this.planRate = pRate;
 	}
 	public void init(String planType2, String planDescription2, double planRate2) {
 		this.planType=planType2;
@@ -30,4 +31,11 @@ public class Membership {
 		this.planRate=planRate2;
 		
 	}
+	public void setCurRate(double rate) {
+		this.currentRate=rate;
+	}
+	public double getCurrentRate() {
+		return currentRate;
+	}
+	
 }

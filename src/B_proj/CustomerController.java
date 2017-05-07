@@ -155,9 +155,8 @@ public class CustomerController {
 	{
 		return(cusObj.getLicenseNum());
 	}
-	public String displaysubscriptionType(double monthlyCost){
+	public String displaysubscriptionType(){//DENNIS When you do operation.displaycost , please save output to customercontroller.setCurrentRate(value)
 		String x =memInfo.getPlanType();
-		
 		if(Integer.valueOf(x)==0)
 			return(memInfo.getPlanDescription());
 		else if (Integer.valueOf(x)>0)
@@ -291,8 +290,33 @@ public class CustomerController {
 		memInfo.setPlanDescription(planDescription);
 		memDb.updatePlanDescription(planDescription,memInfo);
 	}
-	public void updatePlanRate(double planRate){
-		memInfo.setPlanRate(planRate);
-		memDb.updatePlanRate(planRate,memInfo);
+	public void updatePlanRate(){
+		double rate=memInfo.getCurrentRate();
+		if(memInfo.getPlanRate()>0&&Integer.valueOf(memInfo.getPlanType())<3){
+			//donothing
+		}else {
+		switch(Integer.valueOf(memInfo.getPlanType())){
+		case 0:
+			memInfo.setPlanRate(0);
+			memDb.updatePlanRate(0,memInfo);
+			break;
+		case 1:
+			memInfo.setPlanRate(rate);
+			memDb.updatePlanRate(rate,memInfo);
+			break;
+		case 2:
+			memInfo.setPlanRate(1.25*rate);
+			memDb.updatePlanRate(1.25*rate,memInfo);
+			break;
+		case 3:
+			memInfo.setPlanRate(2*rate);
+			memDb.updatePlanRate(2*rate,memInfo);
+			break;		
+		}}
+		
+		
+	}
+	public void setCurrentRate(double rate){
+		memInfo.setCurRate(rate);
 	}
 }
