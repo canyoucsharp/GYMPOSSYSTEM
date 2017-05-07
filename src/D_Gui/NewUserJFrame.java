@@ -269,7 +269,7 @@ public class NewUserJFrame extends JFrame {
 				String picturelink;
 				if (PictureLinktextField.getText() == "")
 				{
-					picturelink = "http://clipartix.com/wp-content/uploads/2016/08/Pictures-of-questions-marks-clipart.png";
+					picturelink = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
 				}
 				else
 				{

@@ -74,7 +74,7 @@ public class UserInfoJFrame extends JFrame {
 		Subscription mySub=myCont.getNewSub();
 		setContentPane(contentPane);
 		
-		/*if(myCus.getFirstName()==null)
+		if(myCus.getFirstName()==null)
 		{
 			setContentPane(contentPane);
 			JOptionPane.showMessageDialog(null,"No user Found" );
@@ -85,7 +85,7 @@ public class UserInfoJFrame extends JFrame {
 		}
 		
 		else
-		{*/
+		{
 		
 		JLabel lblName = new JLabel("Name: "+myCont.displayFirstName()+ ", " + myCont.displayLastName());
 		lblName.setBounds(10, 11, 147, 14);
@@ -149,7 +149,7 @@ public class UserInfoJFrame extends JFrame {
 		
 	
 		}
-//	}
+	}
 
 
 	public int getKeyitem() {
