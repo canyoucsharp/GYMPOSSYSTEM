@@ -53,7 +53,7 @@ public class SubscriptionDb {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date1 = new Date();
 		dateFormat.format(date1);
-		String updateTableSQL = "UPDATE clients SET,subStatus=?, contractBegin=?,contractEnd=?, planType = ? where client_id = ?";
+		String updateTableSQL = "UPDATE subscription SET,sub_status=?, contract_begin=?,contract_end=?, plan_type = ? where sub_id = ?";
 		try {
 			
 			pst = conn.prepareStatement(updateTableSQL);
@@ -61,7 +61,7 @@ public class SubscriptionDb {
 			pst.setString(2, newSub.getContractBegin());
 			pst.setString(3, newSub.getContractEnd());
 			pst.setString(4, newSub.getPlanType());
-			pst.setInt(5, clientid);
+			pst.setInt(5, newSub.subid);
 			pst.executeUpdate();
 			JOptionPane.showMessageDialog(null,"Subscription Success");
 		} catch (Exception e) {
