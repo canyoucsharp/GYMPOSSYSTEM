@@ -14,6 +14,8 @@ public class CustomerController {
     private SubscriptionDb newSubDb;
     private PaymentInfo newPayInfo;
     private PaymentDb newPayDb;
+    private Membership memInfo;
+    private MembershipDb memDb;
     double monthlyCost;
     
     
@@ -53,6 +55,8 @@ public class CustomerController {
             newSubDb=new SubscriptionDb();
             newPayInfo=new PaymentInfo();
             newPayDb=new PaymentDb();
+            memInfo=new Membership();
+            memDb=new MembershipDb();
         }
 
 	// Actions
@@ -191,6 +195,12 @@ public class CustomerController {
 		
 		
 	}
+	public void newMembership(String planType,String planDescription,double planRate){
+		   memInfo=new Membership();
+           memDb=new MembershipDb();
+           memInfo.init(planType,planDescription,planRate);
+           memDb.init(memInfo,cusObj);
+	}
 	
 	
 	//Subscription
@@ -218,13 +228,6 @@ public class CustomerController {
 		newSub.setSubStatus(status);
 	}
 	
-	public String displayPlanType(){ //not sure when you would use this over displaySubType but just for good measure
-		return(newSub.getPlanType());
-	}
-	public void updatePlanType(String type){
-		newSubDb.pushPlanType(type);
-		newSub.setPlanType(type);
-	}
 	public long displaySubRemaining(){
 		return(newSub.getContractRemaining());
 	}
@@ -263,5 +266,28 @@ public class CustomerController {
 	public void updateExpiration(String expiration){
 		newPayDb.pushExpiration(expiration,cusObj);
 		newPayInfo.setExpiration(expiration);
+	}
+	
+	//Membership
+	public String displayPlanType(){
+		return(memInfo.getPlanType());
+	}
+	public String displayPlanDescription(){
+		return(memInfo.getPlanDescription());
+	}
+	public double displayPlanRate(){
+		return(memInfo.getPlanRate());
+	}
+	public void updatePlanType(String planType){
+		memInfo.setPlanType(planType);
+		memDb.updatePlanType(planType,cusObj);
+	}
+	public void updatePlanDescription(String planDescription){
+		memInfo.setPlanDescription(planDescription);
+		memDb.updatePlanDescription(planDescription,cusObj);
+	}
+	public void updatePlanRate(double planRate){
+		memInfo.setPlanRate(planRate);
+		memDb.updatePlanRate(planRate,cusObj);
 	}
 }

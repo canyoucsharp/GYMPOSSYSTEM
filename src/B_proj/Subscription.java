@@ -14,10 +14,9 @@ public class Subscription  {
 	String subStatus;
 	String contractBegin;
 	String contractEnd;
-	String planType;
 	long contractRemaining;
 	int contractLengthInYears;
-	
+
 	public int getContractLengthInYears() {
 		return contractLengthInYears;
 	}
@@ -109,16 +108,6 @@ public class Subscription  {
 
 	public void setContractRemaining(long contractRemaining2) {
 		this.contractRemaining = contractRemaining2;
-	}
-
-
-	public String getPlanType() {
-		return planType;
-	}
-
-
-	public void setPlanType(String planType) {
-		this.planType = planType;
 	}
 }
 
