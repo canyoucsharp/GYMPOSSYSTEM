@@ -59,10 +59,13 @@ public class Operations {
 		this.maxOccupancy = d;
 	}
 	public void calculateMonthlyCost(){
-		monthlyCost=(locationCost+accountsPayable+electric+gas+water);
+		monthlyCost=locationCost+accountsPayable+electric+gas+water;
 		roi+=1;
+		System.out.println(roi);
 		monthlyCost*=roi;
-		monthlyCost=monthlyCost/maxOccupancy;
+		System.out.println(monthlyCost);
+		monthlyCost/=maxOccupancy;
+
 	}
 
 	public double getMonthlyCost() {
