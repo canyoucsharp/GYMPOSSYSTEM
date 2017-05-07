@@ -36,6 +36,8 @@ ResultSet rs=null;
 	private JPanel contentPane;
 	private JPasswordField password;
 	private JTextField Username;
+	int isAdmin;
+	int repId;
 
 	/**
 	 * Launch the application.
@@ -82,7 +84,7 @@ ResultSet rs=null;
 			public void actionPerformed(ActionEvent e) {
 				try
 				{
-					String query="select * from salesrep where username=? and password=?";
+					String query="select * from login where username=? and password=?";
 					pst=conn.prepareStatement(query);
 					pst.setString(1, Username.getText());
 					pst.setString(2, password.getText());
@@ -91,6 +93,8 @@ ResultSet rs=null;
 					
 					if(rs.next())
 					{
+						isAdmin=rs.getInt("isadmin");
+						repId=rs.getInt("rep_id");
 						MainMenuJFrame MainMenu = new MainMenuJFrame();
 						dispose();
 						MainMenu.setVisible(true);
@@ -142,4 +146,21 @@ ResultSet rs=null;
 		contentPane.add(label);
 
 	}
+
+	public int getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(int isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public int getRepId() {
+		return repId;
+	}
+
+	public void setRepId(int repId) {
+		this.repId = repId;
+	}
+	
 }

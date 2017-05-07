@@ -28,7 +28,6 @@ public class Subscription  {
 		LocalDate today = LocalDate.now( ZoneId.of( "America/Montreal" ) );
 		java.util.Date date1= java.sql.Date.valueOf(today);
 		String endDate=calcEndDate(Integer.parseInt(contractLength),date1);
-		
 		this.setSubStatus(subStatus);
 		this.setContractBegin(date1.toString());
 		this.setContractEnd(endDate.toString());
