@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import B_proj.Customer;
 import B_proj.CustomerController;
 import B_proj.NotFoundException;
+import B_proj.OperationsController;
 import B_proj.Subscription;
 
 import javax.swing.JLabel;
@@ -26,6 +27,7 @@ public class UserInfoJFrame extends JFrame {
 
 	private int keyitem = 0;
 	private JPanel contentPane;
+	OperationsController myOperation = new OperationsController();
 
 	/**
 	 * Launch the application.
@@ -94,12 +96,12 @@ public class UserInfoJFrame extends JFrame {
 		contentPane.add(lblContractLength);
 		
 		JLabel lblSubscriptionType = new JLabel("Subscription Type: " + mySub.getPlanType());
-		lblSubscriptionType.setBounds(10, 61, 147, 14);
+		lblSubscriptionType.setBounds(10, 61, 180, 14);
 		contentPane.add(lblSubscriptionType);
 		
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType());
-		lblMonthlyPay.setBounds(10, 86, 147, 14);
-		contentPane.add(lblMonthlyPay);
+		//JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType(1));
+		//lblMonthlyPay.setBounds(10, 86, 147, 14);
+		//contentPane.add(lblMonthlyPay);
 		
 		JLabel lblYearsSubscribed = new JLabel("Years Subscribed: ");
 		lblYearsSubscribed.setBounds(10, 111, 147, 14);
