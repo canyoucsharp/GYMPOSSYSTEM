@@ -200,7 +200,7 @@ public class CustomerController {
 		newPayInfo=new PaymentInfo();
 		newPayDb=new PaymentDb();
 		newPayInfo.init(cardNum, provider, security, expiration);
-		newPayDb.init(cusObj,newPayInfo);
+		newPayDb.newPay(cusObj,newPayInfo);
 		
 		
 	}
@@ -208,7 +208,7 @@ public class CustomerController {
 		   memInfo=new Membership();
            memDb=new MembershipDb();
            memInfo.init(planType,planDescription,planRate);
-           memDb.init(memInfo,cusObj);
+           memDb.newMem(memInfo,cusObj);
 	}
 	
 	
