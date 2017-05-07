@@ -36,6 +36,7 @@ public class Subscription  {
 	public static long getContractRemaining(Date enddate, TimeUnit timeUnit) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date1 = new Date();
+		dateFormat.format(date1);
 		long diffInMillies = enddate.getTime() - date1.getTime();
 	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
 	}
