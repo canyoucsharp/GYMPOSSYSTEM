@@ -290,6 +290,7 @@ public class CustomerController {
 		memInfo.setPlanDescription(planDescription);
 		memDb.updatePlanDescription(planDescription,memInfo);
 	}
+	
 	public void updatePlanRate(){
 		double rate=memInfo.getCurrentRate();
 		if(memInfo.getPlanRate()>0&&Integer.valueOf(memInfo.getPlanType())<3){
@@ -312,10 +313,23 @@ public class CustomerController {
 			memInfo.setPlanRate(2*rate);
 			memDb.updatePlanRate(2*rate,memInfo);
 			break;		
-		}}
-		
-		
+		}
 	}
+}
+	
+	public double updatePlanRateDummy(double rate,int type){
+		switch(type){
+		case 0://canceled
+			return(0);
+		case 1://2 years
+			return(rate);
+		case 2://1 year
+			return(1.25*rate);
+		case 3:// no contract
+			return(2*rate);	
+		}
+		return(0);
+}
 	public void setCurrentRate(double rate){
 		memInfo.setCurRate(rate);
 	}
