@@ -129,6 +129,7 @@ public class NewUserJFrame extends JFrame {
 		PictureLinktextField.setBounds(146, 262, 86, 20);
 		contentPane.add(PictureLinktextField);
 		PictureLinktextField.setColumns(10);
+		PictureLinktextField.setText(" ");
 		
 		JButton btnRegister = new JButton("Register");
 		btnRegister.setBounds(79, 414, 89, 23);
@@ -267,7 +268,7 @@ public class NewUserJFrame extends JFrame {
 				int Age = Integer.parseInt(AgeTextField.getText());
 				int ClientId = Integer.parseInt(ClientIdtextField.getText());
 				String picturelink;
-				if (PictureLinktextField.getText() == "")
+				if (PictureLinktextField.getText() == " ")
 				{
 					picturelink = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
 				}
