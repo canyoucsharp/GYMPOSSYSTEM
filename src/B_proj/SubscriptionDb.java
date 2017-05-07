@@ -61,6 +61,7 @@ public class SubscriptionDb {
 			pst.setString(2, newSub.getContractBegin());
 			pst.setString(3, newSub.getContractEnd());
 			pst.setString(4, newSub.getPlanType());
+			pst.setInt(5, clientid);
 			pst.executeUpdate();
 			JOptionPane.showMessageDialog(null,"Subscription Success");
 		} catch (Exception e) {
