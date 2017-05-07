@@ -31,6 +31,7 @@ public class Membership {
 		this.planRate=planRate2;
 		
 	}
+	public void setCurRate(double rate) { 
 		this.currentRate=rate;
 	}
 	public double getCurrentRate() {
