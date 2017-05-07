@@ -38,6 +38,9 @@ public class NewUserJFrame extends JFrame {
 	private JTextField AddressTextField;
 	private JTextField AgeTextField;
 	private JTextField ClientIdtextField;
+	private JPasswordField CreditCardNumberpasswordField;
+	private JTextField CardHoldersName;
+	private JPasswordField CVVpasswordField;
 
 	/**
 	 * Launch the application.
@@ -219,6 +222,33 @@ public class NewUserJFrame extends JFrame {
 		contentPane.add(Costlbl);
 		Costlbl.setVisible(false);
 		
+		JLabel lblCardNumber = new JLabel("Card Number");
+		lblCardNumber.setBounds(316, 181, 159, 14);
+		contentPane.add(lblCardNumber);
+		
+		CreditCardNumberpasswordField = new JPasswordField();
+		CreditCardNumberpasswordField.setBounds(317, 206, 158, 20);
+		contentPane.add(CreditCardNumberpasswordField);
+		CreditCardNumberpasswordField.setVisible(false);
+		
+		JLabel lblCardHoldersName = new JLabel("Card Holder's Name");
+		lblCardHoldersName.setBounds(316, 240, 158, 14);
+		contentPane.add(lblCardHoldersName);
+		lblCardHoldersName.setVisible(false);
+		
+		CardHoldersName = new JTextField();
+		CardHoldersName.setBounds(317, 265, 158, 20);
+		contentPane.add(CardHoldersName);
+		CardHoldersName.setColumns(10);
+		
+		JLabel lblCVVnumber = new JLabel("CVV Number");
+		lblCVVnumber.setBounds(316, 304, 159, 14);
+		contentPane.add(lblCVVnumber);
+		
+		CVVpasswordField = new JPasswordField();
+		CVVpasswordField.setBounds(316, 329, 50, 20);
+		contentPane.add(CVVpasswordField);
+		
 		
 		
 		SubActiveCombo.addActionListener(new ActionListener(){
@@ -233,6 +263,8 @@ public class NewUserJFrame extends JFrame {
 					Lengthlbl.setVisible(true);
 					Costlbl.setVisible(true);
 					
+					CreditCardNumberpasswordField.setVisible(true);
+					lblCardHoldersName.setVisible(true);
 				}
 				else
 				{
@@ -241,6 +273,9 @@ public class NewUserJFrame extends JFrame {
 					Lengthlbl.setVisible(false);
 					Costlbl.setVisible(false);
 
+					
+					CreditCardNumberpasswordField.setVisible(false);
+					lblCardHoldersName.setVisible(false);
 				}
 			}
 			
@@ -337,7 +372,6 @@ public class NewUserJFrame extends JFrame {
 				FirstNametextField.setText("");
 				AgeTextField.setText("");
 				AddressTextField.setText("");
-				dispose();
 				
 			}
 		});

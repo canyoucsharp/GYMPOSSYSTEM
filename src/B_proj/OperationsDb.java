@@ -197,7 +197,7 @@ public class OperationsDb {
 				else
 				{
 					
-					JOptionPane.showMessageDialog(null,"No user Found" );
+					JOptionPane.showMessageDialog(null,"No Operations Found" );
 
 
 				}

@@ -136,7 +136,13 @@ public class UserInfoJFrame extends JFrame {
 		lblSubscriptionStatus.setBounds(10, 161, 147, 14);
 		contentPane.add(lblSubscriptionStatus);
 		
+		//Catching null picture statements
 		String path = myCont.displayPictureLink();
+		if (path == " " || path == ""){
+			path = "https://image.freepik.com/free-icon/question-mark_318-52837.jpg";
+		}
+		//
+		
 		URL url = new URL(path);
 		BufferedImage image = ImageIO.read(url);
 		
