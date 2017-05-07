@@ -70,6 +70,15 @@ public class CustomerController {
 			e.printStackTrace();
 		}
 	}
+	
+	public String displayPlanType(){ //not sure when you would use this over displaySubType but just for good measure
+		return(newSub.getPlanType());
+	}
+	public void updatePlanType(String type){
+		newSubDb.pushPlanType(type);
+		newSub.setPlanType(type);
+	}
+	
 	public void updateFirstName(String firstName) throws SQLException{
 		cusDb.pushFirstName(firstName, cusObj);
 		cusObj.setFirstName(firstName);
