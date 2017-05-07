@@ -106,9 +106,34 @@ public class MembershipDb {
 
 	public void newMem(Membership memInfo, Customer cusObj) {
 		// TODO Auto-generated method stub
+		myConnector = new MysqlConnect();
+		conn = myConnector.ConnectDB();
+try{
+		String insertTableSQL = "INSERT INTO membership  "
+				+ "(plan_type,plan_description,plan_rate) " + "VALUES" + "(?,?,?)";
+		
+		pst = conn.prepareStatement(insertTableSQL);
+		pst.setString(1, memInfo.getPlanType());
+		pst.setString(2, memInfo.getPlanDescription());
+		pst.setDouble(3, memInfo.getPlanRate());
+		
+		pst.executeUpdate();
+		JOptionPane.showMessageDialog(null, "Membership Registered");
+
+	}
+ 
+	catch (Exception e) {
+		System.out.println(e.getMessage().toString());
+		JOptionPane.showMessageDialog(null, "Membership addition Failure");
 		
 	}
-
+	finally
+	{
+		myConnector.closeConnection(rs, pst, conn);
+	}
+		
+		
+	}
 
 
 }

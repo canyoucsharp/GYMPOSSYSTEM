@@ -30,16 +30,22 @@ public class PaymentDb {
 					newPayInfo.setProvider(rs.getInt("provider"));
 					JOptionPane.showMessageDialog(null, "PaymentInfo for " +cusObj.getFirstName() + " Found");
 
-				} else {
+				} 
+				else {
 					cusObj = null;
 					JOptionPane.showMessageDialog(null, "PaymentInfo");
 
 				}
+				
+			}
+			catch (Exception e) {
+				System.out.println(e);
+			} finally {
 
-			
-		}
-		
+				myConnector.closeConnection(rs, pst, conn);
+			}
 	}
+	
 
 
 	public void pushCreditCardNumber(String cardNum, Customer cusObj) {
