@@ -52,6 +52,7 @@ public class SubscriptionDb {
 		conn = myConnector.ConnectDB();
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date1 = new Date();
+		dateFormat.format(date1);
 		String updateTableSQL = "UPDATE clients SET,subStatus=?, contractBegin=?,contractEnd=?, planType = ? where client_id = ?";
 		try {
 			
@@ -95,7 +96,7 @@ public class SubscriptionDb {
 				newSub.setSubStatus(rs.getString("sub_status"));
 				newSub.setContractBegin(rs.getString("contract_begin"));
 				newSub.setContractEnd(rs.getString("contract_end"));
-				Date endDate=new SimpleDateFormat("dd/MM/yyyy").parse(newSub.getContractEnd()); 
+				Date endDate=new SimpleDateFormat("dd-MM-yyyy").parse(newSub.getContractEnd()); 
 				newSub.setPlanType(rs.getString("plan_type"));
 				long contractRemaining=getContractRemaining(endDate,TimeUnit.DAYS);
 				newSub.setContractRemaining(contractRemaining);

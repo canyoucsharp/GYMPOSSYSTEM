@@ -191,7 +191,7 @@ public class OperationsDb {
 			conn = myConnector.ConnectDB();
 
 			try {
-				String query = "select * from Operations where operationid = ?";
+				String query = "select * from operations where operationid = ?";
 				pst = conn.prepareStatement(query);
 				pst.setInt(1, operObj.getOperationID());
 				pst.executeQuery();

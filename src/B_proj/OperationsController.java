@@ -29,7 +29,7 @@ public class OperationsController {
 	public double displayAccountsPayable(){
 		return(opObj.getAccountsPayable());
 	}
-	public int displayMaxOccupancy(){
+	public double displayMaxOccupancy(){
 		return(opObj.getMaxOccupancy());
 	}
 	public static double displayMonthlyCost(){

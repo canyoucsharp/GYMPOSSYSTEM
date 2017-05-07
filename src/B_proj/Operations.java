@@ -52,7 +52,7 @@ public class Operations {
 	public void setAccountsPayable(double d) {
 		this.accountsPayable = d;
 	}
-	public int getMaxOccupancy() {
+	public double getMaxOccupancy() {
 		return maxOccupancy;
 	}
 	public void setMaxOccupancy(double d) {
