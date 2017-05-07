@@ -101,11 +101,12 @@ public class CustomerDb {
 				cusObj.setRepId(rs.getInt("rep_id"));
 				cusObj.setDob(rs.getString("dob"));
 				cusObj.setPictureLink(rs.getString("picture"));
+				JOptionPane.showMessageDialog(null,"User "+cusObj.getFirstName()+" Found" );
 
 			}
 			else
 			{
-				
+				cusObj=null;
 				JOptionPane.showMessageDialog(null,"No user Found" );
 
 
