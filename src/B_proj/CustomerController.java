@@ -12,6 +12,8 @@ public class CustomerController {
     private CustomerDb cusDb;
     private Subscription newSub;
     private SubscriptionDb newSubDb;
+    private PaymentInfo newPayInfo;
+    private PaymentDb newPayDb;
     double monthlyCost;
     
     
@@ -49,7 +51,8 @@ public class CustomerController {
             cusDb=new CustomerDb();
             newSub=new Subscription();
             newSubDb=new SubscriptionDb();
-
+            newPayInfo=new PaymentInfo();
+            newPayDb=new PaymentDb();
         }
 
 	// Actions
@@ -180,6 +183,11 @@ public class CustomerController {
 	
 	}
 	
+	public void newPayment(String cardNum,int provider,String security,String expiration){
+		
+		
+	}
+	
 	
 	//Subscription
 	
@@ -221,6 +229,8 @@ public class CustomerController {
 		newSub.setContractRemaining(remaining);
 	}
 	
+	
+	// Payment info
 	
 	
 	

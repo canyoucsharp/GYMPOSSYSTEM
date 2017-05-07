@@ -3,8 +3,8 @@ package B_proj;
 public class PaymentInfo {	
 	private String creditCardNum;
 	private String[] provider={"Visa","Mastercard","American Express","Discover"};
-	private String Security;
-	private String Expiration;
+	private String security;
+	private String expiration;
 	
 	public String getCreditCardNum() {
 		return creditCardNum;
@@ -19,16 +19,16 @@ public class PaymentInfo {
 		this.provider = provider;
 	}
 	public String getSecurity() {
-		return Security;
+		return security;
 	}
 	public void setSecurity(String security) {
-		Security = security;
+		this.security = security;
 	}
 	public String getExpiration() {
-		return Expiration;
+		return expiration;
 	}
 	public void setExpiration(String expiration) {
-		Expiration = expiration;
+		this.expiration = expiration;
 	}
 	
 	
