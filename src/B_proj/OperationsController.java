@@ -12,8 +12,7 @@ public class OperationsController {
 		this.init();
 	}
 	
-	public void init() throws NotFoundException
-	{
+	public void init() throws NotFoundException {
 		try {
 			opDbObj.init(opObj);
 		} catch (SQLException e) {
@@ -32,7 +31,7 @@ public class OperationsController {
 	public double displayMaxOccupancy(){
 		return(opObj.getMaxOccupancy());
 	}
-	public static double displayMonthlyCost(){
+	public double displayMonthlyCost(){
 		return(opObj.getMonthlyCost());
 	}
 	public double displayRoi(){

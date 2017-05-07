@@ -62,7 +62,7 @@ public class Operations {
 		monthlyCost=(locationCost+accountsPayable+electric+gas+water);
 		roi+=1;
 		monthlyCost*=roi;
-		monthlyCost/=maxOccupancy;
+		monthlyCost=monthlyCost/maxOccupancy;
 	}
 
 	public double getMonthlyCost() {
