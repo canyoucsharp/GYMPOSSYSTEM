@@ -84,7 +84,6 @@ public class EmployeeController {
 	public void updateAdmin(Boolean value)throws SQLException{
 		empDbObj.pushAdmin(value,empObj);
 		empObj.setAdmin(value);
-		
 	}
 }
 	
