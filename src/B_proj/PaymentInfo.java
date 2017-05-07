@@ -16,8 +16,8 @@ public class PaymentInfo {
 	public String getProvider() {
 		return (providerKey[provider]);
 	}
-	public void setProvider(String[] provider) {
-		this.providerKey = provider;
+	public void setProvider(int provider) {
+		this.provider = provider;
 	}
 	public String getSecurity() {
 		return security;

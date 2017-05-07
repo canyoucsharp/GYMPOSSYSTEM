@@ -242,8 +242,26 @@ public class CustomerController {
 	public String displayProvider(){
 		return(newPayInfo.getProvider());
 	}
-	
-	
-	
-	
+	public String displaySecurity(){
+		return(newPayInfo.getSecurity());
+	}
+	public String displayExperation(){
+		return(newPayInfo.getExpiration());
+	}
+	public void updateCreditCardNum(String cardNum){
+		newPayDb.pushCreditCardNumber(cardNum,cusObj);
+		newPayInfo.setCreditCardNum(cardNum);
+	}
+	public void updateProvider(int pid){
+		newPayDb.pushProvider(pid,cusObj);
+		newPayInfo.setProvider(pid);
+	}
+	public void updateSecurity(String security){
+		newPayDb.pushSecurity(security,cusObj);
+		newPayInfo.setSecurity(security);
+	}
+	public void updateExpiration(String expiration){
+		newPayDb.pushExpiration(expiration,cusObj);
+		newPayInfo.setExpiration(expiration);
+	}
 }
