@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.*;
@@ -17,11 +18,14 @@ import javax.swing.border.EmptyBorder;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 import B_proj.CustomerController;
+import B_proj.NotFoundException;
+import B_proj.OperationsController;
 
 public class NewUserJFrame extends JFrame {
 
 	int SubTypenum = 0;
-	CustomerController NewCus = new CustomerController();
+	private CustomerController NewCus = new CustomerController();
+	private double pricing;
 	
 	
 	private JPanel contentPane;
@@ -53,8 +57,10 @@ public class NewUserJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws NotFoundException 
 	 */
-	public NewUserJFrame() {
+	public NewUserJFrame() throws NotFoundException {
+		OperationsController opCont = new OperationsController();
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 528, 477);
 		contentPane = new JPanel();
@@ -240,6 +246,8 @@ public class NewUserJFrame extends JFrame {
 			
 		});
 		
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		
 		SubTypecomboBox.addActionListener(new ActionListener(){
 
 			@Override
@@ -249,20 +257,23 @@ public class NewUserJFrame extends JFrame {
 				{
 					Lengthlbl.setText("Length: 12 Months");
 					SubTypenum = 2;
-					Costlbl.setText("Cost: "); //Getter for cost 12 months
+					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
+					Costlbl.setText("Cost: " + formatter.format(pricing));
 					
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Deluxe")
 				{
 					Lengthlbl.setText("Length: 24 Months");
 					SubTypenum = 1;
-					Costlbl.setText("Cost: "); //Getter for cost 24 months
+					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
+					Costlbl.setText("Cost: " + formatter.format(pricing));
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Super Deluxe")
 				{
 					Lengthlbl.setText("Length: No Contract");
 					SubTypenum = 3;
-					Costlbl.setText("Cost: "); //Getter for cost No Contract
+					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
+					Costlbl.setText("Cost: " + formatter.format(pricing));
 				}
 			
 			}
