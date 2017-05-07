@@ -55,7 +55,7 @@ public class Operations {
 	public int getMaxOccupancy() {
 		return maxOccupancy;
 	}
-	public void setMaxOccupancy(double maxOccupancy) {
+	public void setMaxOccupancy(int maxOccupancy) {
 		this.maxOccupancy = maxOccupancy;
 	}
 	public void calculateMonthlyCost(){

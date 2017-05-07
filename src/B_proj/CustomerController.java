@@ -137,9 +137,8 @@ public class CustomerController {
 		return(cusObj.getLicenseNum());
 	}
 	public String displaysubscriptionType(double monthlyCost){
-	
-		
-		switch(subType){
+		String x =newSub.getPlanType();
+		switch(Integer.valueOf(x)){
 		case 0:
 			return("Canceled");
 		case 1:
@@ -181,8 +180,21 @@ public class CustomerController {
 	
 	//Subscription
 	
+	public String displayContractBegin (){
+		return(newSub.getContractBegin());
+	}
 	
+	public String displayContractEnd(){
+		return(newSub.getContractEnd());
+	}
 	
+	public String displaySubStatus(){
+		return(newSub.getSubStatus());
+	}
+	
+	public String displayPlanType(){ //not sure when you would use this over displaySubType but just for good measure
+		return(newSub.getPlanType());
+	}
 	
 	
 	

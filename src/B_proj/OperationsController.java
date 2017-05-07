@@ -6,13 +6,13 @@ public class OperationsController {
 	private static Operations opObj;
 	private OperationsDb opDbObj;
 	
-	public OperationsController(){
+	public OperationsController() throws NotFoundException{
 		opObj=new Operations();
 		opDbObj=new OperationsDb();
 		this.init();
 	}
 	
-	public void init()
+	public void init() throws NotFoundException
 	{
 		try {
 			opDbObj.init(opObj);
