@@ -91,7 +91,7 @@ public class UserInfoJFrame extends JFrame {
 		lblName.setBounds(10, 11, 147, 14);
 		contentPane.add(lblName);
 		
-		JLabel lblContractLength = new JLabel("Contract Length: ");
+		JLabel lblContractLength = new JLabel("Contract Length: " + myCont.displaySubRemaining());
 		lblContractLength.setBounds(10, 36, 147, 14);
 		contentPane.add(lblContractLength);
 		
