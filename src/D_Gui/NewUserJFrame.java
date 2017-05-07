@@ -258,7 +258,6 @@ public class NewUserJFrame extends JFrame {
 			});
 		
 		
-		
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -267,12 +266,9 @@ public class NewUserJFrame extends JFrame {
 				String Sex = comboBox.getSelectedItem().toString();
 				int Age = Integer.parseInt(AgeTextField.getText());
 				int ClientId = Integer.parseInt(ClientIdtextField.getText());
-				String picturelink;
-				if (PictureLinktextField.getText() == " ")
-				{
-					picturelink = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
-				}
-				else
+				String picturelink = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
+				
+				if (PictureLinktextField.getText() != " ")
 				{
 					picturelink = PictureLinktextField.getText();
 				}
