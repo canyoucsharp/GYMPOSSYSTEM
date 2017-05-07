@@ -50,9 +50,6 @@ public class SubscriptionDb {
 	{
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date date1 = new Date();
-		dateFormat.format(date1);
 		String updateTableSQL = "UPDATE subscription SET sub_status=?, contract_begin=?,contract_end=?, plan_type = ? where sub_id = ?";
 		try {
 			

@@ -1,6 +1,7 @@
 package B_proj;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -167,13 +168,13 @@ public class CustomerController {
 		cusObj=new Customer();
         cusDb=new CustomerDb();
         newSub=new Subscription();
+        cusObj.setNewSUb(newSub);
         cusObj.initNew(firstName,lastName,sex,dob,phone,picture,address,age,repId, lisnum, id);
         cusDb.registerCustomer(cusObj, newSub);
 	}
 	
-	public void newSubscription(int clientid,String subStatus,String planType,String contractLength) throws SQLException
-	{	newSub=new Subscription();
-		newSubDb=new SubscriptionDb();
+	public void newSubscription(int clientid,String subStatus,String planType,String contractLength) throws SQLException, NumberFormatException, ParseException
+	{	newSubDb=new SubscriptionDb();
 		newSub.initNew(subStatus, planType,contractLength);
 		newSubDb.newSub(clientid, newSub);
 	

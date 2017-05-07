@@ -282,7 +282,15 @@ public class NewUserJFrame extends JFrame {
 							String Subnumber = Integer.toString(SubTypenum);
 							String ActiveSub = (String) SubActiveCombo.getSelectedItem();
 							String SubType = (String) SubTypecomboBox.getSelectedItem();
-							NewCus.newSubscription(ClientId, ActiveSub, SubType, Subnumber);
+							try {
+								NewCus.newSubscription(ClientId, ActiveSub, SubType, Subnumber);
+							} catch (NumberFormatException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (java.text.ParseException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 						}
 						catch (SQLException e)
 						{

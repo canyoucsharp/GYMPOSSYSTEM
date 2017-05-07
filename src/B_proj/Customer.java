@@ -2,6 +2,16 @@ package B_proj;
 
 public class Customer extends Person {
 	
+	private Subscription newSUb;
+	
+	public Subscription getNewSUb() {
+		return newSUb;
+	}
+	public void setNewSUb(Subscription newSUb) {
+		this.newSUb = newSUb;
+	}
+
+
 	int subId;
 	int repId;
 	String pictureLink;

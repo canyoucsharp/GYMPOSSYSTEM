@@ -1,7 +1,10 @@
 package B_proj;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -21,11 +24,10 @@ public class Subscription  {
 	public void setContractLengthInYears(int contractLengthInYears) {
 		this.contractLengthInYears = contractLengthInYears;
 	}
-	public void initNew(String subStatus ,String planType,String contractLength) {
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date date1 = new Date();
-		dateFormat.format(date1);
-		Date endDate=calcEndDate(Integer.parseInt(contractLength),date1);
+	public void initNew(String subStatus ,String planType,String contractLength) throws NumberFormatException, ParseException {
+		LocalDate today = LocalDate.now( ZoneId.of( "America/Montreal" ) );
+		java.util.Date date1= java.sql.Date.valueOf(today);
+		String endDate=calcEndDate(Integer.parseInt(contractLength),date1);
 		
 		this.setSubStatus(subStatus);
 		this.setContractBegin(date1.toString());
@@ -33,24 +35,28 @@ public class Subscription  {
 		this.setContractLengthInYears(Integer.parseInt(contractLength));
 		contractRemaining=getContractRemaining(endDate,TimeUnit.DAYS);
 	}
-	public static long getContractRemaining(Date enddate, TimeUnit timeUnit) {
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date date1 = new Date();
-		dateFormat.format(date1);
-		long diffInMillies = enddate.getTime() - date1.getTime();
+	public static long getContractRemaining(String enddate, TimeUnit timeUnit) throws ParseException {
+		LocalDate today = LocalDate.now( ZoneId.of( "America/Montreal" ) );
+		java.util.Date date1 = java.sql.Date.valueOf(today);
+		 Date enddate1=new SimpleDateFormat("yyyy-MM-dd").parse(enddate);
+		long diffInMillies = enddate1.getTime() - date1.getTime();
 	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
 	}
 	
-	public Date calcEndDate(int years,Date curDate)
+	public String calcEndDate(int years,Date curDate) throws ParseException
 	{
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		
 		int days=years*365;
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(curDate); // Now use sub date.
 		cal.add(Calendar.DATE,days );
-		Date newDate= cal.getTime();
-		dateFormat.format(newDate);
-		return newDate;
+		
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
+		String formatted = format1.format(cal.getTime());
+		return formatted;
+		
+	
+	
 	}
 	public Subscription() {
 		this.subStatus="off";
