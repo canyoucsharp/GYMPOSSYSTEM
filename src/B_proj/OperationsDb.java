@@ -204,7 +204,7 @@ public class OperationsDb {
 					operObj.setGas(rs.getDouble("gas"));
 					operObj.setWater(rs.getDouble("water"));
 					operObj.setLocationCost(rs.getDouble("locationcost"));
-					operObj.setMaxOccupancy(rs.getDouble("maxOccupancy"));
+					operObj.setMaxOccupancy(rs.getInt("maxOccupancy"));
 					operObj.setOperationID(rs.getInt("operationid"));
 					operObj.setRoi(rs.getInt("roi"));
 				}
@@ -215,9 +215,13 @@ public class OperationsDb {
 
 
 				}
+			}
+				catch(Exception e)
+				{
+					JOptionPane.showMessageDialog(null,e.getMessage());
+				}
 				
-			
-	}
+				
+			}
+		}
 
-}
-}

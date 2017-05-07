@@ -77,5 +77,10 @@ public class Operations {
 	public void setRoi(double roi) {
 		this.roi = roi;
 	}
+
+	public void setMaxOccupancy(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
