@@ -202,8 +202,11 @@ public class OperationsDb {
 					operObj.setAccountsPayable(rs.getDouble("accountsPayable");
 					operObj.setElectric(rs.getDouble("electric"));
 					operObj.setGas(rs.getDouble("gas"));
-					operObj.setWater(rs.getDouble("gas"));
-
+					operObj.setWater(rs.getDouble("water"));
+					operObj.setLocationCost(rs.getDouble("locationcost"));
+					operObj.setMaxOccupancy(rs.getDouble("maxOccupancy"));
+					operObj.setOperationID(rs.getInt("operationid"));
+					operObj.setRoi(rs.getInt("roi"));
 				}
 				else
 				{
@@ -216,4 +219,5 @@ public class OperationsDb {
 			
 	}
 
+}
 }
