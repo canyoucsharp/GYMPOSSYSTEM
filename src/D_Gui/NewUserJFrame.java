@@ -279,7 +279,7 @@ public class NewUserJFrame extends JFrame {
 					if (SubActiveCombo.getSelectedItem() == "Active")
 					{
 						try{
-							String Subnumber = ("" + SubTypenum);
+							String Subnumber = Integer.toString(SubTypenum);
 							String ActiveSub = (String) SubActiveCombo.getSelectedItem();
 							String SubType = (String) SubTypecomboBox.getSelectedItem();
 							NewCus.newSubscription(ClientId, ActiveSub, SubType, Subnumber);
