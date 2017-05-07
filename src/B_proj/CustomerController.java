@@ -289,14 +289,14 @@ public class CustomerController {
 	}
 	public void updatePlanType(String planType){
 		memInfo.setPlanType(planType);
-		memDb.updatePlanType(planType,cusObj);
+		memDb.updatePlanType(planType,memInfo);
 	}
 	public void updatePlanDescription(String planDescription){
 		memInfo.setPlanDescription(planDescription);
-		memDb.updatePlanDescription(planDescription,cusObj);
+		memDb.updatePlanDescription(planDescription,memInfo);
 	}
 	public void updatePlanRate(double planRate){
 		memInfo.setPlanRate(planRate);
-		memDb.updatePlanRate(planRate,cusObj);
+		memDb.updatePlanRate(planRate,memInfo);
 	}
 }

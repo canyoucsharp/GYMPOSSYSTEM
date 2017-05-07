@@ -104,4 +104,11 @@ public class MembershipDb {
 		}
 	}
 
+	public void newMem(Membership memInfo, Customer cusObj) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 }

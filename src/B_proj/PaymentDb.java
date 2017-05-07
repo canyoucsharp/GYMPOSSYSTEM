@@ -31,4 +31,10 @@ public class PaymentDb {
 		
 	}
 
+
+	public void newPay(Customer cusObj, PaymentInfo newPayInfo) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
