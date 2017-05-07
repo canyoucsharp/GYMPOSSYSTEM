@@ -4,7 +4,7 @@ public class Operations {
 	private int operationID;
 	private double locationCost;
 	private double accountsPayable;
-	private double maxOccupancy;
+	private int maxOccupancy;
 	private double monthlyCost;
 	private double roi;
 	private double electric;
@@ -55,7 +55,7 @@ public class Operations {
 	public double getMaxOccupancy() {
 		return maxOccupancy;
 	}
-	public void setMaxOccupancy(double d) {
+	public void setMaxOccupancy(int d) {
 		this.maxOccupancy = d;
 	}
 	public void calculateMonthlyCost(){
@@ -65,7 +65,6 @@ public class Operations {
 		monthlyCost*=roi;
 		System.out.println(monthlyCost);
 		monthlyCost/=maxOccupancy;
-
 	}
 
 	public double getMonthlyCost() {
@@ -81,9 +80,4 @@ public class Operations {
 		this.roi = roi;
 	}
 
-	public void setMaxOccupancy(int int1) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
