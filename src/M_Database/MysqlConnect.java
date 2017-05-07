@@ -11,6 +11,7 @@ private static String hostName;
 private static String port;
 private static String userName;
 private static String password;
+
  
 private Connection conn=null;
  public static void SelectDatabase() throws DataBaseException {
@@ -33,6 +34,23 @@ private Connection conn=null;
 		}
 
 	}
+ 
+public void closeConnection(ResultSet rs,PreparedStatement pst,Connection conn)
+{
+	try
+	{
+	rs.close();
+	pst.close();
+	conn.close();
+	System.out.println("Connection closed");
+	}
+	catch(Exception e)
+	{
+		System.out.println(e.getMessage());
+	}
+	
+	
+}
 
 public Connection ConnectDB()
 {
@@ -55,7 +73,7 @@ try
   JOptionPane.showMessageDialog(null,e);
   return null;
  }
- 
+
  
 }
 

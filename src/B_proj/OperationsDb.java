@@ -31,9 +31,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -56,9 +54,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -79,9 +75,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -102,9 +96,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -125,9 +117,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -152,9 +142,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -175,9 +163,7 @@ public class OperationsDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -220,6 +206,13 @@ public class OperationsDb {
 				{
 					JOptionPane.showMessageDialog(null,e.getMessage());
 				}
+			
+			finally
+			{
+				myConnector.closeConnection(rs, pst, conn);
+				
+			}
+			
 				
 				
 			}

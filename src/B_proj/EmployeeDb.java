@@ -41,10 +41,7 @@ public class EmployeeDb {
 		}
 
 		finally {
-			rs.close();
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -63,10 +60,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -84,9 +78,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -104,9 +96,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -124,9 +114,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -144,9 +132,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -164,9 +150,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -184,9 +168,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -204,9 +186,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -224,9 +204,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -245,10 +223,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -267,10 +242,7 @@ public class EmployeeDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}

@@ -70,9 +70,7 @@ public class CustomerDb {
 			conn.rollback();
 			
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 		
 
@@ -122,18 +120,11 @@ public class CustomerDb {
 		
 
 		finally {
-			rs.close();
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
-	/*Hello The queries below seem extremely redundant I feel this can be fixed with ENUM
-	 * and a case statement.Is there any particular reason you need these Briano??????
-	 * for example we can have pushField(ENUM whichField,String newField,Customer cusObj)
-	 * 
-	 */
+	
 	public void pushFirstName(String firstName, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -150,9 +141,7 @@ public class CustomerDb {
 			System.out.println(e);
 		} finally {
 
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -170,9 +159,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -190,9 +177,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -210,9 +195,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -230,9 +213,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -250,9 +231,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -270,9 +249,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -290,9 +267,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -310,9 +285,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 
 	}
@@ -329,9 +302,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 	}
 	public void pushPictureLink(String pictureLink, Customer cusObj) throws SQLException {
@@ -347,9 +318,7 @@ public class CustomerDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 		
 	}

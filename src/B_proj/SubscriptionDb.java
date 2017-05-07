@@ -42,6 +42,10 @@ public class SubscriptionDb {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		finally
+		{
+			myConnector.closeConnection(rs, pst, conn);
+		}
 
 	}
 	
@@ -66,9 +70,7 @@ public class SubscriptionDb {
 			
 		} 
 		finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 			
 		}
 		}
@@ -106,9 +108,7 @@ public class SubscriptionDb {
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			pst.close();
-			conn.close();
-			System.out.println("Connection closed");
+			myConnector.closeConnection(rs, pst, conn);
 		}
 	}
 	public static long getContractRemaining(Date enddate, TimeUnit timeUnit) {
