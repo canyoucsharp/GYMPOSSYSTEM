@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import M_Database.MysqlConnect;
 
 public class OperationsDb {
@@ -182,9 +184,36 @@ public class OperationsDb {
 
 
 
-	public void init(Operations opObj) throws SQLException {
-		// TODO Auto-generated method stub
-		
+	
+		public void init(Operations operObj) throws SQLException,NotFoundException {
+			// TODO Auto-generated method stub
+			myConnector = new MysqlConnect();
+			conn = myConnector.ConnectDB();
+
+			try {
+				String query = "select * from Operations where operationid = ?";
+				pst = conn.prepareStatement(query);
+				pst.setInt(1, operObj.getOperationID());
+				pst.executeQuery();
+				rs = pst.executeQuery();
+
+				if (rs.next()) {
+
+					operObj.setAccountsPayable(rs.getDouble("accountsPayable");
+					operObj.setElectric(rs.getDouble("electric"));
+					operObj.setGas(rs.getDouble("gas"));
+					operObj.setWater(rs.getDouble("gas"));
+
+				}
+				else
+				{
+					
+					JOptionPane.showMessageDialog(null,"No user Found" );
+
+
+				}
+				
+			
 	}
 
 }

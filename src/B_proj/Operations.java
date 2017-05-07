@@ -25,37 +25,37 @@ public class Operations {
 	public double getElectric() {
 		return electric;
 	}
-	public void setElectric(int electric) {
-		this.electric = electric;
+	public void setElectric(double d) {
+		this.electric = d;
 	}
 	public double getGas() {
 		return gas;
 	}
-	public void setGas(int gas) {
+	public void setGas(double gas) {
 		this.gas = gas;
 	}
 	public double getWater() {
 		return water;
 	}
-	public void setWater(int water) {
+	public void setWater(double water) {
 		this.water = water;
 	}
 	public double getLocationCost() {
 		return locationCost;
 	}
-	public void setLocationCost(int locationCost) {
+	public void setLocationCost(double locationCost) {
 		this.locationCost = locationCost;
 	}
 	public double getAccountsPayable() {
 		return accountsPayable;
 	}
-	public void setAccountsPayable(int accountsPayable) {
-		this.accountsPayable = accountsPayable;
+	public void setAccountsPayable(double d) {
+		this.accountsPayable = d;
 	}
 	public int getMaxOccupancy() {
 		return maxOccupancy;
 	}
-	public void setMaxOccupancy(int maxOccupancy) {
+	public void setMaxOccupancy(double maxOccupancy) {
 		this.maxOccupancy = maxOccupancy;
 	}
 	public void calculateMonthlyCost(){

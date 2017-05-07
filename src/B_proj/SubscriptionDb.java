@@ -44,21 +44,21 @@ public class SubscriptionDb {
 		}
 
 	}
+	
 
 	public void newSub(int clientid,Subscription newSub) throws SQLException
 	{
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date1 = new Date();
 		String updateTableSQL = "UPDATE clients SET,subStatus=?, contractBegin=?,contractEnd=?, planType = ? where client_id = ?";
 		try {
-			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			Date date1 = new Date();
-			dateFormat.format(date1);
-			String endDate=calcEndDate( newSub.getContractLengthInYears(),date1);
+			
 			pst = conn.prepareStatement(updateTableSQL);
 			pst.setString(1, newSub.getSubStatus());
-			pst.setString(2, date1.toString());
-			pst.setString(3, endDate);
+			pst.setString(2, newSub.getContractBegin());
+			pst.setString(3, newSub.getContractEnd());
 			pst.setString(4, newSub.getPlanType());
 			pst.executeUpdate();
 			JOptionPane.showMessageDialog(null,"Subscription Success");
@@ -73,28 +73,8 @@ public class SubscriptionDb {
 			
 		}
 		}
-	public String calcEndDate(int years,Date curDate)
-	{
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		int days=years*365;
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(curDate); // Now use sub date.
-		cal.add(Calendar.DATE,days );
-		Date newDate= cal.getTime();
-		dateFormat.format(newDate);
-		return newDate.toString();
-	}
+	
 
-	public static long getDateDiff(String sdate2, TimeUnit timeUnit) throws ParseException {
-
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date date1 = new Date();
-		dateFormat.format(date1);
-		Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(sdate2);
-		long diffInMillies = date2.getTime() - date1.getTime();
-		return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
-
-	}
 
 	public void init(int id, Subscription newSub) throws SQLException {//search
 		// TODO Auto-generated method stub
@@ -112,16 +92,18 @@ public class SubscriptionDb {
 			rs = pst.executeQuery();
 
 			if (rs.next()) {
-
 				newSub.setSubStatus(rs.getString("sub_status"));
 				newSub.setContractBegin(rs.getString("contract_begin"));
 				newSub.setContractEnd(rs.getString("contract_end"));
-
-				Integer contractRemaining = (int) getDateDiff(newSub.getContractEnd(), TimeUnit.DAYS);
-				newSub.setContractRemaining(contractRemaining.toString());
+				Date endDate=new SimpleDateFormat("dd/MM/yyyy").parse(newSub.getContractEnd()); 
 				newSub.setPlanType(rs.getString("plan_type"));
+				long contractRemaining=getContractRemaining(endDate,TimeUnit.DAYS);
+				newSub.setContractRemaining(contractRemaining);
 
 			}
+			
+			
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
@@ -129,5 +111,11 @@ public class SubscriptionDb {
 			conn.close();
 			System.out.println("Connection closed");
 		}
+	}
+	public static long getContractRemaining(Date enddate, TimeUnit timeUnit) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date1 = new Date();
+		long diffInMillies = enddate.getTime() - date1.getTime();
+	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
 	}
 }

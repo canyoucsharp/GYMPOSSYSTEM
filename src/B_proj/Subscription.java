@@ -1,12 +1,18 @@
 package B_proj;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 public class Subscription  {
 	int subid;
 	String subStatus;
 	String contractBegin;
 	String contractEnd;
 	String planType;
-	String contractRemaining;
+	long contractRemaining;
 	int contractLengthInYears;
 	
 	public int getContractLengthInYears() {
@@ -15,11 +21,35 @@ public class Subscription  {
 	public void setContractLengthInYears(int contractLengthInYears) {
 		this.contractLengthInYears = contractLengthInYears;
 	}
-	public void initNew(String subStatus,String contractBegin,String contractEnd ,String planType,String contractLength) {
+	public void initNew(String subStatus ,String planType,String contractLength) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date1 = new Date();
+		dateFormat.format(date1);
+		Date endDate=calcEndDate(Integer.parseInt(contractLength),date1);
+		
 		this.setSubStatus(subStatus);
-		this.setContractBegin(contractBegin);
-		this.setContractEnd(contractEnd);
+		this.setContractBegin(date1.toString());
+		this.setContractEnd(endDate.toString());
 		this.setContractLengthInYears(Integer.parseInt(contractLength));
+		contractRemaining=getContractRemaining(endDate,TimeUnit.DAYS);
+	}
+	public static long getContractRemaining(Date enddate, TimeUnit timeUnit) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date1 = new Date();
+		long diffInMillies = enddate.getTime() - date1.getTime();
+	    return timeUnit.convert(diffInMillies,TimeUnit.MILLISECONDS);
+	}
+	
+	public Date calcEndDate(int years,Date curDate)
+	{
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		int days=years*365;
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(curDate); // Now use sub date.
+		cal.add(Calendar.DATE,days );
+		Date newDate= cal.getTime();
+		dateFormat.format(newDate);
+		return newDate;
 	}
 	public Subscription() {
 		this.subStatus="off";
@@ -66,13 +96,13 @@ public class Subscription  {
 	}
 
 
-	public String getContractRemaining() {
+	public long getContractRemaining() {
 		return contractRemaining;
 	}
 
 
-	public void setContractRemaining(String contractRemaining) {
-		this.contractRemaining = contractRemaining;
+	public void setContractRemaining(long contractRemaining2) {
+		this.contractRemaining = contractRemaining2;
 	}
 
 
