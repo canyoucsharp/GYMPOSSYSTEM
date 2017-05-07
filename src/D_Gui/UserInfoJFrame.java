@@ -64,7 +64,7 @@ public class UserInfoJFrame extends JFrame {
 	
 	public UserInfoJFrame(int key,CustomerController myCont) throws NotFoundException, IOException {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 265, 420);
+		setBounds(100, 100, 335, 515);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
@@ -74,7 +74,7 @@ public class UserInfoJFrame extends JFrame {
 		Subscription mySub=myCont.getNewSub();
 		setContentPane(contentPane);
 		
-		if(myCus.getFirstName()==null)
+		/*if(myCus.getFirstName()==null)
 		{
 			setContentPane(contentPane);
 			JOptionPane.showMessageDialog(null,"No user Found" );
@@ -83,9 +83,9 @@ public class UserInfoJFrame extends JFrame {
 			lblError.add(contentPane);
 			throw new NotFoundException("No user Found");
 		}
-		
-		else
-		{
+		*/
+		//else
+		//{
 		
 		JLabel lblName = new JLabel("Name: "+myCont.displayFirstName()+ ", " + myCont.displayLastName());
 		lblName.setBounds(10, 11, 147, 14);
@@ -99,33 +99,45 @@ public class UserInfoJFrame extends JFrame {
 		lblSubscriptionType.setBounds(10, 61, 180, 14);
 		contentPane.add(lblSubscriptionType);
 		
-		//JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType(1));
-		//lblMonthlyPay.setBounds(10, 86, 147, 14);
-		//contentPane.add(lblMonthlyPay);
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myOperation.displayMonthlyCost());
+		lblMonthlyPay.setBounds(10, 86, 147, 14);
+		contentPane.add(lblMonthlyPay);
 		
 		JLabel lblYearsSubscribed = new JLabel("Years Subscribed: ");
-		lblYearsSubscribed.setBounds(10, 111, 147, 14);
+		lblYearsSubscribed.setBounds(10, 186, 147, 14);
 		contentPane.add(lblYearsSubscribed);
 		
 		JLabel lblSex = new JLabel("Sex: " + myCont.displaySex());
-		lblSex.setBounds(10, 136, 147, 14);
+		lblSex.setBounds(10, 211, 147, 14);
 		contentPane.add(lblSex);
 		
 		JLabel lblPhone = new JLabel("Phone: " + myCont.displayPhoneNumber() );
-		lblPhone.setBounds(10, 161, 147, 14);
+		lblPhone.setBounds(10, 236, 147, 14);
 		contentPane.add(lblPhone);
 		
 		JLabel lblDateOfBirth = new JLabel("Date of Birth: " + myCont.displayDateOfBirth());
-		lblDateOfBirth.setBounds(10, 186, 147, 14);
+		lblDateOfBirth.setBounds(10, 261, 147, 14);
 		contentPane.add(lblDateOfBirth);
 		
 		JLabel lblLiscenseNumber = new JLabel("Liscense Number: " + myCont.displayLicenseNumber());
-		lblLiscenseNumber.setBounds(10, 211, 212, 14);
+		lblLiscenseNumber.setBounds(10, 286, 212, 14);
 		contentPane.add(lblLiscenseNumber);
 		
 		JLabel Agelbl = new JLabel("Age: " + myCont.displayAge());
-		Agelbl.setBounds(10, 236, 147, 14);
+		Agelbl.setBounds(10, 311, 147, 14);
 		contentPane.add(Agelbl);
+		
+		JLabel lblBeginningContractDate = new JLabel("Beginning Contract Date: " + myCont.displayContractBegin());
+		lblBeginningContractDate.setBounds(10, 111, 253, 14);
+		contentPane.add(lblBeginningContractDate);
+		
+		JLabel lblEndingContractDate = new JLabel("Ending Contract Date: " + myCont.displayContractEnd());
+		lblEndingContractDate.setBounds(10, 136, 253, 14);
+		contentPane.add(lblEndingContractDate);
+		
+		JLabel lblSubscriptionStatus = new JLabel("Subscription Status: " + myCont.displaySubStatus());
+		lblSubscriptionStatus.setBounds(10, 161, 147, 14);
+		contentPane.add(lblSubscriptionStatus);
 		
 		String path = myCont.displayPictureLink();
 		URL url = new URL(path);
@@ -134,14 +146,14 @@ public class UserInfoJFrame extends JFrame {
 		
 		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 
-		label.setBounds(40, 261, 176, 119);
+		label.setBounds(41, 356, 176, 119);
 		contentPane.add(label);
 		
 		
 		
 	
 		}
-	}
+	//}
 
 
 	public int getKeyitem() {
