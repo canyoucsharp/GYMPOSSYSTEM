@@ -83,15 +83,15 @@ public class UserInfoJFrame extends JFrame {
 			lblError.add(contentPane);
 			throw new NotFoundException("No user Found");
 		}
-		*/
-		//else
-		//{
+		
+		else
+		{*/
 		
 		JLabel lblName = new JLabel("Name: "+myCont.displayFirstName()+ ", " + myCont.displayLastName());
 		lblName.setBounds(10, 11, 147, 14);
 		contentPane.add(lblName);
 		
-		JLabel lblContractLength = new JLabel("Contract Length: " + myCont.displaySubRemaining());
+		JLabel lblContractLength = new JLabel("Remaining Days: " + myCont.displaySubRemaining() + " days");
 		lblContractLength.setBounds(10, 36, 147, 14);
 		contentPane.add(lblContractLength);
 		
@@ -103,28 +103,24 @@ public class UserInfoJFrame extends JFrame {
 		lblMonthlyPay.setBounds(10, 86, 147, 14);
 		contentPane.add(lblMonthlyPay);
 		
-		JLabel lblYearsSubscribed = new JLabel("Years Subscribed: ");
-		lblYearsSubscribed.setBounds(10, 186, 147, 14);
-		contentPane.add(lblYearsSubscribed);
-		
 		JLabel lblSex = new JLabel("Sex: " + myCont.displaySex());
-		lblSex.setBounds(10, 211, 147, 14);
+		lblSex.setBounds(10, 186, 147, 14);
 		contentPane.add(lblSex);
 		
 		JLabel lblPhone = new JLabel("Phone: " + myCont.displayPhoneNumber() );
-		lblPhone.setBounds(10, 236, 147, 14);
+		lblPhone.setBounds(10, 211, 147, 14);
 		contentPane.add(lblPhone);
 		
 		JLabel lblDateOfBirth = new JLabel("Date of Birth: " + myCont.displayDateOfBirth());
-		lblDateOfBirth.setBounds(10, 261, 147, 14);
+		lblDateOfBirth.setBounds(10, 236, 147, 14);
 		contentPane.add(lblDateOfBirth);
 		
 		JLabel lblLiscenseNumber = new JLabel("Liscense Number: " + myCont.displayLicenseNumber());
-		lblLiscenseNumber.setBounds(10, 286, 212, 14);
+		lblLiscenseNumber.setBounds(10, 261, 212, 14);
 		contentPane.add(lblLiscenseNumber);
 		
 		JLabel Agelbl = new JLabel("Age: " + myCont.displayAge());
-		Agelbl.setBounds(10, 311, 147, 14);
+		Agelbl.setBounds(10, 286, 147, 14);
 		contentPane.add(Agelbl);
 		
 		JLabel lblBeginningContractDate = new JLabel("Beginning Contract Date: " + myCont.displayContractBegin());
@@ -144,16 +140,16 @@ public class UserInfoJFrame extends JFrame {
 		BufferedImage image = ImageIO.read(url);
 		
 		
-		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
+		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(250, 250, Image.SCALE_DEFAULT)));
 
-		label.setBounds(41, 356, 176, 119);
+		label.setBounds(20, 336, 273, 139);
 		contentPane.add(label);
 		
 		
 		
 	
 		}
-	//}
+//	}
 
 
 	public int getKeyitem() {
