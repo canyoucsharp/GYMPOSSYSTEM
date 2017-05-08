@@ -137,10 +137,10 @@ public class UserInfoJFrame extends JFrame {
 		
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + formatter.format(myOperation.displayMonthlyCost()));
+		myCont.setCurrentRate(myOperation.displayMonthlyCost());
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + formatter.format(myCont.displaysubscriptionType()));
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
-		myCont.setCurrentRate(myOperation.displayMonthlyCost());
 		
 		JLabel lblSex = new JLabel("Sex: " + myCont.displaySex());
 		lblSex.setBounds(10, 186, 283, 14);

@@ -10,6 +10,8 @@ import java.text.NumberFormat;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import B_proj.CustomerController;
 import B_proj.OperationsController;
@@ -17,6 +19,7 @@ import B_proj.OperationsController;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JSlider;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -66,8 +69,6 @@ public class AdminJFrame extends JFrame {
 	
 	/** The Monthly coststext field. */
 	private JTextField MonthlyCoststextField;
-	
-	/** The RO itext field. */
 	private JTextField ROItextField;
 
 	/**
@@ -173,17 +174,38 @@ public class AdminJFrame extends JFrame {
 		
 		MonthlyCoststextField.setEditable(false);
 		
-		ROItextField = new JTextField();
-		ROItextField.setBounds(185, 311, 116, 22);
-		contentPane.add(ROItextField);
-		ROItextField.setColumns(10);
-		ROItextField.setEditable(false);
-		
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		NumberFormat percent = NumberFormat.getNumberInstance();
 		
 		String ROI = percent.format(opControl.displayRoi());
-		ROItextField.setText(ROI);
+
+		JSlider ROIslider = new JSlider();
+		ROIslider.setBounds(154, 304, 147, 26);
+		contentPane.add(ROIslider);
+		ROIslider.setValue((int) opControl.displayRoi());
+		ROIslider.setMaximum(10);
+		ROIslider.setMajorTickSpacing(10);
+		ROIslider.setMinorTickSpacing(1);
+		ROIslider.setMinimum(1);
+		ROIslider.addChangeListener(new ChangeListener(){
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				// TODO Auto-generated method stub
+				JSlider source = (JSlider)e.getSource();
+				ROItextField.setText("" + source.getValue());
+			}
+			
+		});
+		
+		
+		ROItextField = new JTextField();
+		ROItextField.setBounds(209, 341, 32, 20);
+		contentPane.add(ROItextField);
+		ROItextField.setColumns(10);
+		ROItextField.setText("" + ROIslider.getValue());
+		ROItextField.setEditable(false);
+		
 		
 		String MonthlyCost = formatter.format(opControl.displayMonthlyCost());
 		MonthlyCoststextField.setText(MonthlyCost);
@@ -230,7 +252,9 @@ public class AdminJFrame extends JFrame {
 			
 			double updateGas = Double.parseDouble(GastextField.getText().replaceAll("[^\\d.]+", ""));
 
+			int ROI = ROIslider.getValue();
 		
+			opControl.updateRoi(ROI);
 			opControl.updateAccountsPayable(updateAccountsPayable);
 			opControl.updateElectric(updateElectric);
 			opControl.updateGash(updateGas);
@@ -238,10 +262,12 @@ public class AdminJFrame extends JFrame {
 			opControl.updateMaxOccupancy(updateMaxOccupancy);
 			opControl.updateWater(updateWater);
 			
+			MonthlyCoststextField.setText(formatter.format(opControl.displayMonthlyCost()));
+			
+			
 			}
 		});
 		
 		
 	}
-
 }
