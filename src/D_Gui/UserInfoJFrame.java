@@ -144,7 +144,7 @@ public class UserInfoJFrame extends JFrame {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
 		myCont.setCurrentRate(myOperation.displayMonthlyCost());
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType(Plantype));
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " /*+ myCont.displaysubscriptionType(Plantype)*/);
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
 		
@@ -208,6 +208,7 @@ public class UserInfoJFrame extends JFrame {
 					EditCus.dispose();
 				}
 				EditCus = new EditCustomerJFrame(key, myCont);
+				EditCus.setVisible(true);
 				dispose();
 			}
 			

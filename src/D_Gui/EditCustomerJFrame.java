@@ -144,15 +144,15 @@ public class EditCustomerJFrame extends JFrame {
 		
 		String Sex = myCont.displaySex();
 		JComboBox SexcomboBox = new JComboBox();
-		SexcomboBox.setBounds(271, 136, 39, 20);
+		SexcomboBox.setBounds(221, 136, 89, 20);
 		contentPane.add(SexcomboBox);
-		if (Sex == "M"){
-		SexcomboBox.addItem("M");
-		SexcomboBox.addItem("F");
+		if (Sex == "Male"){
+		SexcomboBox.addItem("Male");
+		SexcomboBox.addItem("Female");
 		}
 		else{
-			SexcomboBox.addItem("F");
-			SexcomboBox.addItem("M");
+			SexcomboBox.addItem("Female");
+			SexcomboBox.addItem("Male");
 		}
 		
 		JLabel lblContractBegin = new JLabel("Contract Begin:");
@@ -179,8 +179,9 @@ public class EditCustomerJFrame extends JFrame {
 		
 		String SubStatus = myCont.displaySubStatus();
 		SubStatuscomboBox = new JComboBox();
-		SubStatuscomboBox.setBounds(242, 158, 67, 20);
+		SubStatuscomboBox.setBounds(221, 158, 88, 20);
 		contentPane.add(SubStatuscomboBox);
+		
 		
 		lblDaysRemaining = new JLabel("Days Remaining: ");
 		lblDaysRemaining.setBounds(10, 242, 175, 14);
@@ -245,7 +246,13 @@ public class EditCustomerJFrame extends JFrame {
 		contentPane.add(PlanDesctextField);
 		PlanDesctextField.setColumns(10);
 		
-		
+		if (SubStatus == "Active")
+		{
+			PlanDesctextField.setVisible(true);
+		}
+		else{
+			PlanDesctextField.setVisible(false);
+		}
 		
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.setBounds(117, 443, 89, 23);
