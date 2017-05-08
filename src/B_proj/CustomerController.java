@@ -350,12 +350,14 @@ public class CustomerController {
 	 * @return the string
 	 */
 	public String displaysubscriptionType(){//DENNIS When you do operation.displaycost , please save output to customercontroller.setCurrentRate(value)
-		String x =memInfo.getPlanType();
-		if(Integer.valueOf(x)==0)
-			return(memInfo.getPlanDescription());
-		else if (Integer.valueOf(x)>0)
+		int x=Integer.valueOf(memInfo.getPlanType());
+		if(x==0){
+			System.out.println(x);
+			return(memInfo.getPlanDescription());}
+		else if (x>0){
+			System.out.println(x);
 			return(memInfo.getPlanRate()+memInfo.getPlanDescription());
-		
+		}
 		return("Error");
 	}
 	
