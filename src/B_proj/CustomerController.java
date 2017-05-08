@@ -349,7 +349,11 @@ public class CustomerController {
 	 *
 	 * @return the string
 	 */
-	public String displaysubscriptionType(){//DENNIS When you do operation.displaycost , please save output to customercontroller.setCurrentRate(value)
+	public String displaysubscriptionType(String planType){//DENNIS When you do operation.displaycost , please save output to customercontroller.setCurrentRate(value)
+	
+		memInfo.setPlanType(planType);
+		memDb=new MembershipDb();
+		memDb.init(memInfo, cusObj);
 		int x=Integer.valueOf(memInfo.getPlanType());
 		if(x==0){
 			System.out.println(x);
