@@ -31,6 +31,7 @@ public class Subscription  {
 		this.setSubStatus(subStatus);
 		this.setContractBegin(date1.toString());
 		this.setContractEnd(endDate.toString());
+		this.setPlanType(planType);
 		this.setContractLengthInYears(Integer.parseInt(contractLength));
 		contractRemaining=getContractRemaining(endDate,TimeUnit.DAYS);
 	}
