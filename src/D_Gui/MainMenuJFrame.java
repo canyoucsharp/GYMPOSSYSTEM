@@ -46,7 +46,7 @@ public class MainMenuJFrame extends JFrame {
 	 */
 	public MainMenuJFrame(int Admin_Status) throws Exception {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 268, 352);
+		setBounds(100, 100, 268, 421);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -96,10 +96,22 @@ public class MainMenuJFrame extends JFrame {
 		JButton btnViewSalesRep = new JButton("View Sales Rep");
 		btnViewSalesRep.setBounds(44, 250, 174, 44);
 		contentPane.add(btnViewSalesRep);
+		
 		btnViewSalesRep.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				NewEmployeeframe.setVisible(true);
 			}
 		});
+		
+		JButton EditCustomerbtn = new JButton("Edit Customer");
+		EditCustomerbtn.setBounds(44, 305, 174, 44);
+		contentPane.add(EditCustomerbtn);
+		EditCustomerbtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//Open Edit Customer page
+			}
+		});
 	}
+	
+	
 }

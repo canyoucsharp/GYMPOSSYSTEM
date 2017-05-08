@@ -84,9 +84,40 @@ public class UserInfoJFrame extends JFrame {
 		lblContractLength.setBounds(10, 36, 283, 14);
 		contentPane.add(lblContractLength);
 		
-		JLabel lblSubscriptionType = new JLabel("Subscription Type: " + mySub.getPlanType());
+
+		JLabel lblSubscriptionType = new JLabel();
 		lblSubscriptionType.setBounds(10, 61, 283, 14);
 		contentPane.add(lblSubscriptionType);
+		
+		String Plantype = mySub.getPlanType();
+		if (Plantype != null){
+		switch(Plantype){
+		case "1":
+		{
+			lblSubscriptionType.setText("Subscription Type: Standard");
+			break;
+		}
+		case "2":
+		{
+			lblSubscriptionType.setText("Subscription Type: Deluxe");
+			break;
+		}
+		case "3":
+		{
+			lblSubscriptionType.setText("Subscription Type: Super Deluxe");
+			break;
+		}
+		case "null":
+		{
+			lblSubscriptionType.setText("Subscription Type: None");
+			break;
+		}
+		}
+		}
+		else
+		{
+			lblSubscriptionType.setText("Subscription Type: None");
+		}
 		
 		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myOperation.displayMonthlyCost());
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
