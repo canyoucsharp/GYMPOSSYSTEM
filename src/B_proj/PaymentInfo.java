@@ -44,8 +44,8 @@ public class PaymentInfo {
 	 *
 	 * @return the provider
 	 */
-	public String getProvider() {
-		return (providerKey[provider]);
+	public int getProvider() {
+		return (provider);
 	}
 	
 	/**

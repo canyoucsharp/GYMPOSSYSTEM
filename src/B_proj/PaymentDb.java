@@ -204,7 +204,7 @@ try{
 		pst = conn.prepareStatement(insertTableSQL);
 		pst.setInt(1, cusObj.getId());
 		pst.setString(2, newPayInfo.getCreditCardNum());
-		pst.setString(3, newPayInfo.getProvider());
+		pst.setInt(3, newPayInfo.getProvider());
 		pst.setString(4, newPayInfo.getSecurity());
 		pst.setString(5, newPayInfo.getExpiration());
 		pst.executeUpdate();
