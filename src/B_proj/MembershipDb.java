@@ -127,7 +127,7 @@ public class MembershipDb {
 
 		myConnector = new MysqlConnect();
 		conn = myConnector.ConnectDB();
-		String updateTableSQL = "UPDATE membership SET plan_description = ? " + " WHERE plan_type = ?";
+		String updateTableSQL = "UPDATE membership SET plan_rate = ? " + " WHERE plan_type = ?";
 		try {
 			pst = conn.prepareStatement(updateTableSQL);
 			pst.setDouble(1,planRate);
