@@ -155,6 +155,7 @@ public class AdminJFrame extends JFrame {
 		
 		String Water = formatter.format(opControl.displayWater());
 		WatertextField.setText(Water);
+		//System.out.println(opControl.displayGas());
 		
 		String Electric = formatter.format(opControl.displayElectric());
 		ElectrictextField.setText(Electric);

@@ -92,9 +92,9 @@ public class EditCustomerJFrame extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel Sexlbl = new JLabel("New label");
-		Sexlbl.setBounds(10, 139, 115, 14);
-		contentPane.add(Sexlbl);
+		JLabel lblSex = new JLabel("Sex: ");
+		lblSex.setBounds(10, 139, 115, 14);
+		contentPane.add(lblSex);
 		
 	}
 }
