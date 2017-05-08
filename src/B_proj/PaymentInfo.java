@@ -47,6 +47,10 @@ public class PaymentInfo {
 	public int getProvider() {
 		return (provider);
 	}
+	public String getConvProvider()
+	{
+		return providerKey[provider];
+	}
 	
 	/**
 	 * Sets the provider.
