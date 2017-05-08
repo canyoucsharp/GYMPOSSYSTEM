@@ -390,7 +390,6 @@ public class NewUserJFrame extends JFrame {
 			
 		});
 		
-		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
 		SubTypecomboBox.addActionListener(new ActionListener(){
 
@@ -399,6 +398,7 @@ public class NewUserJFrame extends JFrame {
 				// TODO Auto-generated method stub
 				if (SubTypecomboBox.getSelectedItem() == "Standard")
 				{
+					NumberFormat formatter = NumberFormat.getCurrencyInstance();
 					Lengthlbl.setText("Length: 12 Months");
 					SubTypenum = 1;
 					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
@@ -407,6 +407,7 @@ public class NewUserJFrame extends JFrame {
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Deluxe")
 				{
+					NumberFormat formatter = NumberFormat.getCurrencyInstance();
 					Lengthlbl.setText("Length: 24 Months");
 					SubTypenum = 2;
 					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
@@ -414,6 +415,7 @@ public class NewUserJFrame extends JFrame {
 				}
 				else if(SubTypecomboBox.getSelectedItem() == "Super Deluxe")
 				{
+					NumberFormat formatter = NumberFormat.getCurrencyInstance();
 					Lengthlbl.setText("Length: No Contract");
 					SubTypenum = 3;
 					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
@@ -452,7 +454,6 @@ public class NewUserJFrame extends JFrame {
 							try {
 								NewCus.newSubscription(ClientId, ActiveSub, Subnumber, Subnumber);
 								NewCus.newPayment(CreditCardNumberpasswordField.getText(), Provider, CVVpasswordField.getText(), ExpirationtextField.getText());
-								NewCus.newMembership(Subnumber, SubType, pricing);
 								
 							} catch (NumberFormatException e) {
 								// TODO Auto-generated catch block
@@ -468,8 +469,6 @@ public class NewUserJFrame extends JFrame {
 							e.printStackTrace();
 						}
 					}
-					else
-						NewCus.newMembership("0", "Canceled", pricing);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null,"Error Resgistering New Customer");
