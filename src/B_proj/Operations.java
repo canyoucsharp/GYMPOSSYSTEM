@@ -153,7 +153,7 @@ public class Operations {
 	 *
 	 * @return the max occupancy
 	 */
-	public double getMaxOccupancy() {
+	public int getMaxOccupancy() {
 		return maxOccupancy;
 	}
 	

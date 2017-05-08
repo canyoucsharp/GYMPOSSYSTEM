@@ -63,7 +63,7 @@ public class OperationsController {
 	 *
 	 * @return the double
 	 */
-	public double displayMaxOccupancy(){
+	public int displayMaxOccupancy(){
 		return(opObj.getMaxOccupancy());
 	}
 	

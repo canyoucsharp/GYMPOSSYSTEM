@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.text.NumberFormat;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -134,7 +135,9 @@ public class UserInfoJFrame extends JFrame {
 			lblSubscriptionType.setText("Subscription Type: None");
 		}
 		
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myOperation.displayMonthlyCost());
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + formatter.format(myOperation.displayMonthlyCost()));
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
 		myCont.setCurrentRate(myOperation.displayMonthlyCost());
