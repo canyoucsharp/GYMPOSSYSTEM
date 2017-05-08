@@ -3,6 +3,8 @@ package D_Gui;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +25,7 @@ import B_proj.Subscription;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JButton;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -30,6 +33,9 @@ import javax.swing.JOptionPane;
  */
 public class UserInfoJFrame extends JFrame {
 
+	/** Scan User includes an edit for it **/
+	EditCustomerJFrame EditCus;
+	
 	/** The keyitem. */
 	private int keyitem = 0;
 	
@@ -138,7 +144,7 @@ public class UserInfoJFrame extends JFrame {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
 		myCont.setCurrentRate(myOperation.displayMonthlyCost());
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + formatter.format(myCont.displaysubscriptionType()));
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType());
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
 		
@@ -187,9 +193,30 @@ public class UserInfoJFrame extends JFrame {
 		
 		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(250, 100, Image.SCALE_DEFAULT)));
 
-		label.setBounds(20, 336, 273, 139);
+		label.setBounds(20, 311, 273, 139);
 		contentPane.add(label);
 		
+		JButton btnEdit = new JButton("Edit");
+		btnEdit.setBounds(111, 452, 89, 23);
+		contentPane.add(btnEdit);
+		btnEdit.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (EditCus != null){
+					EditCus.dispose();
+				}
+				EditCus = new EditCustomerJFrame(key, myCont);
+				dispose();
+			}
+			
+		});
+		
+		if (EditCus != null)
+		{
+			EditCus.dispose();
+		}
 		
 		
 	
