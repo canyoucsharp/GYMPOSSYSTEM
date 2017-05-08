@@ -100,8 +100,8 @@ public class NewUserJFrame extends JFrame {
 		lblSex.setBounds(10, 100, 102, 14);
 		contentPane.add(lblSex);
 		
-		JLabel lblDob = new JLabel("DOB: ");
-		lblDob.setBounds(10, 144, 102, 14);
+		JLabel lblDob = new JLabel("DOB:(YYYY/MM/DD)  ");
+		lblDob.setBounds(10, 144, 126, 14);
 		contentPane.add(lblDob);
 		
 		//Need to set-up date format************
@@ -272,6 +272,7 @@ public class NewUserJFrame extends JFrame {
 					lblCardHoldersName.setVisible(true);
 					CardHoldersName.setVisible(true);
 					lblCVVnumber.setVisible(true);
+					CVVpasswordField.setVisible(true);
 				}
 				else
 				{
@@ -286,6 +287,10 @@ public class NewUserJFrame extends JFrame {
 					lblCardHoldersName.setVisible(false);
 					CardHoldersName.setVisible(false);
 					lblCVVnumber.setVisible(false);
+					CVVpasswordField.setVisible(false);
+					CVVpasswordField.setText("");
+					CardHoldersName.setText("");
+					CreditCardNumberpasswordField.setText("");
 				}
 			}
 			
@@ -382,6 +387,11 @@ public class NewUserJFrame extends JFrame {
 				FirstNametextField.setText("");
 				AgeTextField.setText("");
 				AddressTextField.setText("");
+				CVVpasswordField.setText("");
+				CardHoldersName.setText("");
+				CreditCardNumberpasswordField.setText("");
+				ClientIdtextField.setText("");
+				hide();
 				
 			}
 		});
