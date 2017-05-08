@@ -12,6 +12,7 @@ public class Operations {
 	private double water;
 	
 	Operations(){
+		operationID=1;
 	}
 	
 	public int getOperationID() {
