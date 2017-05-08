@@ -144,7 +144,7 @@ public class UserInfoJFrame extends JFrame {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
 		myCont.setCurrentRate(myOperation.displayMonthlyCost());
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType());
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType(Plantype));
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
 		
