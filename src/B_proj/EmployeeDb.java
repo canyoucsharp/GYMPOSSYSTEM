@@ -354,4 +354,9 @@ public class EmployeeDb {
 		
 	}
 
+	public void registerCustomer(Employee empObj) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

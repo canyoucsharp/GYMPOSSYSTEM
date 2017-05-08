@@ -111,6 +111,22 @@ public class Employee extends Person{
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
 	}
+
+	public void initNew(String username2, String password2, String firstName, String lastName, String sex, String dob,
+			String phone, String address, int age, String lisNum, int hourlyRate2) {
+		this.username=username2;
+		this.password=password2;
+		this.setFirstName(firstName);
+		this.setLastName(lastName);
+		this.setSex(sex);
+		this.setDob(dob);
+		this.setPhoneNumber(phone);
+		this.setAddress(address);
+		this.setAge(age);
+		this.setLicenseNum(lisNum);
+		this.setHourlyRate(hourlyRate2);
+		
+	}
 	
 	
 }

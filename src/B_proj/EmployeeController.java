@@ -215,6 +215,15 @@ public class EmployeeController {
 		empDbObj.pushAdmin(value,empObj);
 		empObj.setAdmin(value);
 	}
+	
+	
+	public void newRep(String firstName,String lastName,String phone,int hourlyRate,String address,int age,String sex,String lisNum,String dob,String username,String password) throws SQLException{
+		empObj=new Employee();
+        empDbObj=new EmployeeDb();
+        empObj.initNew(username,password,firstName,lastName,sex,dob,phone,address,age,lisNum,hourlyRate);
+        empDbObj.registerCustomer(empObj);
+	}
+	
 }
 	
 
