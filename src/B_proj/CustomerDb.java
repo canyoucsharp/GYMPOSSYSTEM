@@ -38,17 +38,22 @@ public class CustomerDb {
 	//leave the fields blank
 	public void registerCustomer(Customer cusObj, Subscription newSub) throws SQLException {
 		SubscriptionDb newDb=new SubscriptionDb();
+		
 		try {
+			
 			myConnector = new MysqlConnect();
 			conn = myConnector.ConnectDB();
 			conn.setAutoCommit(false);
+			
 			newDb.addSubscription(conn,newSub);
+			
 			String insertTableSQL = "INSERT INTO clients"
 					+ "(client_id, first_name, last_name, phone_number,address,dob,sex,license_num,sub_id,rep_id,age,picture) "
 					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?,?,?)";
-
+			
+			
 			pst = conn.prepareStatement(insertTableSQL);
-			pst.setInt   (1, cusObj.getId());
+        	pst.setInt   (1, cusObj.getId());
 			pst.setString(2, cusObj.getFirstName());
 			pst.setString(3, cusObj.getLastName());
 			pst.setString(4, cusObj.getPhoneNumber());
@@ -56,17 +61,19 @@ public class CustomerDb {
 			pst.setString(6, cusObj.getDob());
 			pst.setString(7, cusObj.getSex());
 			pst.setString(8, cusObj.getLicenseNum());
-			pst.setInt   (9, newSub.subid);
-			pst.setInt   (10, cusObj.repId);
+			pst.setInt   (9, newSub.getSubid());
+			pst.setInt   (10, cusObj.getRepId());
 			pst.setInt   (11,cusObj.getAge());
 			pst.setString(12, cusObj.getPictureLink());
+			
 			pst.executeUpdate();
 			conn.commit();
+			
 			JOptionPane.showMessageDialog(null,"Registration Success");
 			
 			
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage().toString());
 			conn.rollback();
 			
 		} finally {

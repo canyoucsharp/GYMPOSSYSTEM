@@ -42,10 +42,7 @@ public class SubscriptionDb {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		finally
-		{
-			myConnector.closeConnection(rs, pst, conn);
-		}
+		
 
 	}
 	
