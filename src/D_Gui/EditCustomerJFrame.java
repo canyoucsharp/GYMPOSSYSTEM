@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JComboBox;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -114,6 +115,13 @@ public class EditCustomerJFrame extends JFrame {
 		JLabel lblSex = new JLabel("Sex: ");
 		lblSex.setBounds(10, 139, 115, 14);
 		contentPane.add(lblSex);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(211, 136, 39, 20);
+		contentPane.add(comboBox);
+		comboBox.addItem("M");
+		comboBox.addItem("F");
+		
 		
 	}
 }

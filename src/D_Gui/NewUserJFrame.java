@@ -35,6 +35,9 @@ public class NewUserJFrame extends JFrame {
 	
 	/** The pricing. */
 	private double pricing;
+
+	/** The Provider Id. **/
+	private int Provider;
 	
 	
 	/** The content pane. */
@@ -75,6 +78,7 @@ public class NewUserJFrame extends JFrame {
 	
 	/** The CV vpassword field. */
 	private JPasswordField CVVpasswordField;
+	private JTextField ExpirationtextField;
 
 	/**
 	 * Launch the application.
@@ -260,35 +264,77 @@ public class NewUserJFrame extends JFrame {
 		Costlbl.setVisible(false);
 		
 		JLabel lblCardNumber = new JLabel("Card Number");
-		lblCardNumber.setBounds(316, 181, 159, 14);
+		lblCardNumber.setBounds(316, 217, 159, 14);
 		contentPane.add(lblCardNumber);
 		lblCardNumber.setVisible(false);
 		
 		CreditCardNumberpasswordField = new JPasswordField();
-		CreditCardNumberpasswordField.setBounds(317, 206, 158, 20);
+		CreditCardNumberpasswordField.setBounds(317, 242, 158, 20);
 		contentPane.add(CreditCardNumberpasswordField);
 		CreditCardNumberpasswordField.setVisible(false);
 		
 		JLabel lblCardHoldersName = new JLabel("Card Holder's Name");
-		lblCardHoldersName.setBounds(316, 240, 158, 14);
+		lblCardHoldersName.setBounds(316, 276, 158, 14);
 		contentPane.add(lblCardHoldersName);
 		lblCardHoldersName.setVisible(false);
 		
 		CardHoldersName = new JTextField();
-		CardHoldersName.setBounds(317, 265, 158, 20);
+		CardHoldersName.setBounds(317, 301, 158, 20);
 		contentPane.add(CardHoldersName);
 		CardHoldersName.setColumns(10);
 		CardHoldersName.setVisible(false);
 		
 		JLabel lblCVVnumber = new JLabel("CVV Number");
-		lblCVVnumber.setBounds(316, 304, 159, 14);
+		lblCVVnumber.setBounds(316, 340, 159, 14);
 		contentPane.add(lblCVVnumber);
 		lblCVVnumber.setVisible(false);
 		
 		CVVpasswordField = new JPasswordField();
-		CVVpasswordField.setBounds(316, 329, 50, 20);
+		CVVpasswordField.setBounds(316, 365, 50, 20);
 		contentPane.add(CVVpasswordField);
 		CVVpasswordField.setVisible(false);
+		
+		JLabel lblProvider = new JLabel("Provider ");
+		lblProvider.setBounds(316, 181, 70, 14);
+		contentPane.add(lblProvider);
+		lblProvider.setVisible(false);
+		
+		JComboBox ProvidercomboBox = new JComboBox();
+		ProvidercomboBox.setBounds(409, 178, 70, 20);
+		contentPane.add(ProvidercomboBox);
+		ProvidercomboBox.addItem("Visa");
+		ProvidercomboBox.addItem("Mastercard");
+		ProvidercomboBox.addItem("American Express");
+		ProvidercomboBox.addItem("Discover");
+		ProvidercomboBox.setVisible(false);
+		
+		ProvidercomboBox.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (ProvidercomboBox.getSelectedItem() == "Visa")
+					Provider = 0;
+				if (ProvidercomboBox.getSelectedItem() == "Mastercard")
+					Provider = 1;
+				if (ProvidercomboBox.getSelectedItem() == "American Express")
+					Provider = 2;
+				if (ProvidercomboBox.getSelectedItem() == "Discover")
+					Provider = 3;
+			}
+		});
+		
+		JLabel lblExpiration = new JLabel("Expiration MM/YY");
+		lblExpiration.setBounds(409, 340, 92, 14);
+		contentPane.add(lblExpiration);
+		lblExpiration.setVisible(false);
+		
+		ExpirationtextField = new JTextField();
+		ExpirationtextField.setBounds(425, 365, 50, 20);
+		contentPane.add(ExpirationtextField);
+		ExpirationtextField.setColumns(10);
+		ExpirationtextField.setVisible(false);
+		
+		
 		
 		
 		
@@ -303,6 +349,9 @@ public class NewUserJFrame extends JFrame {
 					SubTypecomboBox.setVisible(true);
 					Lengthlbl.setVisible(true);
 					Costlbl.setVisible(true);
+					lblProvider.setVisible(true);
+					ProvidercomboBox.setVisible(true);
+					
 					
 					lblCardNumber.setVisible(true);
 					CreditCardNumberpasswordField.setVisible(true);
@@ -310,6 +359,8 @@ public class NewUserJFrame extends JFrame {
 					CardHoldersName.setVisible(true);
 					lblCVVnumber.setVisible(true);
 					CVVpasswordField.setVisible(true);
+					lblExpiration.setVisible(true);
+					ExpirationtextField.setVisible(true);
 				}
 				else
 				{
@@ -317,6 +368,8 @@ public class NewUserJFrame extends JFrame {
 					SubTypecomboBox.setVisible(false);
 					Lengthlbl.setVisible(false);
 					Costlbl.setVisible(false);
+					lblProvider.setVisible(false);
+					ProvidercomboBox.setVisible(false);
 
 					
 					lblCardNumber.setVisible(false);
@@ -325,9 +378,13 @@ public class NewUserJFrame extends JFrame {
 					CardHoldersName.setVisible(false);
 					lblCVVnumber.setVisible(false);
 					CVVpasswordField.setVisible(false);
+					lblExpiration.setVisible(false);
+					ExpirationtextField.setVisible(false);
 					CVVpasswordField.setText("");
 					CardHoldersName.setText("");
 					CreditCardNumberpasswordField.setText("");
+					ProvidercomboBox.setSelectedItem("Visa");
+					lblExpiration.setText("");
 				}
 			}
 			
@@ -377,22 +434,26 @@ public class NewUserJFrame extends JFrame {
 				int ClientId = Integer.parseInt(ClientIdtextField.getText());
 				String picturelink = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
 				
-				if (PictureLinktextField.getText() != " ")
+				if (PictureLinktextField.getText() != " " || PictureLinktextField.getText() != "")
 				{
 					picturelink = PictureLinktextField.getText();
 				}
 				
 				try {
 					NewCus.newCustomer(FirstNametextField.getText(), LastNametextField.getText(), Sex, DOBtextField.getText(), PhoneNumbertextField.getText(), picturelink, AddressTextField.getText(), Age, 1, CCNumbertextField.getText(), ClientId);
-					
 					if (SubActiveCombo.getSelectedItem() == "Active")
 					{
 						try{
 							String Subnumber = Integer.toString(SubTypenum);
 							String ActiveSub = (String) SubActiveCombo.getSelectedItem();
-							//String SubType = (String) SubTypecomboBox.getSelectedItem();
+							String SubType = (String) SubTypecomboBox.getSelectedItem();
+							
+							
 							try {
 								NewCus.newSubscription(ClientId, ActiveSub, Subnumber, Subnumber);
+								NewCus.newPayment(CreditCardNumberpasswordField.getText(), Provider, CVVpasswordField.getText(), ExpirationtextField.getText());
+								NewCus.newMembership(Subnumber, SubType, pricing);
+								
 							} catch (NumberFormatException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
@@ -407,6 +468,8 @@ public class NewUserJFrame extends JFrame {
 							e.printStackTrace();
 						}
 					}
+					else
+						NewCus.newMembership("0", "Canceled", pricing);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					JOptionPane.showMessageDialog(null,"Error Resgistering New Customer");
