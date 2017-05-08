@@ -11,7 +11,7 @@ public class Operations {
 	private double gas;
 	private double water;
 	
-	Operations(){
+	public Operations(){
 		operationID=1;
 	}
 	

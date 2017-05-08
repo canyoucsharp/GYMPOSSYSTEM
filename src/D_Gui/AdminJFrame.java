@@ -21,8 +21,8 @@ import javax.swing.JButton;
 public class AdminJFrame extends JFrame {
 
 
-	private OperationsController opControl = new OperationsController();
-	private CustomerController myCont = new CustomerController();
+	private OperationsController opControl;
+	private CustomerController myCont;
 	private JPanel contentPane;
 	private JTextField OverHeadtext;
 	private JTextField UserCapacitytext;
@@ -41,6 +41,7 @@ public class AdminJFrame extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -58,6 +59,8 @@ public class AdminJFrame extends JFrame {
 	 * @throws Exception 
 	 */
 	public AdminJFrame() throws Exception {
+		opControl = new OperationsController();
+		myCont = new CustomerController();
 		setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 348, 485);
 		contentPane = new JPanel();

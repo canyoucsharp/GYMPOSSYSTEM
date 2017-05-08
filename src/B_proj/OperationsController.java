@@ -3,7 +3,7 @@ package B_proj;
 import java.sql.SQLException;
 
 public class OperationsController {
-	private static Operations opObj;
+	private Operations opObj;
 	private OperationsDb opDbObj;
 	
 	public OperationsController() throws NotFoundException{

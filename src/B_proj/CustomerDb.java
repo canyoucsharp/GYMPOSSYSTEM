@@ -92,7 +92,6 @@ public class CustomerDb {
 			String query = "select * from clients where client_id = ?";
 			pst = conn.prepareStatement(query);
 			pst.setInt(1, cusObj.getId());
-			pst.executeQuery();
 			rs = pst.executeQuery();
 
 			if (rs.next()) {

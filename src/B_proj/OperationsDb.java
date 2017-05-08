@@ -13,7 +13,10 @@ public class OperationsDb {
 	private Connection conn;
 	private MysqlConnect myConnector;
 	private PreparedStatement pst;
-	private ResultSet rs = null;
+	private ResultSet rs;
+	
+	
+	
 
 	public void pushLocationCost(double locationCost, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
@@ -171,20 +174,21 @@ public class OperationsDb {
 
 
 	
-		public void init(Operations operObj) throws SQLException,NotFoundException {
+		public void init(Operations operObj) throws SQLException {
 			// TODO Auto-generated method stub
 			myConnector = new MysqlConnect();
 			conn = myConnector.ConnectDB();
+			
 
 			try {
 				String query = "select * from operations where operationid = ?";
 				pst = conn.prepareStatement(query);
 				pst.setInt(1, operObj.getOperationID());
-				pst.executeQuery();
 				rs = pst.executeQuery();
-
-				if (rs.next()) {
-
+				
+				if (rs.first()) 
+				{
+					
 					operObj.setAccountsPayable(rs.getDouble("accountsPayable"));
 					operObj.setElectric(rs.getDouble("electric"));
 					operObj.setGas(rs.getDouble("gas"));
@@ -201,10 +205,12 @@ public class OperationsDb {
 
 
 				}
+				
 			}
+			
 				catch(Exception e)
 				{
-					JOptionPane.showMessageDialog(null,e.getMessage());
+					JOptionPane.showMessageDialog(null,e.getMessage().toString());
 				}
 			
 			finally
