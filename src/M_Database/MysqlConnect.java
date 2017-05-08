@@ -39,14 +39,17 @@ public void closeConnection(ResultSet rs,PreparedStatement pst,Connection conn)
 {
 	try
 	{
+	if(rs!=null)
 	rs.close();
+	if(pst!=null)
 	pst.close();
+	if(conn!=null)
 	conn.close();
 	System.out.println("Connection closed");
 	}
 	catch(Exception e)
 	{
-		System.out.println(e.getMessage());
+		System.out.println(e.getMessage().toString());
 	}
 	
 	
