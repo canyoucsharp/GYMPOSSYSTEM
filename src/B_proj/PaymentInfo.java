@@ -102,10 +102,10 @@ public class PaymentInfo {
 	 * @param expiration the expiration
 	 */
 	public void init(String cardNum,int provider,String security,String expiration){
-		this.creditCardNum=cardNum;
-		this.provider=provider;
-		this.security=security;
-		this.expiration=expiration;
+		this.setCreditCardNum(cardNum);
+		this.setProvider(provider);
+		this.setSecurity(security);
+		this.setExpiration(expiration);
 	}
 	
 }
