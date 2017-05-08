@@ -306,7 +306,7 @@ public class NewUserJFrame extends JFrame {
 				if (SubTypecomboBox.getSelectedItem() == "Standard")
 				{
 					Lengthlbl.setText("Length: 12 Months");
-					SubTypenum = 2;
+					SubTypenum = 1;
 					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
 					Costlbl.setText("Cost: " + formatter.format(pricing));
 					
@@ -314,7 +314,7 @@ public class NewUserJFrame extends JFrame {
 				else if(SubTypecomboBox.getSelectedItem() == "Deluxe")
 				{
 					Lengthlbl.setText("Length: 24 Months");
-					SubTypenum = 1;
+					SubTypenum = 2;
 					pricing = NewCus.updatePlanRateDummy(opCont.displayMonthlyCost(), SubTypenum);
 					Costlbl.setText("Cost: " + formatter.format(pricing));
 				}
@@ -353,9 +353,9 @@ public class NewUserJFrame extends JFrame {
 						try{
 							String Subnumber = Integer.toString(SubTypenum);
 							String ActiveSub = (String) SubActiveCombo.getSelectedItem();
-							String SubType = (String) SubTypecomboBox.getSelectedItem();
+							//String SubType = (String) SubTypecomboBox.getSelectedItem();
 							try {
-								NewCus.newSubscription(ClientId, ActiveSub, SubType, Subnumber);
+								NewCus.newSubscription(ClientId, ActiveSub, Subnumber, Subnumber);
 							} catch (NumberFormatException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();

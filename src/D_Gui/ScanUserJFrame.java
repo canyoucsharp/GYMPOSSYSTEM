@@ -97,8 +97,8 @@ public class ScanUserJFrame extends JFrame {
 			
 					
 					
-					
-					userinfo.setVisible(true);
+					if (userinfo != null)
+						userinfo.setVisible(true);
 					//Resets Text Field
 					ScanUsertextField.setText("");
 					ScanUsertextField.requestFocus();
