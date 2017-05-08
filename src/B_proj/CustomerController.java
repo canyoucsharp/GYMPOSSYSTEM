@@ -360,7 +360,7 @@ public class CustomerController {
 			return(memInfo.getPlanDescription());}
 		else if (x>0){
 			System.out.println(x);
-			return(memInfo.getPlanRate()+memInfo.getPlanDescription());
+			return(String.valueOf(memInfo.getPlanRate())+memInfo.getPlanDescription());
 		}
 		return("Error");
 	}
@@ -562,7 +562,7 @@ public class CustomerController {
 	 *
 	 * @return the string
 	 */
-	public String displayProvider(){
+	public int displayProvider(){
 		return(newPayInfo.getProvider());
 	}
 	
