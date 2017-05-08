@@ -1,13 +1,31 @@
-package B_proj;
+	package B_proj;
 import M_Database.MysqlConnect;
 import java.sql.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EmployeeDb.
+ */
 public class EmployeeDb {
+	
+	/** The my connector. */
 	private MysqlConnect myConnector;
+	
+	/** The pst. */
 	private PreparedStatement pst = null;
+	
+	/** The rs. */
 	private ResultSet rs = null;
+	
+	/** The conn. */
 	private Connection conn;
 
+	/**
+	 * Inits the.
+	 *
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void init(Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 
@@ -46,6 +64,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push first name.
+	 *
+	 * @param firstName the first name
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushFirstName(String firstName, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -65,6 +90,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push last name.
+	 *
+	 * @param lastName the last name
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushLastName(String lastName, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -83,6 +115,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push number.
+	 *
+	 * @param number the number
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushNumber(String number, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -101,6 +140,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push address.
+	 *
+	 * @param address the address
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushAddress(String address, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -119,6 +165,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push age.
+	 *
+	 * @param age the age
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushAge(String age, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -137,6 +190,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push sex.
+	 *
+	 * @param sex the sex
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushSex(String sex, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -155,6 +215,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push license number.
+	 *
+	 * @param newLicenseNumber the new license number
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushLicenseNumber(String newLicenseNumber, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -173,6 +240,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push sales.
+	 *
+	 * @param newSales the new sales
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushSales(int newSales, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -191,6 +265,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push hourly rate.
+	 *
+	 * @param newRate the new rate
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushHourlyRate(int newRate, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -209,6 +290,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push user name.
+	 *
+	 * @param newUserName the new user name
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushUserName(String newUserName, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -228,6 +316,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push password.
+	 *
+	 * @param newPassword the new password
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushPassword(String newPassword, Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -247,6 +342,13 @@ public class EmployeeDb {
 
 	}
 
+	/**
+	 * Push admin.
+	 *
+	 * @param value the value
+	 * @param empObj the emp obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushAdmin(Boolean value, Employee empObj) throws SQLException{
 		// TODO Auto-generated method stub
 		

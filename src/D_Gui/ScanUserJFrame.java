@@ -21,15 +21,31 @@ import B_proj.NotFoundException;
 
 import javax.swing.JTextField;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ScanUserJFrame.
+ */
 public class ScanUserJFrame extends JFrame {
+	
+	/** The my cus controller. */
 	private CustomerController myCusController;
+	
+	/** The userinfo. */
 	UserInfoJFrame userinfo;
+	
+	/** The key. */
 	int key = 23;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The Scan usertext field. */
 	private JTextField ScanUsertextField;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -46,7 +62,9 @@ public class ScanUserJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws IOException 
+	 *
+	 * @throws NotFoundException the not found exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	public ScanUserJFrame() throws NotFoundException, IOException {
 		 myCusController=new CustomerController();

@@ -8,12 +8,30 @@ import javax.swing.JOptionPane;
 
 import M_Database.MysqlConnect;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MembershipDb.
+ */
 public class MembershipDb {
+	
+	/** The conn. */
 	private Connection conn;
+	
+	/** The my connector. */
 	private MysqlConnect myConnector;
+	
+	/** The pst. */
 	private PreparedStatement pst;
+	
+	/** The rs. */
 	private ResultSet rs = null;
 
+	/**
+	 * Inits the.
+	 *
+	 * @param memInfo the mem info
+	 * @param cusObj the cus obj
+	 */
 	public void init(Membership memInfo, Customer cusObj) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -50,6 +68,12 @@ public class MembershipDb {
 
 	}
 
+	/**
+	 * Update plan type.
+	 *
+	 * @param planType the plan type
+	 * @param memInfo the mem info
+	 */
 	public void updatePlanType(String planType, Membership memInfo) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -68,6 +92,12 @@ public class MembershipDb {
 
 	}
 
+	/**
+	 * Update plan description.
+	 *
+	 * @param planDescription the plan description
+	 * @param memInfo the mem info
+	 */
 	public void updatePlanDescription(String planDescription,Membership memInfo ) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -86,6 +116,12 @@ public class MembershipDb {
 
 	}
 
+	/**
+	 * Update plan rate.
+	 *
+	 * @param planRate the plan rate
+	 * @param memInfo the mem info
+	 */
 	public void updatePlanRate(double planRate, Membership memInfo) {
 		// TODO Auto-generated method stub
 
@@ -104,6 +140,12 @@ public class MembershipDb {
 		}
 	}
 
+	/**
+	 * New mem.
+	 *
+	 * @param memInfo the mem info
+	 * @param cusObj the cus obj
+	 */
 	public void newMem(Membership memInfo, Customer cusObj) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();

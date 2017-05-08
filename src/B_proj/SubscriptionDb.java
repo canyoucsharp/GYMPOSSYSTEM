@@ -13,13 +13,31 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SubscriptionDb.
+ */
 public class SubscriptionDb {
 
+	/** The pst. */
 	private PreparedStatement pst;
+	
+	/** The conn. */
 	private Connection conn;
+	
+	/** The my connector. */
 	private MysqlConnect myConnector;
+	
+	/** The rs. */
 	private ResultSet rs = null;
 
+	/**
+	 * Adds the subscription.
+	 *
+	 * @param conn the conn
+	 * @param newSub the new sub
+	 * @throws SQLException the SQL exception
+	 */
 	public void addSubscription(Connection conn, Subscription newSub) throws SQLException {
 		try {
 
@@ -46,7 +64,22 @@ public class SubscriptionDb {
 
 	}
 	
+	/**
+	 * Eat shit.
+	 */
+	public void eatShit()
+	{
+		
+	}
+	
 
+	/**
+	 * New sub.
+	 *
+	 * @param clientid the clientid
+	 * @param newSub the new sub
+	 * @throws SQLException the SQL exception
+	 */
 	public void newSub(int clientid,Subscription newSub) throws SQLException
 	{
 		myConnector = new MysqlConnect();
@@ -74,6 +107,13 @@ public class SubscriptionDb {
 	
 
 
+	/**
+	 * Inits the.
+	 *
+	 * @param id the id
+	 * @param newSub the new sub
+	 * @throws SQLException the SQL exception
+	 */
 	public void init(int id, Subscription newSub) throws SQLException {//search
 		// TODO Auto-generated method stub
 		Connection conn;
@@ -108,6 +148,14 @@ public class SubscriptionDb {
 			myConnector.closeConnection(rs, pst, conn);
 		}
 	}
+	
+	/**
+	 * Gets the contract remaining.
+	 *
+	 * @param enddate the enddate
+	 * @param timeUnit the time unit
+	 * @return the contract remaining
+	 */
 	public static long getContractRemaining(Date enddate, TimeUnit timeUnit) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date1 = new Date();
@@ -117,30 +165,55 @@ public class SubscriptionDb {
 	}
 
 
+	/**
+	 * Push contract begin.
+	 *
+	 * @param begin the begin
+	 */
 	public void pushContractBegin(String begin) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
+	/**
+	 * Push contract end.
+	 *
+	 * @param end the end
+	 */
 	public void pushContractEnd(String end) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
+	/**
+	 * Push sub status.
+	 *
+	 * @param status the status
+	 */
 	public void pushSubStatus(String status) {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
-
+	/**
+	 * Push plan type.
+	 *
+	 * @param type the type
+	 */
 	public void pushPlanType(String type) {
 		// TODO Auto-generated method stub
 		
 	}
 
 
+	/**
+	 * Push sub remaining.
+	 *
+	 * @param remaining the remaining
+	 */
 	public void pushSubRemaining(long remaining) {
 		// TODO Auto-generated method stub
 		

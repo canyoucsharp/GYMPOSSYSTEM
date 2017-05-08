@@ -18,14 +18,22 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MainMenuJFrame.
+ */
 public class MainMenuJFrame extends JFrame {
 
+	/** The Scan user UI. */
 	ScanUserJFrame ScanUserUI;
 	
+	/** The content pane. */
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -42,7 +50,9 @@ public class MainMenuJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws Exception 
+	 *
+	 * @param Admin_Status the admin status
+	 * @throws Exception the exception
 	 */
 	public MainMenuJFrame(int Admin_Status) throws Exception {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

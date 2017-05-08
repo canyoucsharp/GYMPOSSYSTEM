@@ -3,13 +3,31 @@ import M_Database.MysqlConnect;
 import java.sql.*;
 
 import javax.swing.JOptionPane;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class PaymentDb.
+ */
 public class PaymentDb {
 
+	/** The pst. */
 	private PreparedStatement pst;
+	
+	/** The conn. */
 	private Connection conn;
+	
+	/** The my connector. */
 	private MysqlConnect myConnector;
+	
+	/** The rs. */
 	private ResultSet rs = null;
 	
+	/**
+	 * Inits the.
+	 *
+	 * @param cusObj the cus obj
+	 * @param newPayInfo the new pay info
+	 */
 	public void init(Customer cusObj, PaymentInfo newPayInfo) {
 		// TODO Auto-generated method stub
 			myConnector = new MysqlConnect();
@@ -48,6 +66,12 @@ public class PaymentDb {
 	
 
 
+	/**
+	 * Push credit card number.
+	 *
+	 * @param cardNum the card num
+	 * @param cusObj the cus obj
+	 */
 	public void pushCreditCardNumber(String cardNum, Customer cusObj) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -70,6 +94,12 @@ public class PaymentDb {
 	}
 
 
+	/**
+	 * Push provider.
+	 *
+	 * @param pid the pid
+	 * @param cusObj the cus obj
+	 */
 	public void pushProvider(int pid,Customer cusObj) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -95,6 +125,12 @@ public class PaymentDb {
 	
 
 
+	/**
+	 * Push security.
+	 *
+	 * @param security the security
+	 * @param cusObj the cus obj
+	 */
 	public void pushSecurity(String security,Customer cusObj) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -120,6 +156,12 @@ public class PaymentDb {
 	
 
 
+	/**
+	 * Push expiration.
+	 *
+	 * @param expiration the expiration
+	 * @param cusObj the cus obj
+	 */
 	public void pushExpiration(String expiration, Customer cusObj) {
 		// TODO Auto-generated method stub
 		
@@ -145,6 +187,12 @@ public class PaymentDb {
 		
 	
 
+	/**
+	 * New pay.
+	 *
+	 * @param cusObj the cus obj
+	 * @param newPayInfo the new pay info
+	 */
 	public void newPay(Customer cusObj, PaymentInfo newPayInfo) {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();

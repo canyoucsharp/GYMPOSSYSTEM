@@ -6,14 +6,33 @@ import java.util.ResourceBundle;
 import javax.swing.*;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MysqlConnect.
+ */
 public class MysqlConnect {
+
+/** The host name. */
 private static String hostName;
+
+/** The port. */
 private static String port;
+
+/** The user name. */
 private static String userName;
+
+/** The password. */
 private static String password;
 
  
+/** The conn. */
 private Connection conn=null;
+ 
+ /**
+  * Select database.
+  *
+  * @throws DataBaseException the data base exception
+  */
  public static void SelectDatabase() throws DataBaseException {
 		ResourceBundle	 bundle = ResourceBundle.getBundle("DataBase");
 		
@@ -35,6 +54,13 @@ private Connection conn=null;
 
 	}
  
+/**
+ * Close connection.
+ *
+ * @param rs the rs
+ * @param pst the pst
+ * @param conn the conn
+ */
 public void closeConnection(ResultSet rs,PreparedStatement pst,Connection conn)
 {
 	try
@@ -55,6 +81,11 @@ public void closeConnection(ResultSet rs,PreparedStatement pst,Connection conn)
 	
 }
 
+/**
+ * Connect DB.
+ *
+ * @return the connection
+ */
 public Connection ConnectDB()
 {
 	try {

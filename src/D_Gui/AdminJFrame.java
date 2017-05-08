@@ -18,27 +18,62 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AdminJFrame.
+ */
 public class AdminJFrame extends JFrame {
 
 
+	/** The op control. */
 	private OperationsController opControl;
+	
+	/** The my cont. */
 	private CustomerController myCont;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The Over headtext. */
 	private JTextField OverHeadtext;
+	
+	/** The User capacitytext. */
 	private JTextField UserCapacitytext;
+	
+	/** The Cancelation feetext. */
 	private JTextField CancelationFeetext;
+	
+	/** The Change passwordtext. */
 	private JTextField ChangePasswordtext;
+	
+	/** The Location costtext field. */
 	private JTextField LocationCosttextField;
+	
+	/** The Accounts payabletext field. */
 	private JTextField AccountsPayabletextField;
+	
+	/** The Max occupancytext field. */
 	private JTextField MaxOccupancytextField;
+	
+	/** The Electrictext field. */
 	private JTextField ElectrictextField;
+	
+	/** The Watertext field. */
 	private JTextField WatertextField;
+	
+	/** The Gastext field. */
 	private JTextField GastextField;
+	
+	/** The Monthly coststext field. */
 	private JTextField MonthlyCoststextField;
+	
+	/** The RO itext field. */
 	private JTextField ROItextField;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		
@@ -56,7 +91,8 @@ public class AdminJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws Exception 
+	 *
+	 * @throws Exception the exception
 	 */
 	public AdminJFrame() throws Exception {
 		opControl = new OperationsController();

@@ -23,14 +23,25 @@ import B_proj.Subscription;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserInfoJFrame.
+ */
 public class UserInfoJFrame extends JFrame {
 
+	/** The keyitem. */
 	private int keyitem = 0;
+	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The my operation. */
 	OperationsController myOperation = new OperationsController();
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		CustomerController myCont=new CustomerController();
@@ -59,7 +70,11 @@ public class UserInfoJFrame extends JFrame {
 	
 	/**
 	 * Create the frame.
-	 * @throws IOException 
+	 *
+	 * @param key the key
+	 * @param myCont the my cont
+	 * @throws NotFoundException the not found exception
+	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
 	
 	public UserInfoJFrame(int key,CustomerController myCont) throws NotFoundException, IOException {
@@ -178,6 +193,11 @@ public class UserInfoJFrame extends JFrame {
 	}
 
 
+	/**
+	 * Gets the keyitem.
+	 *
+	 * @return the keyitem
+	 */
 	public int getKeyitem() {
 		return keyitem;
 	}

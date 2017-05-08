@@ -5,12 +5,30 @@ import java.sql.*;
 
 import javax.swing.JOptionPane;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CustomerDb.
+ */
 public class CustomerDb {
+	
+	/** The conn. */
 	private Connection conn;
+	
+	/** The my connector. */
 	private MysqlConnect myConnector;
+	
+	/** The pst. */
 	private PreparedStatement pst;
+	
+	/** The rs. */
 	private ResultSet rs = null;
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 * @throws SQLException the SQL exception
+	 */
 	public static void main(String args[]) throws SQLException {
 		CustomerDb mycusdb = new CustomerDb();
 		Customer mycus = new Customer();
@@ -35,6 +53,13 @@ public class CustomerDb {
 	}
 	//during registration every customer must be paired with a subscription
 	//even if if the customer isnt ready to subscribe you are allowed to
+	/**
+	 * Register customer.
+	 *
+	 * @param cusObj the cus obj
+	 * @param newSub the new sub
+	 * @throws SQLException the SQL exception
+	 */
 	//leave the fields blank
 	public void registerCustomer(Customer cusObj, Subscription newSub) throws SQLException {
 		SubscriptionDb newDb=new SubscriptionDb();
@@ -83,6 +108,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Inits the.
+	 *
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 * @throws NotFoundException the not found exception
+	 */
 	public void init(Customer cusObj) throws SQLException,NotFoundException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -118,6 +150,9 @@ public class CustomerDb {
 
 			}
 			
+		
+		
+		
 		}
 		
 
@@ -132,6 +167,13 @@ public class CustomerDb {
 
 	}
 	
+	/**
+	 * Push first name.
+	 *
+	 * @param firstName the first name
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushFirstName(String firstName, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -153,6 +195,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push last name.
+	 *
+	 * @param lastName the last name
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushLastName(String lastName, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -171,6 +220,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push number.
+	 *
+	 * @param number the number
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushNumber(String number, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -189,6 +245,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push address.
+	 *
+	 * @param address the address
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushAddress(String address, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -207,6 +270,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push age.
+	 *
+	 * @param age the age
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushAge(String age, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -225,6 +295,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push sex.
+	 *
+	 * @param sex the sex
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushSex(String sex, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -243,6 +320,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push license number.
+	 *
+	 * @param newLicenseNumber the new license number
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushLicenseNumber(String newLicenseNumber, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -261,6 +345,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push sub id.
+	 *
+	 * @param newSubId the new sub id
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushSubId(int newSubId, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -279,6 +370,13 @@ public class CustomerDb {
 
 	}
 
+	/**
+	 * Push rep id.
+	 *
+	 * @param newRepId the new rep id
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushRepId(int newRepId, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -296,6 +394,14 @@ public class CustomerDb {
 		}
 
 	}
+	
+	/**
+	 * Push date of birth.
+	 *
+	 * @param dob the dob
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushDateOfBirth(String dob, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -312,6 +418,14 @@ public class CustomerDb {
 			myConnector.closeConnection(rs, pst, conn);
 		}
 	}
+	
+	/**
+	 * Push picture link.
+	 *
+	 * @param pictureLink the picture link
+	 * @param cusObj the cus obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushPictureLink(String pictureLink, Customer cusObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();

@@ -28,19 +28,40 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoginJFrame.
+ */
 public class LoginJFrame extends JFrame {
+
+/** The conn. */
 Connection conn=null;
+
+/** The pst. */
 PreparedStatement pst=null;
+
+/** The rs. */
 ResultSet rs=null;
 	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The password. */
 	private JPasswordField password;
+	
+	/** The Username. */
 	private JTextField Username;
+	
+	/** The is admin. */
 	int isAdmin;
+	
+	/** The rep id. */
 	int repId;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -57,6 +78,8 @@ ResultSet rs=null;
 
 	/**
 	 * Create the frame.
+	 *
+	 * @throws SQLException the SQL exception
 	 */
 	public LoginJFrame() throws SQLException {
 		MysqlConnect myConnector=new MysqlConnect();
@@ -147,18 +170,38 @@ ResultSet rs=null;
 
 	}
 
+	/**
+	 * Gets the checks if is admin.
+	 *
+	 * @return the checks if is admin
+	 */
 	public int getIsAdmin() {
 		return isAdmin;
 	}
 
+	/**
+	 * Sets the checks if is admin.
+	 *
+	 * @param isAdmin the new checks if is admin
+	 */
 	public void setIsAdmin(int isAdmin) {
 		this.isAdmin = isAdmin;
 	}
 
+	/**
+	 * Gets the rep id.
+	 *
+	 * @return the rep id
+	 */
 	public int getRepId() {
 		return repId;
 	}
 
+	/**
+	 * Sets the rep id.
+	 *
+	 * @param repId the new rep id
+	 */
 	public void setRepId(int repId) {
 		this.repId = repId;
 	}

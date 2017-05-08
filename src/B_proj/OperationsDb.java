@@ -9,15 +9,34 @@ import javax.swing.JOptionPane;
 
 import M_Database.MysqlConnect;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class OperationsDb.
+ */
 public class OperationsDb {
+	
+	/** The conn. */
 	private Connection conn;
+	
+	/** The my connector. */
 	private MysqlConnect myConnector;
+	
+	/** The pst. */
 	private PreparedStatement pst;
+	
+	/** The rs. */
 	private ResultSet rs;
 	
 	
 	
 
+	/**
+	 * Push location cost.
+	 *
+	 * @param locationCost the location cost
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushLocationCost(double locationCost, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -41,6 +60,13 @@ public class OperationsDb {
 
 	
 
+	/**
+	 * Push accounts payable.
+	 *
+	 * @param accountsPayable the accounts payable
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushAccountsPayable(double accountsPayable, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -62,6 +88,13 @@ public class OperationsDb {
 
 	}
 
+	/**
+	 * Push max occupancy.
+	 *
+	 * @param maxOccupancy the max occupancy
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushMaxOccupancy(int maxOccupancy, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -83,6 +116,13 @@ public class OperationsDb {
 
 	}
 
+	/**
+	 * Push roi.
+	 *
+	 * @param roi the roi
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushRoi(double roi, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -104,6 +144,13 @@ public class OperationsDb {
 
 	}
 
+	/**
+	 * Push electric.
+	 *
+	 * @param electric the electric
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushElectric(double electric, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -129,6 +176,13 @@ public class OperationsDb {
 
 	
 
+	/**
+	 * Push water.
+	 *
+	 * @param water the water
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushWater(double water, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -150,6 +204,13 @@ public class OperationsDb {
 
 	}
 
+	/**
+	 * Push gas.
+	 *
+	 * @param gas the gas
+	 * @param opObj the op obj
+	 * @throws SQLException the SQL exception
+	 */
 	public void pushGas(double gas, Operations opObj) throws SQLException {
 		// TODO Auto-generated method stub
 		myConnector = new MysqlConnect();
@@ -174,6 +235,12 @@ public class OperationsDb {
 
 
 	
+		/**
+		 * Inits the.
+		 *
+		 * @param operObj the oper obj
+		 * @throws SQLException the SQL exception
+		 */
 		public void init(Operations operObj) throws SQLException {
 			// TODO Auto-generated method stub
 			myConnector = new MysqlConnect();

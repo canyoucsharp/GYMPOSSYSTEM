@@ -2,16 +2,34 @@ package B_proj;
 
 import java.sql.SQLException;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class OperationsController.
+ */
 public class OperationsController {
+	
+	/** The op obj. */
 	private Operations opObj;
+	
+	/** The op db obj. */
 	private OperationsDb opDbObj;
 	
+	/**
+	 * Instantiates a new operations controller.
+	 *
+	 * @throws NotFoundException the not found exception
+	 */
 	public OperationsController() throws NotFoundException{
 		opObj=new Operations();
 		opDbObj=new OperationsDb();
 		this.init();
 	}
 	
+	/**
+	 * Inits the.
+	 *
+	 * @throws NotFoundException the not found exception
+	 */
 	public void init() throws NotFoundException {
 		try {
 			opDbObj.init(opObj);
@@ -21,33 +39,85 @@ public class OperationsController {
 		}
 	}
 	
+	/**
+	 * Display location cost.
+	 *
+	 * @return the double
+	 */
 	//display 
 	public double displayLocationCost(){
 		return(opObj.getLocationCost());
 	}
+	
+	/**
+	 * Display accounts payable.
+	 *
+	 * @return the double
+	 */
 	public double displayAccountsPayable(){
 		return(opObj.getAccountsPayable());
 	}
+	
+	/**
+	 * Display max occupancy.
+	 *
+	 * @return the double
+	 */
 	public double displayMaxOccupancy(){
 		return(opObj.getMaxOccupancy());
 	}
+	
+	/**
+	 * Display monthly cost.
+	 *
+	 * @return the double
+	 */
 	public double displayMonthlyCost(){
 		return(opObj.getMonthlyCost());
 	}
+	
+	/**
+	 * Display roi.
+	 *
+	 * @return the double
+	 */
 	public double displayRoi(){
 		return(opObj.getRoi());
 	}
+	
+	/**
+	 * Display electric.
+	 *
+	 * @return the double
+	 */
 	public double displayElectric(){
 		return(opObj.getElectric());
 	}
+	
+	/**
+	 * Display water.
+	 *
+	 * @return the double
+	 */
 	public double displayWater(){
 		return(opObj.getWater());
 	}
+	
+	/**
+	 * Display gas.
+	 *
+	 * @return the double
+	 */
 	public double displayGas(){
 		return(opObj.getGas());
 	}
 	//update functions
 	
+	/**
+	 * Update location cost.
+	 *
+	 * @param locationCost the location cost
+	 */
 	public void updateLocationCost(double locationCost){
 		try {
 			opDbObj.pushLocationCost(locationCost,opObj);
@@ -57,6 +127,11 @@ public class OperationsController {
 		}
 	}
 	
+	/**
+	 * Update accounts payable.
+	 *
+	 * @param accountsPayable the accounts payable
+	 */
 	public void updateAccountsPayable(double accountsPayable)
 	{
 		try {
@@ -66,6 +141,12 @@ public class OperationsController {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Update max occupancy.
+	 *
+	 * @param maxOccupancy the max occupancy
+	 */
 	public void updateMaxOccupancy(int maxOccupancy)
 	{
 		try {
@@ -75,6 +156,12 @@ public class OperationsController {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Update roi.
+	 *
+	 * @param roi the roi
+	 */
 	public void updateRoi(int roi){
 		try {
 			opDbObj.pushRoi(roi,opObj);
@@ -83,6 +170,12 @@ public class OperationsController {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Update electric.
+	 *
+	 * @param electric the electric
+	 */
 	public void updateElectric(double electric)
 	{
 		try {
@@ -92,6 +185,12 @@ public class OperationsController {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Update water.
+	 *
+	 * @param water the water
+	 */
 	public void updateWater(double water){
 		try {
 			opDbObj.pushWater(water,opObj);
@@ -100,6 +199,12 @@ public class OperationsController {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Update gash.
+	 *
+	 * @param gas the gas
+	 */
 	public void updateGash(double gas){
 		try {
 			opDbObj.pushGas(gas,opObj);

@@ -9,18 +9,37 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EditCustomerJFrame.
+ */
 public class EditCustomerJFrame extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The First nametext field. */
 	private JTextField FirstNametextField;
+	
+	/** The Last nametext field. */
 	private JTextField LastNametextField;
+	
+	/** The Addresstext field. */
 	private JTextField AddresstextField;
+	
+	/** The lbl phone number. */
 	private JLabel lblPhoneNumber;
+	
+	/** The Phone numbertext field. */
 	private JTextField PhoneNumbertextField;
+	
+	/** The text field. */
 	private JTextField textField;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

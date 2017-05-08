@@ -9,12 +9,19 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLayeredPane;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UpdateSubJFrame.
+ */
 public class UpdateSubJFrame extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

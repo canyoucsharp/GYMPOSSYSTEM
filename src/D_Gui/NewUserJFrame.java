@@ -21,29 +21,65 @@ import B_proj.CustomerController;
 import B_proj.NotFoundException;
 import B_proj.OperationsController;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NewUserJFrame.
+ */
 public class NewUserJFrame extends JFrame {
 
+	/** The Sub typenum. */
 	int SubTypenum = 0;
+	
+	/** The New cus. */
 	private CustomerController NewCus = new CustomerController();
+	
+	/** The pricing. */
 	private double pricing;
 	
 	
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The First nametext field. */
 	private JTextField FirstNametextField;
+	
+	/** The Last nametext field. */
 	private JTextField LastNametextField;
+	
+	/** The DO btext field. */
 	private JTextField DOBtextField;
+	
+	/** The Phone numbertext field. */
 	private JTextField PhoneNumbertextField;
+	
+	/** The CC numbertext field. */
 	private JTextField CCNumbertextField;
+	
+	/** The Picture linktext field. */
 	private JTextField PictureLinktextField;
+	
+	/** The Address text field. */
 	private JTextField AddressTextField;
+	
+	/** The Age text field. */
 	private JTextField AgeTextField;
+	
+	/** The Client idtext field. */
 	private JTextField ClientIdtextField;
+	
+	/** The Credit card numberpassword field. */
 	private JPasswordField CreditCardNumberpasswordField;
+	
+	/** The Card holders name. */
 	private JTextField CardHoldersName;
+	
+	/** The CV vpassword field. */
 	private JPasswordField CVVpasswordField;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -60,7 +96,8 @@ public class NewUserJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws NotFoundException 
+	 *
+	 * @throws NotFoundException the not found exception
 	 */
 	public NewUserJFrame() throws NotFoundException {
 		OperationsController opCont = new OperationsController();

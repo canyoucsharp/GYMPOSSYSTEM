@@ -13,19 +13,40 @@ import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.JButton;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class NewSalesRepJFrame.
+ */
 public class NewSalesRepJFrame extends JFrame {
 
+	/** The content pane. */
 	private JPanel contentPane;
+	
+	/** The First nametext field. */
 	private JTextField FirstNametextField;
+	
+	/** The Last nametext field. */
 	private JTextField LastNametextField;
+	
+	/** The DO btext field. */
 	private JTextField DOBtextField;
+	
+	/** The Licensetext field. */
 	private JTextField LicensetextField;
+	
+	/** The admin. */
 	boolean admin;
+	
+	/** The Addresstext field. */
 	private JTextField AddresstextField;
+	
+	/** The Phone numbertext field. */
 	private JTextField PhoneNumbertextField;
 
 	/**
 	 * Launch the application.
+	 *
+	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
