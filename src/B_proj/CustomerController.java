@@ -354,7 +354,7 @@ public class CustomerController {
 		memInfo.setPlanType(planType);
 		memDb=new MembershipDb();
 		memDb.init(memInfo, cusObj);
-		int x=Integer.valueOf(memInfo.getPlanType());
+		Integer x=Integer.valueOf(memInfo.getPlanType());
 		if(x==0){
 			System.out.println(x);
 			return(memInfo.getPlanDescription());}
