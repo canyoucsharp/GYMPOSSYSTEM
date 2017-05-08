@@ -6,7 +6,7 @@ package B_proj;
  */
 public class Customer extends Person {
 	
-	/** The new S ub. */
+	/** The new Sub. */
 	private Subscription newSUb;
 	
 	/**

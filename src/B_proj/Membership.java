@@ -19,6 +19,11 @@ public class Membership {
 	private double currentRate;
 	//
 
+	Membership(){
+		if(planType==null){
+			planType="0";
+		}
+	}
 	/**
 	 * Gets the plan type.
 	 *
