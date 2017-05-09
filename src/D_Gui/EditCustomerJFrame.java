@@ -133,7 +133,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblAge.setBounds(10, 114, 175, 14);
 		contentPane.add(lblAge);
 		
-		AgetextField = new JTextField(myCont.displayAge());
+		AgetextField = new JTextField(""+ myCont.displayAge());
 		AgetextField.setBounds(195, 111, 115, 20);
 		contentPane.add(AgetextField);
 		AgetextField.setColumns(10);

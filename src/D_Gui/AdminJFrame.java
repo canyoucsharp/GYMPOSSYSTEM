@@ -193,17 +193,18 @@ public class AdminJFrame extends JFrame {
 			public void stateChanged(ChangeEvent e) {
 				// TODO Auto-generated method stub
 				JSlider source = (JSlider)e.getSource();
-				ROItextField.setText("" + source.getValue());
+				double value = source.getValue() * 10;
+				ROItextField.setText("" + percent.format(value) + "%");
 			}
 			
 		});
 		
 		
 		ROItextField = new JTextField();
-		ROItextField.setBounds(209, 341, 32, 20);
+		ROItextField.setBounds(196, 341, 45, 20);
 		contentPane.add(ROItextField);
 		ROItextField.setColumns(10);
-		ROItextField.setText("" + ROIslider.getValue());
+		ROItextField.setText("" + ROIslider.getValue()*10 + "%");
 		ROItextField.setEditable(false);
 		
 		
