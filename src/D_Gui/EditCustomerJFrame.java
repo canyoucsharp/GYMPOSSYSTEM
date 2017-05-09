@@ -187,7 +187,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblDaysRemaining.setBounds(10, 242, 175, 14);
 		contentPane.add(lblDaysRemaining);
 		
-		DaysRemainingtextField = new JTextField();
+		DaysRemainingtextField = new JTextField(""+myCont.displaySubRemaining());
 		DaysRemainingtextField.setBounds(195, 239, 115, 20);
 		contentPane.add(DaysRemainingtextField);
 		DaysRemainingtextField.setColumns(10);
@@ -196,7 +196,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardNumber.setBounds(10, 267, 175, 14);
 		contentPane.add(lblCreditCardNumber);
 		
-		CreditCardnumtextField = new JTextField();
+		CreditCardnumtextField = new JTextField(myCont.displayCreditCardNum());
 		CreditCardnumtextField.setBounds(195, 264, 115, 20);
 		contentPane.add(CreditCardnumtextField);
 		CreditCardnumtextField.setColumns(10);
@@ -205,7 +205,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardCvv.setBounds(10, 292, 175, 14);
 		contentPane.add(lblCreditCardCvv);
 		
-		CreditCardCVVtextField = new JTextField();
+		CreditCardCVVtextField = new JTextField(myCont.displaySecurity());
 		CreditCardCVVtextField.setBounds(195, 289, 115, 20);
 		contentPane.add(CreditCardCVVtextField);
 		CreditCardCVVtextField.setColumns(10);
@@ -214,7 +214,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardProvider.setBounds(10, 317, 167, 14);
 		contentPane.add(lblCreditCardProvider);
 		
-		CCProvidertextField = new JTextField();
+		CCProvidertextField = new JTextField(myCont.displayProvider());
 		CCProvidertextField.setBounds(195, 314, 115, 20);
 		contentPane.add(CCProvidertextField);
 		CCProvidertextField.setColumns(10);
@@ -223,7 +223,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardExpiration.setBounds(10, 342, 175, 14);
 		contentPane.add(lblCreditCardExpiration);
 		
-		CCexpirationtextField = new JTextField();
+		CCexpirationtextField = new JTextField(myCont.displayExperation());
 		CCexpirationtextField.setBounds(195, 339, 115, 20);
 		contentPane.add(CCexpirationtextField);
 		CCexpirationtextField.setColumns(10);
