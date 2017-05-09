@@ -587,8 +587,9 @@ public class CustomerController {
 	 * @param cardNum the card num
 	 */
 	public void updateCreditCardNum(String cardNum){
-		newPayDb.pushCreditCardNumber(cardNum,cusObj);
 		newPayInfo.setCreditCardNum(cardNum);
+		newPayDb.pushCreditCardNumber(cardNum,cusObj);
+		
 	}
 	
 	/**
@@ -597,8 +598,9 @@ public class CustomerController {
 	 * @param pid the pid
 	 */
 	public void updateProvider(int pid){
-		newPayDb.pushProvider(pid,cusObj);
 		newPayInfo.setProvider(pid);
+		newPayDb.pushProvider(pid,cusObj);
+		
 	}
 	
 	/**
@@ -607,8 +609,9 @@ public class CustomerController {
 	 * @param security the security
 	 */
 	public void updateSecurity(String security){
-		newPayDb.pushSecurity(security,cusObj);
 		newPayInfo.setSecurity(security);
+		newPayDb.pushSecurity(security,cusObj);
+		
 	}
 	
 	/**
@@ -617,8 +620,9 @@ public class CustomerController {
 	 * @param expiration the expiration
 	 */
 	public void updateExpiration(String expiration){
-		newPayDb.pushExpiration(expiration,cusObj);
 		newPayInfo.setExpiration(expiration);
+		newPayDb.pushExpiration(expiration,cusObj);
+		
 	}
 	
 	/**

@@ -28,7 +28,10 @@ public class PaymentDb {
 	 * @param cusObj the cus obj
 	 * @param newPayInfo the new pay info
 	 */
-	public void init(Customer cusObj, PaymentInfo newPayInfo) {
+	
+	
+		
+		public void init(Customer cusObj, PaymentInfo newPayInfo) {
 		// TODO Auto-generated method stub
 			myConnector = new MysqlConnect();
 			conn = myConnector.ConnectDB();
