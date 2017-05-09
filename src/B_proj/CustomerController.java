@@ -356,10 +356,8 @@ public class CustomerController {
 		memDb.init(memInfo, cusObj);
 		Integer x=Integer.valueOf(memInfo.getPlanType());
 		if(x==0){
-			System.out.println(x);
 			return(memInfo.getPlanDescription());}
 		else if (x>0){
-			System.out.println(x);
 			return(String.valueOf(memInfo.getPlanRate())+memInfo.getPlanDescription());
 		}
 		return("Error");
@@ -728,6 +726,7 @@ public class CustomerController {
 	 * @param rate the new current rate
 	 */
 	public void setCurrentRate(double rate){
+		memDb.setCurRate(rate);
 		memInfo.setCurRate(rate);
 	}
 }

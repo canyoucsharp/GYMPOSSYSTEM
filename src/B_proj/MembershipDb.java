@@ -177,5 +177,10 @@ try{
 		
 	}
 
+	public void setCurRate(double rate) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }
