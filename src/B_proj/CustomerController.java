@@ -126,6 +126,7 @@ public class CustomerController {
 		try {
 			cusDb.init(cusObj);
 			newSubDb.init(cusObj.getId(), newSub);
+			newPayDb.init(cusObj, newPayInfo);
 		} catch (NotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -727,7 +728,7 @@ public class CustomerController {
 	public void setCurrentRate(double rate){
 		memDb=new MembershipDb();
 		memDb.init(memInfo, cusObj);
-		memDb.setCurRate(rate);
+		//memDb.setCurRate(rate);
 		memInfo.setCurRate(rate);
 	}
 }
