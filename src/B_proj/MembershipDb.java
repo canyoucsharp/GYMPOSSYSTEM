@@ -177,8 +177,21 @@ try{
 		
 	}
 
-	public void setCurRate(double rate) {
+	public void setCurRate(Membership memInfo,double rate) {
 		// TODO Auto-generated method stub
+		myConnector = new MysqlConnect();
+		conn = myConnector.ConnectDB();
+		String updateTableSQL = "UPDATE membership SET cur_rate = ? " + " WHERE plan_type = ?";
+		try {
+			pst = conn.prepareStatement(updateTableSQL);
+			pst.setDouble(1,rate);
+			pst.setString(2, memInfo.getPlanType());
+			pst.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			myConnector.closeConnection(rs, pst, conn);
+		}
 		
 	}
 
