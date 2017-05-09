@@ -232,7 +232,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblPlanType.setBounds(10, 367, 175, 14);
 		contentPane.add(lblPlanType);
 		
-		PlanTypetextField = new JTextField();
+		PlanTypetextField = new JTextField(myCont.displayPlanType());
 		PlanTypetextField.setBounds(195, 364, 115, 20);
 		contentPane.add(PlanTypetextField);
 		PlanTypetextField.setColumns(10);
@@ -241,7 +241,27 @@ public class EditCustomerJFrame extends JFrame {
 		lblPlanDescription.setBounds(10, 392, 175, 14);
 		contentPane.add(lblPlanDescription);
 		
-		PlanDesctextField = new JTextField();
+		String Description = myCont.displayPlanDescription();
+		switch (Description){
+		case "1":{
+			Description = "Standard";
+			break;
+		}
+		case "2":{
+			Description = "Deluxe";
+			break;
+		}
+		case "3":{
+			Description = "Super Deluxe";
+			break;
+		}
+		default:{
+			Description = "None";
+		}
+			
+		}
+		
+		PlanDesctextField = new JTextField(Description);
 		PlanDesctextField.setBounds(195, 389, 115, 20);
 		contentPane.add(PlanDesctextField);
 		PlanDesctextField.setColumns(10);
