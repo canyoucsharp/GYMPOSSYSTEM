@@ -41,7 +41,7 @@ public class NewSalesRepJFrame extends JFrame {
 	private JTextField LicensetextField;
 	
 	/** The admin. */
-	boolean admin;
+	boolean admin = false;
 	
 	/** The Addresstext field. */
 	private JTextField AddresstextField;
@@ -227,6 +227,7 @@ public class NewSalesRepJFrame extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				dispose();
 				
 			}
 		});
