@@ -40,7 +40,7 @@ public class PaymentDb {
 				pst.executeQuery();
 				rs = pst.executeQuery();
 
-				if (rs.next()) {
+				if (rs.first()||rs.next()) {
 
 					newPayInfo.setCreditCardNum(rs.getString("creditcardnum"));
 					newPayInfo.setExpiration(rs.getString("expiration"));
