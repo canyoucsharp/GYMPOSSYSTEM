@@ -196,7 +196,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardNumber.setBounds(10, 267, 175, 14);
 		contentPane.add(lblCreditCardNumber);
 		
-		CreditCardnumtextField = new JTextField(myCont.displayCreditCardNum());
+		CreditCardnumtextField = new JTextField("" + myCont.displayCreditCardNum());
 		CreditCardnumtextField.setBounds(195, 264, 115, 20);
 		contentPane.add(CreditCardnumtextField);
 		CreditCardnumtextField.setColumns(10);
@@ -205,7 +205,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardCvv.setBounds(10, 292, 175, 14);
 		contentPane.add(lblCreditCardCvv);
 		
-		CreditCardCVVtextField = new JTextField(myCont.displaySecurity());
+		CreditCardCVVtextField = new JTextField("" + myCont.displaySecurity());
 		CreditCardCVVtextField.setBounds(195, 289, 115, 20);
 		contentPane.add(CreditCardCVVtextField);
 		CreditCardCVVtextField.setColumns(10);
@@ -214,7 +214,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardProvider.setBounds(10, 317, 167, 14);
 		contentPane.add(lblCreditCardProvider);
 		
-		CCProvidertextField = new JTextField(myCont.displayProvider());
+		CCProvidertextField = new JTextField("" + myCont.displayProvider());
 		CCProvidertextField.setBounds(195, 314, 115, 20);
 		contentPane.add(CCProvidertextField);
 		CCProvidertextField.setColumns(10);
