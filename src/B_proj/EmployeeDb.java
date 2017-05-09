@@ -2,6 +2,8 @@
 import M_Database.MysqlConnect;
 import java.sql.*;
 
+import javax.swing.JOptionPane;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class EmployeeDb.
@@ -354,8 +356,72 @@ public class EmployeeDb {
 		
 	}
 
-	public void registerCustomer(Employee empObj) {
+	public void registerEmployee(Employee empObj,boolean isAdmin) throws SQLException {
 		// TODO Auto-generated method stub
+		int isAdminInt;
+		if(isAdmin==true)
+		{
+		isAdminInt=1;	
+		}
+		else
+		isAdminInt=0;
+		
+		myConnector = new MysqlConnect();
+		conn = myConnector.ConnectDB();
+		int key=-1;
+	SubscriptionDb newDb=new SubscriptionDb();
+		
+		try {
+			
+			myConnector = new MysqlConnect();
+			conn = myConnector.ConnectDB();
+			conn.setAutoCommit(false);
+			String insertTableSQL = "INSERT INTO salesrep"
+					+ "(first_name,last_name,phone_num,address,hourly_rate,sales,username,password,sex,age,license_num) "
+					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?)";
+			
+			
+			pst = conn.prepareStatement(insertTableSQL);
+        	pst.setString(1, empObj.getFirstName());
+			pst.setString(2, empObj.getLastName());
+			pst.setString(3, empObj.getPhoneNumber());
+			pst.setFloat(4, empObj.getHourlyRate());
+			pst.setFloat(5, empObj.getSales());
+			pst.setString(6, empObj.getUsername());
+			pst.setString(7, empObj.getPassword());
+			pst.setString(8, empObj.getSex());
+			pst.setInt   (9, empObj.getAge());
+			pst.setString  (10, empObj.getLicenseNum());
+			pst.executeUpdate();
+			ResultSet rs = pst.getGeneratedKeys();
+
+			if (rs.next()) {
+			     key = rs.getInt(1);
+			}
+			
+				insertTableSQL = "INSERT INTO login "
+					+ "(username,password,rep_id,isadmin)"
+					+ "VALUES" + "(?,?,?,?)";
+				pst = conn.prepareStatement(insertTableSQL);
+	        	pst.setString(1, empObj.getUsername());
+				pst.setString(2, empObj.getPassword());
+				pst.setInt(3, key);
+				pst.setInt(4,isAdminInt );
+				pst.executeUpdate();
+			
+			conn.commit();
+			
+			JOptionPane.showMessageDialog(null,"Registration Success");
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage().toString());
+			JOptionPane.showMessageDialog(null,"Registration Failed");
+			conn.rollback();
+			
+		} finally {
+			myConnector.closeConnection(rs, pst, conn);
+		}
 		
 	}
 
