@@ -242,7 +242,7 @@ public class EditCustomerJFrame extends JFrame {
 		contentPane.add(lblPlanDescription);
 		
 		String Description = myCont.displayPlanDescription();
-		switch (Description){
+		/*switch (Description){
 		case "1":{
 			Description = "Standard";
 			break;
@@ -259,20 +259,20 @@ public class EditCustomerJFrame extends JFrame {
 			Description = "None";
 		}
 			
-		}
+		}*/
 		
 		PlanDesctextField = new JTextField(Description);
 		PlanDesctextField.setBounds(195, 389, 115, 20);
 		contentPane.add(PlanDesctextField);
 		PlanDesctextField.setColumns(10);
 		
-		if (SubStatus == "Active")
+		/*if (SubStatus == "Active")
 		{
 			PlanDesctextField.setVisible(true);
 		}
 		else{
 			PlanDesctextField.setVisible(false);
-		}
+		}*/
 		
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.setBounds(117, 443, 89, 23);
