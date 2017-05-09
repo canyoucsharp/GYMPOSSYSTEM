@@ -4,6 +4,7 @@ import java.sql.*;
 
 import javax.swing.JOptionPane;
 
+import model.Customer;
 import model.MysqlConnect;
 
 // TODO: Auto-generated Javadoc
