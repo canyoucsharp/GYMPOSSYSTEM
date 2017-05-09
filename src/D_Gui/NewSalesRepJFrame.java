@@ -204,13 +204,13 @@ public class NewSalesRepJFrame extends JFrame {
 		
 		//Register Action//
 		btnRegister.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent E) {
+			public void actionPerformed(ActionEvent e) {
 				//add action to push info to database
 				try {
 					empCont.newRep(FirstNametextField.getText(), LastNametextField.getText(), PhoneNumbertextField.getText(), Integer.parseInt(HourlyRatetextField.getText()), AddresstextField.getText(), Integer.parseInt(AgetextField.getText()), SexcomboBox.getSelectedItem().toString(), LicensetextField.getText(), DOBtextField.getText(), UsernametextField.getText(), passwordField.getText(), admin);
-				} catch (NumberFormatException | SQLException e) {
+				} catch (NumberFormatException | SQLException e1) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					e1.printStackTrace();
 				}
 				
 			}

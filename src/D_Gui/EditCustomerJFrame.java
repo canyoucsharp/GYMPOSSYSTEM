@@ -190,6 +190,7 @@ public class EditCustomerJFrame extends JFrame {
 		contentPane.add(SubStatuscomboBox);
 		SubStatuscomboBox.addItem(SubStatus);
 		
+		if (SubStatus == "Active"){
 		
 		lblDaysRemaining = new JLabel("Days Remaining: ");
 		lblDaysRemaining.setBounds(10, 242, 175, 14);
@@ -283,6 +284,7 @@ public class EditCustomerJFrame extends JFrame {
 		else{
 			PlanDesctextField.setVisible(false);
 		}*/
+		}
 		
 		JButton btnUpdate = new JButton("Update");
 		btnUpdate.setBounds(117, 443, 89, 23);
@@ -345,7 +347,14 @@ public class EditCustomerJFrame extends JFrame {
 					}
 				}
 				
-				//if ()
+				if (ContractBegintextField.getText() != myCont.displayContractBegin()){
+					myCont.updateContractBegin(ContractBegintextField.getText());
+				}
+				
+				if (ContractEndtextField.getText() != myCont.displayContractBegin()){
+					myCont.updateContractBegin(ContractBegintextField.getText());
+				}
+					
 				
 			}
 		});
