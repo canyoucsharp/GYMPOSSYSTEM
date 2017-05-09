@@ -103,7 +103,7 @@ public class MainMenuJFrame extends JFrame {
 			}
 		});
 		
-		JButton btnViewSalesRep = new JButton("View Sales Rep");
+		JButton btnViewSalesRep = new JButton("Register Sales Rep");
 		btnViewSalesRep.setBounds(44, 250, 174, 44);
 		contentPane.add(btnViewSalesRep);
 		

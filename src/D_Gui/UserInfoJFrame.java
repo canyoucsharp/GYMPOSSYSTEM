@@ -144,11 +144,9 @@ public class UserInfoJFrame extends JFrame {
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
 		myCont.updatePlanRate(myOperation.displayMonthlyCost());
-		System.out.println(myOperation.displayMonthlyCost());
 		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType(Plantype));
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
-		System.out.println(myCont.displaysubscriptionType(Plantype));
 		
 		JLabel lblSex = new JLabel("Sex: " + myCont.displaySex());
 		lblSex.setBounds(10, 186, 283, 14);
@@ -189,7 +187,7 @@ public class UserInfoJFrame extends JFrame {
 		}
 		//
 		
-		URL url = new URL("https://image.freepik.com/free-icon/question-mark_318-52837.jpg");
+		URL url = new URL("http://i.imgur.com/YYnOoKf.jpg");
 		BufferedImage image = ImageIO.read(url);
 		
 		
