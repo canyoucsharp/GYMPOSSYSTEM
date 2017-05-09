@@ -1,6 +1,9 @@
 package B_proj;
+import java.awt.EventQueue;
 import java.sql.SQLException;
 // TODO: Auto-generated Javadoc
+
+import D_Gui.AdminJFrame;
 
 /**
  * The Class EmployeeController.
@@ -20,6 +23,8 @@ public class EmployeeController {
 	empObj=new Employee();
 	empDbObj=new EmployeeDb();
 	}
+	
+
 	
 	/**
 	 * Update hourly rate.

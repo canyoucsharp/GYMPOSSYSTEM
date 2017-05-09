@@ -53,6 +53,8 @@ public class SearchSalesRepJFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		this.setTitle("Search Employee");
+		setResizable(false);
+		setAlwaysOnTop(true);
 		
 		textField = new JTextField();
 		textField.setBounds(84, 50, 285, 20);

@@ -76,14 +76,16 @@ public class NewSalesRepJFrame extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws SQLException 
 	 */
-	public NewSalesRepJFrame() {
+	public NewSalesRepJFrame() throws SQLException {
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 293, 510);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		empCont = new EmployeeController();
 		
 		JLabel lblFirstName = new JLabel("First Name: ");
 		lblFirstName.setBounds(10, 11, 167, 14);
@@ -209,7 +211,8 @@ public class NewSalesRepJFrame extends JFrame {
 				try {
 					//empCont.newRep(FirstNametextField.getText(), LastNametextField.getText(), PhoneNumbertextField.getText(), Integer.parseInt(HourlyRatetextField.getText()), AddresstextField.getText(), Integer.parseInt(AgetextField.getText()), SexcomboBox.getSelectedItem().toString(), LicensetextField.getText(), DOBtextField.getText(), UsernametextField.getText(), passwordField.getText(), admin);
 					empCont.newRep("Dennis", "Kravtsov", "123", 500, "street", 12, "M", "1234", "1995/06/01", "dennis", "kravtsov", true, 56);
-				} catch (NumberFormatException | SQLException e1) {
+				
+				}catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}

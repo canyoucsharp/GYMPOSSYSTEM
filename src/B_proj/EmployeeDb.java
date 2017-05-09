@@ -76,12 +76,15 @@ public class EmployeeDb {
 				empObj.setLicenseNum(rs.getString("license_num"));
 				empObj.setSales(rs.getInt("sales"));
 				empObj.setHourlyRate(rs.getInt("hourly_rate"));
+				
+				JOptionPane.showMessageDialog(null,"User "+empObj.getFirstName()+" Found" );
 
 			}
 		}
 
 		catch (Exception e) {
 			System.out.println(e);
+			JOptionPane.showMessageDialog(null,"No User Found" );
 		}
 
 		finally {
