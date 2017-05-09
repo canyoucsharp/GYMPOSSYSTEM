@@ -365,9 +365,6 @@ public class EmployeeDb {
 		}
 		else
 		isAdminInt=0;
-		
-		myConnector = new MysqlConnect();
-		conn = myConnector.ConnectDB();
 		int key=-1;
 	SubscriptionDb newDb=new SubscriptionDb();
 		
