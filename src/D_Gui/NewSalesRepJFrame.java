@@ -55,6 +55,7 @@ public class NewSalesRepJFrame extends JFrame {
 	private JTextField AgetextField;
 	private JTextField UsernametextField;
 	private JPasswordField passwordField;
+	private JTextField SalestextField;
 
 	/**
 	 * Launch the application.
@@ -124,7 +125,7 @@ public class NewSalesRepJFrame extends JFrame {
 		LicensetextField.setColumns(10);
 		
 		JToggleButton tglbtnIsAnAdmin = new JToggleButton("Is an Admin?");
-		tglbtnIsAnAdmin.setBounds(75, 316, 121, 23);
+		tglbtnIsAnAdmin.setBounds(75, 340, 121, 23);
 		contentPane.add(tglbtnIsAnAdmin);
 		tglbtnIsAnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -187,21 +188,30 @@ public class NewSalesRepJFrame extends JFrame {
 		contentPane.add(SexcomboBox);
 		
 		JLabel lblUsername = new JLabel("Username: ");
-		lblUsername.setBounds(10, 356, 167, 16);
+		lblUsername.setBounds(10, 380, 167, 16);
 		contentPane.add(lblUsername);
 		
 		UsernametextField = new JTextField();
-		UsernametextField.setBounds(159, 352, 116, 22);
+		UsernametextField.setBounds(159, 376, 116, 22);
 		contentPane.add(UsernametextField);
 		UsernametextField.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password: ");
-		lblPassword.setBounds(10, 385, 167, 16);
+		lblPassword.setBounds(10, 409, 167, 16);
 		contentPane.add(lblPassword);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(159, 382, 116, 22);
+		passwordField.setBounds(159, 406, 116, 22);
 		contentPane.add(passwordField);
+		
+		JLabel lblSales = new JLabel("Sales: ");
+		lblSales.setBounds(10, 308, 167, 14);
+		contentPane.add(lblSales);
+		
+		SalestextField = new JTextField();
+		SalestextField.setBounds(189, 305, 86, 20);
+		contentPane.add(SalestextField);
+		SalestextField.setColumns(10);
 		setResizable(false);
 		
 		//Register Action//
@@ -209,8 +219,8 @@ public class NewSalesRepJFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//add action to push info to database
 				try {
-					//empCont.newRep(FirstNametextField.getText(), LastNametextField.getText(), PhoneNumbertextField.getText(), Integer.parseInt(HourlyRatetextField.getText()), AddresstextField.getText(), Integer.parseInt(AgetextField.getText()), SexcomboBox.getSelectedItem().toString(), LicensetextField.getText(), DOBtextField.getText(), UsernametextField.getText(), passwordField.getText(), admin);
-					empCont.newRep("Dennis", "Kravtsov", "123", 500, "street", 12, "M", "1234", "1995/06/01", "dennis", "kravtsov", true, 56);
+					empCont.newRep(FirstNametextField.getText(), LastNametextField.getText(), PhoneNumbertextField.getText(), Integer.parseInt(HourlyRatetextField.getText()), AddresstextField.getText(), Integer.parseInt(AgetextField.getText()), SexcomboBox.getSelectedItem().toString(), LicensetextField.getText(), DOBtextField.getText(), UsernametextField.getText(), passwordField.getText(), admin, Integer.getInteger(SalestextField.getText()));
+					//empCont.newRep("Dennis", "Kravtsov", "123", 500, "street", 12, "M", "1234", "1995/06/01", "dennis", "kravtsov", true, 56);
 				
 				}catch (SQLException e1) {
 					// TODO Auto-generated catch block
