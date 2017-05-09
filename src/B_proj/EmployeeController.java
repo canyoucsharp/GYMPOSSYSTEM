@@ -29,7 +29,17 @@ public class EmployeeController {
 	 */
 	//update functions
 	public void updateHourlyRate(int newRate) throws SQLException{
+		empObj.setHourlyRate(newRate);
 		empDbObj.pushHourlyRate(newRate, empObj);
+	}
+	public void searchEmployee(int id) throws SQLException{
+		empObj.setId(id);
+		try {
+			empDbObj.init(empObj);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -39,6 +49,7 @@ public class EmployeeController {
 	 * @throws SQLException the SQL exception
 	 */
 	public void updateFirstName(String firstName) throws SQLException{
+		empObj.setFirstName(firstName);
 		empDbObj.pushFirstName(firstName, empObj);
 	}
 	
@@ -49,6 +60,7 @@ public class EmployeeController {
 	 * @throws SQLException the SQL exception
 	 */
 	public void updateLastName(String lastName) throws SQLException{
+		empObj.setLastName(lastName);
 		empDbObj.pushLastName(lastName, empObj);
 	}
 	
@@ -58,8 +70,8 @@ public class EmployeeController {
 	 * @param number the number
 	 * @throws SQLException the SQL exception
 	 */
-	public void updatePhoneNumber(String number) throws SQLException
-	{
+	public void updatePhoneNumber(String number) throws SQLException{
+		empObj.setPhoneNumber(number);
 		empDbObj.pushNumber(number, empObj);
 	}
 	
@@ -69,8 +81,8 @@ public class EmployeeController {
 	 * @param Address the address
 	 * @throws SQLException the SQL exception
 	 */
-	public void updateAddress(String Address) throws SQLException
-	{
+	public void updateAddress(String Address) throws SQLException{
+		empObj.setAddress(Address);
 		empDbObj.pushAddress(Address, empObj);
 	}
 	
@@ -81,6 +93,8 @@ public class EmployeeController {
 	 * @throws SQLException the SQL exception
 	 */
 	public void updateAge(String Age) throws SQLException{
+		int i=Integer.valueOf(Age);
+		empObj.setAge(i);
 		empDbObj.pushAge(Age, empObj);
 	}
 	
@@ -91,6 +105,7 @@ public class EmployeeController {
 	 * @throws SQLException the SQL exception
 	 */
 	public void updateSex(String Sex) throws SQLException{
+		empObj.setSex(Sex);
 		empDbObj.pushSex(Sex, empObj);
 	}
 	
@@ -101,7 +116,12 @@ public class EmployeeController {
 	 * @throws SQLException the SQL exception
 	 */
 	public void updateLicense(String newlicenseNumber) throws SQLException{
+		empObj.setLicenseNum(newlicenseNumber);
 		empDbObj.pushLicenseNumber(newlicenseNumber, empObj);
+	}
+	public void updateSales(int sales)throws SQLException{
+		empObj.setSales(sales);
+		empDbObj.pushSales(sales, empObj);
 	}
 	
 	//DISPLAY FUNCTIONS
@@ -217,10 +237,10 @@ public class EmployeeController {
 	}
 	
 	
-	public void newRep(String firstName,String lastName,String phone,int hourlyRate,String address,int age,String sex,String lisNum,String dob,String username,String password,Boolean admin) throws SQLException{
+	public void newRep(String firstName,String lastName,String phone,int hourlyRate,String address,int age,String sex,String lisNum,String dob,String username,String password,Boolean admin,int sales) throws SQLException{
 		empObj=new Employee();
         empDbObj=new EmployeeDb();
-        empObj.initNew(username,password,firstName,lastName,sex,dob,phone,address,age,lisNum,hourlyRate,admin);
+        empObj.initNew(username,password,firstName,lastName,sex,dob,phone,address,age,lisNum,hourlyRate,admin,sales);
         empDbObj.registerEmployee(empObj, admin);
 	}
 	

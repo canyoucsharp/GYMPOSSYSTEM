@@ -113,7 +113,7 @@ public class Employee extends Person{
 	}
 
 	public void initNew(String username2, String password2, String firstName, String lastName, String sex, String dob,
-			String phone, String address, int age, String lisNum, int hourlyRate2, Boolean admin) {
+			String phone, String address, int age, String lisNum, int hourlyRate2, Boolean admin, int sales2) {
 		this.username=username2;
 		this.password=password2;
 		this.setFirstName(firstName);
@@ -126,7 +126,7 @@ public class Employee extends Person{
 		this.setLicenseNum(lisNum);
 		this.setHourlyRate(hourlyRate2);
 		this.setAdmin(admin);
-		
+		this.setSales(sales2);
 	}
 	
 	
