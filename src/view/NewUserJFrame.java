@@ -162,7 +162,7 @@ public class NewUserJFrame extends JFrame {
 		contentPane.add(PhoneNumbertextField);
 		PhoneNumbertextField.setColumns(10);
 		
-		JLabel lblLiscNumber = new JLabel("Driver's Liscense: ");
+		JLabel lblLiscNumber = new JLabel("Driver's License: ");
 		lblLiscNumber.setBounds(10, 228, 115, 14);
 		contentPane.add(lblLiscNumber);
 		
