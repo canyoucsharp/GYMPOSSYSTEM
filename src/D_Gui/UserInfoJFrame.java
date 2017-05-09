@@ -44,6 +44,8 @@ public class UserInfoJFrame extends JFrame {
 	
 	/** The my operation. */
 	OperationsController myOperation = new OperationsController();
+	
+	private double pricing;
 
 	/**
 	 * Launch the application.
@@ -117,21 +119,25 @@ public class UserInfoJFrame extends JFrame {
 		case "1":
 		{
 			lblSubscriptionType.setText("Subscription Type: Standard");
+			pricing = myCont.updatePlanRateDummy(myOperation.displayMonthlyCost(), Integer.parseInt(Plantype));
 			break;
 		}
 		case "2":
 		{
 			lblSubscriptionType.setText("Subscription Type: Deluxe");
+			pricing = myCont.updatePlanRateDummy(myOperation.displayMonthlyCost(), Integer.parseInt(Plantype));
 			break;
 		}
 		case "3":
 		{
 			lblSubscriptionType.setText("Subscription Type: Super Deluxe");
+			pricing = myCont.updatePlanRateDummy(myOperation.displayMonthlyCost(), Integer.parseInt(Plantype));
 			break;
 		}
 		case "null":
 		{
 			lblSubscriptionType.setText("Subscription Type: None");
+			pricing = 0;
 			break;
 		}
 		}
@@ -139,12 +145,14 @@ public class UserInfoJFrame extends JFrame {
 		else
 		{
 			lblSubscriptionType.setText("Subscription Type: None");
+			pricing = 0;
 		}
 		
 		NumberFormat formatter = NumberFormat.getCurrencyInstance();
 		
-		myCont.updatePlanRate(myOperation.displayMonthlyCost());
-		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + myCont.displaysubscriptionType(Plantype));
+		
+		//myCont.updatePlanRate(myOperation.displayMonthlyCost());
+		JLabel lblMonthlyPay = new JLabel("Monthly Fee: " + formatter.format(pricing));
 		lblMonthlyPay.setBounds(10, 86, 283, 14);
 		contentPane.add(lblMonthlyPay);
 		
@@ -207,7 +215,7 @@ public class UserInfoJFrame extends JFrame {
 				if (EditCus != null){
 					EditCus.dispose();
 				}
-				EditCus = new EditCustomerJFrame(key, myCont);
+				EditCus = new EditCustomerJFrame(key, myCont, myOperation, mySub);
 				EditCus.setVisible(true);
 				dispose();
 			}

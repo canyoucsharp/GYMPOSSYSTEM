@@ -4,12 +4,16 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.text.NumberFormat;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import B_proj.CustomerController;
+import B_proj.OperationsController;
+import B_proj.Subscription;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -61,6 +65,7 @@ public class EditCustomerJFrame extends JFrame {
 	private JTextField PlanTypetextField;
 	private JLabel lblPlanDescription;
 	private JTextField PlanDesctextField;
+	private double pricing;
 
 	/**
 	 * Launch the application.
@@ -72,7 +77,9 @@ public class EditCustomerJFrame extends JFrame {
 			public void run() {
 				try {
 					CustomerController myCont= new CustomerController();
-					EditCustomerJFrame frame = new EditCustomerJFrame(0, myCont);
+					OperationsController myOp= new OperationsController();
+					Subscription mySub= new Subscription();
+					EditCustomerJFrame frame = new EditCustomerJFrame(0, myCont, myOp, mySub);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -84,7 +91,7 @@ public class EditCustomerJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditCustomerJFrame(int key, CustomerController myCont) {
+	public EditCustomerJFrame(int key, CustomerController myCont, OperationsController myOperation, Subscription mySub) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 326, 506);
 		contentPane = new JPanel();
@@ -181,6 +188,7 @@ public class EditCustomerJFrame extends JFrame {
 		SubStatuscomboBox = new JComboBox();
 		SubStatuscomboBox.setBounds(221, 158, 88, 20);
 		contentPane.add(SubStatuscomboBox);
+		SubStatuscomboBox.addItem(SubStatus);
 		
 		
 		lblDaysRemaining = new JLabel("Days Remaining: ");
@@ -232,7 +240,7 @@ public class EditCustomerJFrame extends JFrame {
 		lblPlanType.setBounds(10, 367, 175, 14);
 		contentPane.add(lblPlanType);
 		
-		PlanTypetextField = new JTextField(myCont.displayPlanType());
+		PlanTypetextField = new JTextField(mySub.getPlanType());
 		PlanTypetextField.setBounds(195, 364, 115, 20);
 		contentPane.add(PlanTypetextField);
 		PlanTypetextField.setColumns(10);
@@ -241,8 +249,9 @@ public class EditCustomerJFrame extends JFrame {
 		lblPlanDescription.setBounds(10, 392, 175, 14);
 		contentPane.add(lblPlanDescription);
 		
-		String Description = myCont.displayPlanDescription();
-		/*switch (Description){
+		NumberFormat formatter = NumberFormat.getCurrencyInstance();
+		String Description = mySub.getPlanType();
+		switch (Description){
 		case "1":{
 			Description = "Standard";
 			break;
@@ -257,9 +266,10 @@ public class EditCustomerJFrame extends JFrame {
 		}
 		default:{
 			Description = "None";
+			pricing = 0;
 		}
 			
-		}*/
+		}
 		
 		PlanDesctextField = new JTextField(Description);
 		PlanDesctextField.setBounds(195, 389, 115, 20);
@@ -279,6 +289,63 @@ public class EditCustomerJFrame extends JFrame {
 		contentPane.add(btnUpdate);
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(FirstNametextField.getText() != myCont.displayFirstName()){
+					try {
+						myCont.updateFirstName(FirstNametextField.getText());
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if (LastNametextField.getText() != myCont.displayLastName()){
+					try {
+						myCont.updateLastName(LastNametextField.getText());
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if (AddresstextField.getText() != myCont.displayAddress()){
+					try {
+						myCont.updateAddress(AddresstextField.getText());
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if (PhoneNumbertextField.getText() != myCont.displayPhoneNumber())
+				{
+					try {
+						myCont.updatePhoneNumber(PhoneNumbertextField.getText());
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if (AgetextField.getText() != (""+ myCont.displayAge())){
+					try {
+						myCont.updateAge(AgetextField.getText());
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				if (SexcomboBox.getSelectedItem().toString() != myCont.displaySex()){
+					try {
+						myCont.updateSex(SexcomboBox.getSelectedItem().toString());
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+				
+				//if ()
 				
 			}
 		});
