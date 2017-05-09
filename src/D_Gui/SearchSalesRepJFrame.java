@@ -2,16 +2,28 @@ package D_Gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.sql.SQLException;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import B_proj.Customer;
+import B_proj.CustomerController;
+import B_proj.EmployeeController;
+import B_proj.NotFoundException;
+
 import javax.swing.JTextField;
 
 public class SearchSalesRepJFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
+	private EmployeeController empCont;
 
 	/**
 	 * Launch the application.
@@ -45,5 +57,21 @@ public class SearchSalesRepJFrame extends JFrame {
 		textField.setBounds(84, 50, 285, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		
+		Action action = new AbstractAction()
+		{
+		    @Override
+		    public void actionPerformed(ActionEvent e)
+		    {
+		        //Scan User
+		    	int key = Integer.valueOf(textField.getText());
+		    	empCont = new EmployeeController();
+		    	
+		    		
+		    }
+		};
+
+		textField.addActionListener(action); //Looks for action key to be pressed
+		
 	}
 }
