@@ -112,10 +112,10 @@ public class Employee extends Person{
 		this.isAdmin = isAdmin;
 	}
 
-	public void initNew(String username2, String password2, String firstName, String lastName, String sex, String dob,
-			String phone, String address, int age, String lisNum, int hourlyRate2, Boolean admin, int sales2) {
-		this.username=username2;
-		this.password=password2;
+	public void initNew(String username2, String password2, String firstName, String lastName, String sex, String dob, String phone, String address, int age, String lisNum, int hourlyRate2,
+	Boolean admin, int sales2) {
+		this.setUsername(username2);
+		this.setPassword(password2);
 		this.setFirstName(firstName);
 		this.setLastName(lastName);
 		this.setSex(sex);
