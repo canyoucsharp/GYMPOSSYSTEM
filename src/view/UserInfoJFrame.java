@@ -201,7 +201,7 @@ public class UserInfoJFrame extends JFrame {
 		BufferedImage image = ImageIO.read(url);
 		
 		
-		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(250, 100, Image.SCALE_DEFAULT)));
+		JLabel label = new JLabel(new ImageIcon(image.getScaledInstance(150, 150, Image.SCALE_DEFAULT)));
 
 		label.setBounds(20, 311, 273, 139);
 		contentPane.add(label);
