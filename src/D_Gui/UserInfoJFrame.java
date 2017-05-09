@@ -34,7 +34,7 @@ import javax.swing.JButton;
 public class UserInfoJFrame extends JFrame {
 
 	/** Scan User includes an edit for it **/
-	EditCustomerJFrame EditCus;
+	private EditCustomerJFrame EditCus = null;
 	
 	/** The keyitem. */
 	private int keyitem = 0;
@@ -204,6 +204,11 @@ public class UserInfoJFrame extends JFrame {
 		label.setBounds(20, 311, 273, 139);
 		contentPane.add(label);
 		
+		if (EditCus != null)
+		{
+			EditCus.dispose();
+		}
+		
 		JButton btnEdit = new JButton("Edit");
 		btnEdit.setBounds(111, 452, 89, 23);
 		contentPane.add(btnEdit);
@@ -221,11 +226,6 @@ public class UserInfoJFrame extends JFrame {
 			}
 			
 		});
-		
-		if (EditCus != null)
-		{
-			EditCus.dispose();
-		}
 		
 		
 	

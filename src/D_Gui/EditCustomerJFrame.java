@@ -92,7 +92,7 @@ public class EditCustomerJFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public EditCustomerJFrame(int key, CustomerController myCont, OperationsController myOperation, Subscription mySub) {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 326, 506);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -338,12 +338,12 @@ public class EditCustomerJFrame extends JFrame {
 				if (SexcomboBox.getSelectedItem().toString() != myCont.displaySex()){
 					try {
 						String sex;
-						if (SexcomboBox.getSelectedItem().toString() == "Male")
+						if (SexcomboBox.getSelectedItem().toString().compareTo("Male") == 0)
 							sex = "M";
 						else
 							sex = "F";
 								
-						myCont.updateSex(SexcomboBox.getSelectedItem().toString());
+						myCont.updateSex(sex);
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -358,7 +358,7 @@ public class EditCustomerJFrame extends JFrame {
 					myCont.updateContractEnd(ContractEndtextField.getText());
 				}
 				
-				if (SubStatus == "Active"){
+				if (SubStatus.compareTo("Active") == 0){
 										
 					if (CreditCardnumtextField.getText() != myCont.displayCreditCardNum()){
 						myCont.updateCreditCardNum(CreditCardnumtextField.getText());

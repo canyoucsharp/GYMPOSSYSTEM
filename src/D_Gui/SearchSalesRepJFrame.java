@@ -24,6 +24,7 @@ public class SearchSalesRepJFrame extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private EmployeeController empCont;
+	private ViewEmployeeJFrame EmpView = null;
 
 	/**
 	 * Launch the application.
@@ -45,7 +46,7 @@ public class SearchSalesRepJFrame extends JFrame {
 	 * Create the frame.
 	 */
 	public SearchSalesRepJFrame() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 460, 164);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -66,8 +67,25 @@ public class SearchSalesRepJFrame extends JFrame {
 		        //Scan User
 		    	int key = Integer.valueOf(textField.getText());
 		    	empCont = new EmployeeController();
+		    
+		    	if (EmpView != null){
+	    			EmpView.dispose();
+	    		}
 		    	
-		    		
+		    	try {
+					empCont.searchEmployee(key);
+					System.out.print("It worked!" + empCont.displayAdmin());
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		    	
+		    	EmpView = new ViewEmployeeJFrame(empCont);
+		    	EmpView.setVisible(true);
+		    	   		
+		    			    	
+		    	
+		    	textField.setText("");
 		    }
 		};
 
