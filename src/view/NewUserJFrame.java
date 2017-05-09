@@ -105,7 +105,7 @@ public class NewUserJFrame extends JFrame {
 	 */
 	public NewUserJFrame() throws NotFoundException {
 		OperationsController opCont = new OperationsController();
-		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 528, 477);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
