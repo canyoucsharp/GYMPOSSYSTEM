@@ -351,8 +351,6 @@ public class CustomerController {
 	 */
 	public String displaysubscriptionType(String planType){//DENNIS When you do operation.displaycost , please save output to customercontroller.setCurrentRate(value)
 	
-		memDb=new MembershipDb();
-		memDb.init(memInfo, cusObj);
 		memInfo.setPlanType(planType);
 		Integer x=Integer.valueOf(memInfo.getPlanType());
 		if(x==0){
@@ -727,6 +725,8 @@ public class CustomerController {
 	 * @param rate the new current rate
 	 */
 	public void setCurrentRate(double rate){
+		memDb=new MembershipDb();
+		memDb.init(memInfo, cusObj);
 		memDb.setCurRate(rate);
 		memInfo.setCurRate(rate);
 	}
