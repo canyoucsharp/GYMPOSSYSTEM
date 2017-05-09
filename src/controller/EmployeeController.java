@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import java.sql.SQLException;
 // TODO: Auto-generated Javadoc
 
+import model.Employee;
 import view.AdminJFrame;
 
 /**

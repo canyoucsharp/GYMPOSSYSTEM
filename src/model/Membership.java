@@ -1,4 +1,4 @@
-package controller;
+package model;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -19,7 +19,7 @@ public class Membership {
 	private double currentRate;
 	//
 
-	Membership(){
+	public Membership(){
 		if(planType==null){
 			planType="0";
 		}

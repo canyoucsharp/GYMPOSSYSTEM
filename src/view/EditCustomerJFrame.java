@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 
 import controller.CustomerController;
 import controller.OperationsController;
-import controller.Subscription;
+import model.Subscription;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;

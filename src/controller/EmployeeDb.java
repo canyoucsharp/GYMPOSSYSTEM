@@ -3,7 +3,7 @@ import java.sql.*;
 
 import javax.swing.JOptionPane;
 
-import model.MysqlConnect;
+import model.Employee;
 
 // TODO: Auto-generated Javadoc
 /**

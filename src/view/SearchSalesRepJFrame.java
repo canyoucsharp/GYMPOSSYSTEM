@@ -13,10 +13,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.Customer;
 import controller.CustomerController;
 import controller.EmployeeController;
 import controller.NotFoundException;
+import model.Customer;
 
 import javax.swing.JTextField;
 

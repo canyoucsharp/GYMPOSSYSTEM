@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-import model.MysqlConnect;
+import model.Operations;
 
 // TODO: Auto-generated Javadoc
 /**

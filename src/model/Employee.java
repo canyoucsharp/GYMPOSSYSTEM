@@ -1,5 +1,5 @@
 
-package controller;
+package model;
 
 // TODO: Auto-generated Javadoc
 /**

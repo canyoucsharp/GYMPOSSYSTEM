@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 
 import javax.swing.JOptionPane;
 
-import model.MysqlConnect;
+import model.Customer;
+import model.Membership;
 
 // TODO: Auto-generated Javadoc
 /**

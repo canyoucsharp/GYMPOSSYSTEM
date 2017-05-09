@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import model.MysqlConnect;
+import controller.MysqlConnect;
 
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;

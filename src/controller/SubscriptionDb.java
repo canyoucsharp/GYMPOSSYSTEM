@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
 
-import model.MysqlConnect;
+import model.Subscription;
 
 // TODO: Auto-generated Javadoc
 /**

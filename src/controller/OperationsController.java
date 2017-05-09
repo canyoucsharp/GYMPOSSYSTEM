@@ -2,6 +2,8 @@ package controller;
 
 import java.sql.SQLException;
 
+import model.Operations;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class OperationsController.

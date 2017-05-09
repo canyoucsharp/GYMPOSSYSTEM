@@ -4,7 +4,8 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 // TODO: Auto-generated Javadoc
 
-import model.MysqlConnect;
+import model.Customer;
+import model.PaymentInfo;
 
 /**
  * The Class PaymentDb.

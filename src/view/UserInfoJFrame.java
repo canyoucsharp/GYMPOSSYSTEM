@@ -17,11 +17,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.Customer;
 import controller.CustomerController;
 import controller.NotFoundException;
 import controller.OperationsController;
-import controller.Subscription;
+import model.Customer;
+import model.Subscription;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
