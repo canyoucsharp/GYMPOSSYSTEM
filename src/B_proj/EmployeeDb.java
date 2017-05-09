@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 /**
  * The Class EmployeeDb.
  */
+
+
 public class EmployeeDb {
 	
 	/** The my connector. */
@@ -28,6 +30,28 @@ public class EmployeeDb {
 	 * @param empObj the emp obj
 	 * @throws SQLException the SQL exception
 	 */
+	public static void main(String args[])
+	{
+		EmployeeDb myDb=new EmployeeDb();
+		Employee newEmp=new Employee();
+		
+		newEmp.initNew("username2", "password2", "firstName", "lastName", "sex", "dob", "phone", "address", 22, "lisNum", 23, true);
+		System.out.println(newEmp.getDob());
+		try {
+			myDb.registerEmployee(newEmp, true);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+	/**
+	 * @return
+	 */
+	private static EmployeeDb newEmployeeDb() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	public void init(Employee empObj) throws SQLException {
 		// TODO Auto-generated method stub
 
@@ -366,7 +390,7 @@ public class EmployeeDb {
 		else
 		isAdminInt=0;
 		int key=-1;
-	SubscriptionDb newDb=new SubscriptionDb();
+	
 		
 		try {
 			
@@ -375,23 +399,24 @@ public class EmployeeDb {
 			conn.setAutoCommit(false);
 			String insertTableSQL = "INSERT INTO salesrep"
 					+ "(first_name,last_name,phone_num,address,hourly_rate,sales,username,password,sex,age,license_num) "
-					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?)";
+					+ "VALUES" + "(?,?,?,?,?,?,?,?,?,?,?)";
 			
 			
 			pst = conn.prepareStatement(insertTableSQL);
         	pst.setString(1, empObj.getFirstName());
 			pst.setString(2, empObj.getLastName());
 			pst.setString(3, empObj.getPhoneNumber());
-			pst.setFloat(4, empObj.getHourlyRate());
-			pst.setFloat(5, empObj.getSales());
-			pst.setString(6, empObj.getUsername());
-			pst.setString(7, empObj.getPassword());
-			pst.setString(8, empObj.getSex());
-			pst.setInt   (9, empObj.getAge());
-			pst.setString  (10, empObj.getLicenseNum());
+			pst.setString(4, empObj.getAddress());
+			pst.setFloat(5, empObj.getHourlyRate());
+			pst.setFloat(6, empObj.getSales());
+			pst.setString(7, empObj.getUsername());
+			pst.setString(8, empObj.getPassword());
+			pst.setString(9, empObj.getSex());
+			pst.setInt   (10, empObj.getAge());
+			pst.setString  (11, empObj.getLicenseNum());
 			pst.executeUpdate();
 			ResultSet rs = pst.getGeneratedKeys();
-
+			
 			if (rs.next()) {
 			     key = rs.getInt(1);
 			}
