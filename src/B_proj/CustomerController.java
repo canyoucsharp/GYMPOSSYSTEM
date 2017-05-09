@@ -673,9 +673,10 @@ public class CustomerController {
 	/**
 	 * Update plan rate.
 	 */
-	public void updatePlanRate(){
-		double rate=memInfo.getCurrentRate();
-		if(memInfo.getPlanRate()>0&&Integer.valueOf(memInfo.getPlanType())<3){
+	public void updatePlanRate(double rate){
+		//double rate=memInfo.getCurrentRate();
+		//if(memInfo.getPlanRate()>0&&Integer.valueOf(memInfo.getPlanType())<3){
+		if(rate>0&&Integer.valueOf(memInfo.getPlanType())<3){
 			//donothing
 		}else {
 		switch(Integer.valueOf(memInfo.getPlanType())){
