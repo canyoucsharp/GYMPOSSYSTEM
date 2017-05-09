@@ -454,7 +454,7 @@ public class NewUserJFrame extends JFrame {
 							try {
 								NewCus.newSubscription(ClientId, ActiveSub, Subnumber, Subnumber);
 								NewCus.newPayment(CreditCardNumberpasswordField.getText(), Provider, CVVpasswordField.getText(), ExpirationtextField.getText());
-								
+								//NewCus.newMembership(Subnumber, SubType, pricing);
 							} catch (NumberFormatException e) {
 								// TODO Auto-generated catch block
 								e.printStackTrace();
