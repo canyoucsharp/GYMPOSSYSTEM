@@ -35,7 +35,7 @@ public class EmployeeDb {
 		EmployeeDb myDb=new EmployeeDb();
 		Employee newEmp=new Employee();
 		
-		newEmp.initNew("username2", "password2", "firstName", "lastName", "sex", "dob", "phone", "address", 22, "lisNum", 23, true);
+		newEmp.initNew("username3", "password3", "firstName", "lastName", "sex", "dob", "phone", "address",100, "lisNum", 100,true, 100);
 		System.out.println(newEmp.getDob());
 		try {
 			myDb.registerEmployee(newEmp, true);
@@ -412,7 +412,7 @@ public class EmployeeDb {
 			pst.setString(7, empObj.getUsername());
 			pst.setString(8, empObj.getPassword());
 			pst.setString(9, empObj.getSex());
-			pst.setInt   (10, empObj.getAge());
+			pst.setString   (10, String.valueOf(empObj.getAge()));
 			pst.setString  (11, empObj.getLicenseNum());
 			pst.executeUpdate();
 			ResultSet rs = pst.getGeneratedKeys();
