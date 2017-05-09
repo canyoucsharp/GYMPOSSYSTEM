@@ -96,7 +96,7 @@ public class SearchSalesRepJFrame extends JFrame {
 								if (EditFrame != null){
 									EditFrame.dispose();
 								}
-								EditFrame = new EditEmployeeJFrame(empCont);
+								EditFrame = new EditEmployeeJFrame(Admin_Status, empCont);
 								EditFrame.setVisible(true);					
 							}
 				    		

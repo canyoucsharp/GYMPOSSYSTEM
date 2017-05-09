@@ -35,6 +35,9 @@ public class EditEmployeeJFrame extends JFrame {
 	private JTextField LicensetextField;
 	private JLabel lblPhoneNumber;
 	private JTextField PhoneNumbertextField;
+	private JLabel lblAdmin;
+	private JTextField AdmintextField;
+	private JLabel lblAdmin_1;
 
 	/**
 	 * Launch the application.
@@ -56,9 +59,9 @@ public class EditEmployeeJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditEmployeeJFrame(EmployeeController empCont) {
+	public EditEmployeeJFrame(int Admin_Status, EmployeeController empCont) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 238, 357);
+		setBounds(100, 100, 238, 425);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -114,7 +117,7 @@ public class EditEmployeeJFrame extends JFrame {
 		lblDob.setBounds(10, 111, 106, 14);
 		contentPane.add(lblDob);
 		
-		DOBtextField = new JTextField();
+		DOBtextField = new JTextField(empCont.displayDob());
 		DOBtextField.setBounds(126, 108, 86, 20);
 		contentPane.add(DOBtextField);
 		DOBtextField.setColumns(10);
@@ -150,13 +153,13 @@ public class EditEmployeeJFrame extends JFrame {
 		lblLicenseNumber.setBounds(10, 238, 106, 14);
 		contentPane.add(lblLicenseNumber);
 		
-		LicensetextField = new JTextField();
+		LicensetextField = new JTextField(empCont.displayLicense());
 		LicensetextField.setBounds(126, 235, 86, 20);
 		contentPane.add(LicensetextField);
 		LicensetextField.setColumns(10);
 		
 		JButton btnUpdate = new JButton("Update");
-		btnUpdate.setBounds(70, 294, 89, 23);
+		btnUpdate.setBounds(72, 354, 89, 23);
 		contentPane.add(btnUpdate);
 		
 		lblPhoneNumber = new JLabel("Phone Number: ");
@@ -167,6 +170,23 @@ public class EditEmployeeJFrame extends JFrame {
 		PhoneNumbertextField.setBounds(126, 133, 86, 20);
 		contentPane.add(PhoneNumbertextField);
 		PhoneNumbertextField.setColumns(10);
+		
+		lblAdmin = new JLabel("Admin: ");
+		lblAdmin.setBounds(12, 265, 104, 16);
+		contentPane.add(lblAdmin);
+		
+		AdmintextField = new JTextField("" + Admin_Status);
+		AdmintextField.setBounds(126, 262, 86, 22);
+		contentPane.add(AdmintextField);
+		AdmintextField.setColumns(10);
+		
+		lblAdmin_1 = new JLabel("1 = Admin, 2 = Not Admin");
+		lblAdmin_1.setBounds(22, 294, 190, 16);
+		contentPane.add(lblAdmin_1);
+		
+		
+		
+		
 		btnUpdate.addActionListener(new ActionListener(){
 
 			@Override
@@ -207,7 +227,12 @@ public class EditEmployeeJFrame extends JFrame {
 					e1.printStackTrace();
 				}
 				
-				//empCont.updateLicense(newlicenseNumber);
+				try {
+					empCont.updateLicense(LicensetextField.getText());
+				} catch (SQLException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
 				
 				try {
 					empCont.updatePhoneNumber(PhoneNumbertextField.getText());
@@ -229,7 +254,33 @@ public class EditEmployeeJFrame extends JFrame {
 					e1.printStackTrace();
 				}
 				
-				//empCont.updateAdmin(value);
+				try {
+					empCont.updateDob(DOBtextField.getText());
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				int Admin = Integer.parseInt(AdmintextField.getText());
+				boolean Adminbool = false;
+				
+				switch (Admin){
+				case 0:{
+					Adminbool = false;
+					break;
+				}
+				case 1: {
+					Adminbool = true;
+					break;
+				}
+				}
+				
+				try {
+					empCont.updateAdmin(Adminbool);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				dispose();
 				

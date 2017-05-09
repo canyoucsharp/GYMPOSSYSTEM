@@ -59,7 +59,7 @@ public class ViewEmployeeJFrame extends JFrame {
 		lblAddress.setBounds(10, 61, 183, 14);
 		contentPane.add(lblAddress);
 		
-		JLabel lblDob = new JLabel("DOB: ");
+		JLabel lblDob = new JLabel("DOB: " + empCont.displayDob());
 		lblDob.setBounds(10, 111, 183, 14);
 		contentPane.add(lblDob);
 		
@@ -75,7 +75,7 @@ public class ViewEmployeeJFrame extends JFrame {
 		lblHourlyRate.setBounds(10, 186, 183, 14);
 		contentPane.add(lblHourlyRate);
 		
-		JLabel lblLicenseNumber = new JLabel("License Number: ");
+		JLabel lblLicenseNumber = new JLabel("License Number: " + empCont.displayLicense());
 		lblLicenseNumber.setBounds(10, 211, 183, 14);
 		contentPane.add(lblLicenseNumber);
 		
