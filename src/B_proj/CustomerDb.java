@@ -286,7 +286,7 @@ public class CustomerDb {
 			pst = conn.prepareStatement(updateTableSQL);
 			pst.setString(1, age);
 			pst.setInt(2, cusObj.getId());
-			pst.executeQuery();
+			pst.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {

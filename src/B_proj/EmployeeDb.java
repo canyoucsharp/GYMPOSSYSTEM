@@ -69,7 +69,7 @@ public class EmployeeDb {
 
 				empObj.setFirstName(rs.getString("first_name"));
 				empObj.setLastName(rs.getString("last_name"));
-				empObj.setPhoneNumber(rs.getString("phone_number"));
+				empObj.setPhoneNumber(rs.getString("phone_num"));
 				empObj.setAddress(rs.getString("address"));
 				empObj.setAge(rs.getInt("age"));
 				empObj.setSex(rs.getString("sex"));
