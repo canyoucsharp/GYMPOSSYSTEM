@@ -102,6 +102,7 @@ public class ScanUserJFrame extends JFrame {
 					Customer newCus=myCusController.getCusObj();
 					try {
 						userinfo = new UserInfoJFrame(key,myCusController);
+						
 					} catch (NotFoundException e1) {
 						// TODO Auto-generated catch block
 						

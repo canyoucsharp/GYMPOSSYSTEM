@@ -189,8 +189,9 @@ public class EditCustomerJFrame extends JFrame {
 		SubStatuscomboBox.setBounds(221, 158, 88, 20);
 		contentPane.add(SubStatuscomboBox);
 		SubStatuscomboBox.addItem(SubStatus);
+		SubStatuscomboBox.setEditable(false);
 		
-		if (SubStatus == "Active"){
+		if (myCont.displaySubStatus().compareTo(SubStatus) == 0){
 		
 		lblDaysRemaining = new JLabel("Days Remaining: ");
 		lblDaysRemaining.setBounds(10, 242, 175, 14);
@@ -200,6 +201,7 @@ public class EditCustomerJFrame extends JFrame {
 		DaysRemainingtextField.setBounds(195, 239, 115, 20);
 		contentPane.add(DaysRemainingtextField);
 		DaysRemainingtextField.setColumns(10);
+		DaysRemainingtextField.setEditable(false);
 		
 		lblCreditCardNumber = new JLabel("Credit Card Number: ");
 		lblCreditCardNumber.setBounds(10, 267, 175, 14);
@@ -243,6 +245,7 @@ public class EditCustomerJFrame extends JFrame {
 		
 		PlanTypetextField = new JTextField(mySub.getPlanType());
 		PlanTypetextField.setBounds(195, 364, 115, 20);
+		PlanTypetextField.setEditable(false);
 		contentPane.add(PlanTypetextField);
 		PlanTypetextField.setColumns(10);
 		
@@ -273,17 +276,11 @@ public class EditCustomerJFrame extends JFrame {
 		}
 		
 		PlanDesctextField = new JTextField(Description);
+		PlanDesctextField.setEditable(false);
 		PlanDesctextField.setBounds(195, 389, 115, 20);
 		contentPane.add(PlanDesctextField);
 		PlanDesctextField.setColumns(10);
 		
-		/*if (SubStatus == "Active")
-		{
-			PlanDesctextField.setVisible(true);
-		}
-		else{
-			PlanDesctextField.setVisible(false);
-		}*/
 		}
 		
 		JButton btnUpdate = new JButton("Update");
@@ -340,6 +337,12 @@ public class EditCustomerJFrame extends JFrame {
 				
 				if (SexcomboBox.getSelectedItem().toString() != myCont.displaySex()){
 					try {
+						String sex;
+						if (SexcomboBox.getSelectedItem().toString() == "Male")
+							sex = "M";
+						else
+							sex = "F";
+								
 						myCont.updateSex(SexcomboBox.getSelectedItem().toString());
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
@@ -351,13 +354,32 @@ public class EditCustomerJFrame extends JFrame {
 					myCont.updateContractBegin(ContractBegintextField.getText());
 				}
 				
-				if (ContractEndtextField.getText() != myCont.displayContractBegin()){
-					myCont.updateContractBegin(ContractBegintextField.getText());
+				if (ContractEndtextField.getText() != myCont.displayContractEnd()){
+					myCont.updateContractEnd(ContractEndtextField.getText());
+				}
+				
+				if (SubStatus == "Active"){
+										
+					if (CreditCardnumtextField.getText() != myCont.displayCreditCardNum()){
+						myCont.updateCreditCardNum(CreditCardnumtextField.getText());
+					}
+					
+					if (CreditCardCVVtextField.getText() != myCont.displaySecurity()){
+						myCont.updateSecurity(CreditCardCVVtextField.getText());
+					}
+					
+					if (CCProvidertextField.getText() != Integer.toString(myCont.displayProvider())){
+						myCont.updateProvider(Integer.parseInt(CCProvidertextField.getText()));
+					}
+					
+					if (CCexpirationtextField.getText() != myCont.displayExperation()){
+						myCont.updateExpiration(CCexpirationtextField.getText());
+					}
 				}
 					
-				
+				dispose();
 			}
+			
 		});
-		
 	}
 }
