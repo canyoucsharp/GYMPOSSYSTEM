@@ -46,6 +46,8 @@ public class UserInfoJFrame extends JFrame {
 	OperationsController myOperation = new OperationsController();
 	
 	private double pricing;
+	
+	public JButton btnEdit = new JButton("Edit");
 
 	/**
 	 * Launch the application.
@@ -190,12 +192,12 @@ public class UserInfoJFrame extends JFrame {
 		
 		//Catching null picture statements
 		String path = myCont.displayPictureLink();
-		if (path == " " || path == ""){
-			path = "https://image.freepik.com/free-icon/question-mark_318-52837.jpg";
+		if (path.compareTo("") == 0 || path.compareTo(" ") == 0){
+			path = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
 		}
 		//
 		
-		URL url = new URL("http://i.imgur.com/YYnOoKf.jpg");
+		URL url = new URL(path);
 		BufferedImage image = ImageIO.read(url);
 		
 		
@@ -209,7 +211,7 @@ public class UserInfoJFrame extends JFrame {
 			EditCus.dispose();
 		}
 		
-		JButton btnEdit = new JButton("Edit");
+
 		btnEdit.setBounds(111, 452, 89, 23);
 		contentPane.add(btnEdit);
 		btnEdit.addActionListener(new ActionListener(){
@@ -217,11 +219,6 @@ public class UserInfoJFrame extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				if (EditCus != null){
-					EditCus.dispose();
-				}
-				EditCus = new EditCustomerJFrame(key, myCont, myOperation, mySub);
-				EditCus.setVisible(true);
 				dispose();
 			}
 			

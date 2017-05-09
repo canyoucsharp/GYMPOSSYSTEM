@@ -225,7 +225,35 @@ public class EditCustomerJFrame extends JFrame {
 		lblCreditCardProvider.setBounds(10, 317, 167, 14);
 		contentPane.add(lblCreditCardProvider);
 		
-		CCProvidertextField = new JTextField("" + myCont.displayProvider());
+		String Provider = Integer.toString(myCont.displayProvider());
+		
+		switch(Provider){
+		case "0":
+		{
+			Provider = "Visa";
+			break;
+		}
+		case "1":
+		{
+			Provider = "Mastercard";
+			break;
+		}
+		case "2":
+		{
+			Provider = "American Express";
+			break;
+		}
+		case "3":
+		{
+			Provider = "Discover";
+			break;
+		}
+		default:
+			Provider = "None";
+		}
+			
+		
+		CCProvidertextField = new JTextField(Provider);
 		CCProvidertextField.setBounds(195, 314, 115, 20);
 		contentPane.add(CCProvidertextField);
 		CCProvidertextField.setColumns(10);
@@ -360,6 +388,33 @@ public class EditCustomerJFrame extends JFrame {
 				
 				if (SubStatus.compareTo("Active") == 0){
 										
+					String Provider = CCProvidertextField.getText();
+					int newProvider;
+					switch(Provider){
+					case "Visa":
+					{
+						newProvider = 0;
+						break;
+					}
+					case "1":
+					{
+						newProvider = 1;
+						break;
+					}
+					case "2":
+					{
+						newProvider = 2;
+						break;
+					}
+					case "3":
+					{
+						newProvider = 3;
+						break;
+					}
+					default:
+						newProvider = 0;
+					}
+					
 					if (CreditCardnumtextField.getText() != myCont.displayCreditCardNum()){
 						myCont.updateCreditCardNum(CreditCardnumtextField.getText());
 					}
@@ -369,7 +424,7 @@ public class EditCustomerJFrame extends JFrame {
 					}
 					
 					if (CCProvidertextField.getText() != Integer.toString(myCont.displayProvider())){
-						myCont.updateProvider(Integer.parseInt(CCProvidertextField.getText()));
+						myCont.updateProvider(newProvider);
 					}
 					
 					if (CCexpirationtextField.getText() != myCont.displayExperation()){

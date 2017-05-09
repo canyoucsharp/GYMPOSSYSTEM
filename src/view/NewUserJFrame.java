@@ -436,7 +436,7 @@ public class NewUserJFrame extends JFrame {
 				int ClientId = Integer.parseInt(ClientIdtextField.getText());
 				String picturelink = "http://www.politicspa.com/wp-content/uploads/2013/02/Silhouette-question-mark.jpeg";
 				
-				if (PictureLinktextField.getText() != " " || PictureLinktextField.getText() != "")
+				if (PictureLinktextField.getText().compareTo(" ") != 0 && PictureLinktextField.getText().compareTo("") != 0)
 				{
 					picturelink = PictureLinktextField.getText();
 				}

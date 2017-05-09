@@ -64,7 +64,7 @@ public class MainMenuJFrame extends JFrame {
 	 * @throws Exception the exception
 	 */
 	public MainMenuJFrame(int Admin_Status) throws Exception {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 265, 333);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

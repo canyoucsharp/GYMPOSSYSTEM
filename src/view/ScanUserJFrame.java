@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dialog.ModalityType;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowFocusListener;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -18,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 import controller.Customer;
 import controller.CustomerController;
 import controller.NotFoundException;
+import controller.OperationsController;
+import controller.Subscription;
 
 import javax.swing.JTextField;
 
@@ -41,6 +44,12 @@ public class ScanUserJFrame extends JFrame {
 	
 	/** The Scan usertext field. */
 	private JTextField ScanUsertextField;
+	
+	private EditCustomerJFrame EditCus = null;
+	
+	private Customer myCus= null;
+	private Subscription mySub=null;
+	private OperationsController myOperation =null;
 
 	/**
 	 * Launch the application.
@@ -96,6 +105,10 @@ public class ScanUserJFrame extends JFrame {
 		    	{
 		    	userinfo.dispose();
 		    	}
+		    	
+		    	if (EditCus != null){
+					EditCus.dispose();
+				}
 		    	try {
 					myCusController=new CustomerController();
 		    		myCusController.searchCustomer(key);
@@ -112,7 +125,27 @@ public class ScanUserJFrame extends JFrame {
 						e1.printStackTrace();
 					}
 					
-					
+					userinfo.btnEdit.addActionListener(new ActionListener(){
+
+						@Override
+						public void actionPerformed(ActionEvent e) {
+							// TODO Auto-generated method stub
+							if (EditCus != null){
+								EditCus.dispose();
+							}
+							myCus=myCusController.getCusObj();
+							mySub=myCusController.getNewSub();
+							try {
+								OperationsController myOperation = new OperationsController();
+							} catch (NotFoundException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							EditCus = new EditCustomerJFrame(key, myCusController, myOperation,mySub);
+							EditCus.setVisible(true);
+						}
+						
+					});
 			
 					
 					

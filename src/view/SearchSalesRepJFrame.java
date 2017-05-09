@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -25,6 +26,7 @@ public class SearchSalesRepJFrame extends JFrame {
 	private JTextField textField;
 	private EmployeeController empCont;
 	private ViewEmployeeJFrame EmpView = null;
+	private EditEmployeeJFrame EditFrame = null;
 
 	/**
 	 * Launch the application.
@@ -69,6 +71,9 @@ public class SearchSalesRepJFrame extends JFrame {
 		        //Scan User
 		    	int key = Integer.valueOf(textField.getText());
 		    	empCont = new EmployeeController();
+		    	if (EditFrame != null){
+					EditFrame.dispose();
+				}
 		    
 		    	if (EmpView != null){
 	    			EmpView.dispose();
@@ -77,14 +82,26 @@ public class SearchSalesRepJFrame extends JFrame {
 		    	try {
 					try {
 						empCont.searchEmployee(key);
-						EmpView = new ViewEmployeeJFrame(empCont);
-				    	if (empCont.displayFirstName().compareTo("null") == 0)
-				    	EmpView.setVisible(true);
+						EmpView = new ViewEmployeeJFrame(empCont, EditFrame);
+				    	if (empCont.displayFirstName().compareTo("null") != 0)
+				    		EmpView.setVisible(true);
+				    	EmpView.btnEdit.addActionListener(new ActionListener(){
+
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								// TODO Auto-generated method stub
+								if (EditFrame != null){
+									EditFrame.dispose();
+								}
+								EditFrame = new EditEmployeeJFrame(empCont);
+								EditFrame.setVisible(true);								
+							}
+				    		
+				    	});
 					} catch (NotFoundException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					System.out.print("It worked!" + empCont.displayAdmin());
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -94,6 +111,7 @@ public class SearchSalesRepJFrame extends JFrame {
 		    			    	
 		    	
 		    	textField.setText("");
+		    	textField.requestFocus();
 		    }
 		};
 
