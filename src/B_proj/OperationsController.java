@@ -121,6 +121,7 @@ public class OperationsController {
 	public void updateLocationCost(double locationCost){
 		try {
 			opDbObj.pushLocationCost(locationCost,opObj);
+			opObj.setLocationCost(locationCost);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -136,6 +137,7 @@ public class OperationsController {
 	{
 		try {
 			opDbObj.pushAccountsPayable(accountsPayable,opObj);
+			opObj.setAccountsPayable(accountsPayable);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -151,6 +153,7 @@ public class OperationsController {
 	{
 		try {
 			opDbObj.pushMaxOccupancy(maxOccupancy,opObj);
+			opObj.setMaxOccupancy(maxOccupancy);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -165,6 +168,7 @@ public class OperationsController {
 	public void updateRoi(int roi){
 		try {
 			opDbObj.pushRoi(roi,opObj);
+			opObj.setRoi(roi);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -180,6 +184,7 @@ public class OperationsController {
 	{
 		try {
 			opDbObj.pushElectric(electric,opObj);
+			opObj.setElectric(electric);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -194,6 +199,7 @@ public class OperationsController {
 	public void updateWater(double water){
 		try {
 			opDbObj.pushWater(water,opObj);
+			opObj.setWater(water);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -208,6 +214,7 @@ public class OperationsController {
 	public void updateGash(double gas){
 		try {
 			opDbObj.pushGas(gas,opObj);
+			opObj.setElectric(gas);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

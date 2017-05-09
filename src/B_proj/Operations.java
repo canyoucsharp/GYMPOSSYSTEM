@@ -171,7 +171,9 @@ public class Operations {
 	 */
 	public void calculateMonthlyCost(){
 		monthlyCost=locationCost+accountsPayable+electric+gas+water;
-		roi+=1;
+		if(roi<1){
+			roi+=1;
+		}
 		monthlyCost*=roi;
 		monthlyCost/=maxOccupancy;
 	}
