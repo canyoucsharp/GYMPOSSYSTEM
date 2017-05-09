@@ -351,9 +351,9 @@ public class CustomerController {
 	 */
 	public String displaysubscriptionType(String planType){//DENNIS When you do operation.displaycost , please save output to customercontroller.setCurrentRate(value)
 	
-		memInfo.setPlanType(planType);
 		memDb=new MembershipDb();
 		memDb.init(memInfo, cusObj);
+		memInfo.setPlanType(planType);
 		Integer x=Integer.valueOf(memInfo.getPlanType());
 		if(x==0){
 			return(memInfo.getPlanDescription());}
