@@ -37,7 +37,7 @@ public class EmployeeController {
 		empObj.setHourlyRate(newRate);
 		empDbObj.pushHourlyRate(newRate, empObj);
 	}
-	public void searchEmployee(int id) throws SQLException{
+	public void searchEmployee(int id) throws SQLException, NotFoundException{
 		empObj.setId(id);
 		try {
 			empDbObj.init(empObj);

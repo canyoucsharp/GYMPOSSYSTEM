@@ -52,7 +52,7 @@ public class EmployeeDb {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public void init(Employee empObj) throws SQLException {
+	public void init(Employee empObj) throws SQLException,NotFoundException {
 		// TODO Auto-generated method stub
 
 		myConnector = new MysqlConnect();
@@ -80,11 +80,17 @@ public class EmployeeDb {
 				JOptionPane.showMessageDialog(null,"User "+empObj.getFirstName()+" Found" );
 
 			}
+			else
+				JOptionPane.showMessageDialog(null,"No User Found" );
 		}
+		
+		
 
 		catch (Exception e) {
 			System.out.println(e);
-			JOptionPane.showMessageDialog(null,"No User Found" );
+			
+		
+	  
 		}
 
 		finally {

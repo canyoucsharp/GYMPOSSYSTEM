@@ -75,7 +75,12 @@ public class SearchSalesRepJFrame extends JFrame {
 	    		}
 		    	
 		    	try {
-					empCont.searchEmployee(key);
+					try {
+						empCont.searchEmployee(key);
+					} catch (NotFoundException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					System.out.print("It worked!" + empCont.displayAdmin());
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
