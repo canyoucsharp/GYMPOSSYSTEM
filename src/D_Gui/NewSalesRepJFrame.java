@@ -207,8 +207,8 @@ public class NewSalesRepJFrame extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//add action to push info to database
 				try {
-					empCont.newRep(FirstNametextField.getText(), LastNametextField.getText(), PhoneNumbertextField.getText(), Integer.parseInt(HourlyRatetextField.getText()), AddresstextField.getText(), Integer.parseInt(AgetextField.getText()), SexcomboBox.getSelectedItem().toString(), LicensetextField.getText(), DOBtextField.getText(), UsernametextField.getText(), passwordField.getText(), admin);
-					//empCont.newRep("Dennis", "Kravtsov", "123", 500, "street", 12, "M", "1234", "1995/06/01", "dennis", "kravtsov", true);
+					//empCont.newRep(FirstNametextField.getText(), LastNametextField.getText(), PhoneNumbertextField.getText(), Integer.parseInt(HourlyRatetextField.getText()), AddresstextField.getText(), Integer.parseInt(AgetextField.getText()), SexcomboBox.getSelectedItem().toString(), LicensetextField.getText(), DOBtextField.getText(), UsernametextField.getText(), passwordField.getText(), admin);
+					empCont.newRep("Dennis", "Kravtsov", "123", 500, "street", 12, "M", "1234", "1995/06/01", "dennis", "kravtsov", true);
 				} catch (NumberFormatException | SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

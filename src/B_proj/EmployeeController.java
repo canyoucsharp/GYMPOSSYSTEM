@@ -16,7 +16,7 @@ public class EmployeeController {
 	/**
 	 * Instantiates a new employee controller.
 	 */
-	EmployeeController(){
+	public EmployeeController(){
 	empObj=new Employee();
 	empDbObj=new EmployeeDb();
 	}
