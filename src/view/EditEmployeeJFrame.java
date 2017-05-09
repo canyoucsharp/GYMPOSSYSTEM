@@ -216,6 +216,21 @@ public class EditEmployeeJFrame extends JFrame {
 					e1.printStackTrace();
 				}
 				
+				String sex = null;
+				if (SexcomboBox.getSelectedItem().toString().compareTo("Male") == 0)
+					sex = "M";
+				if (SexcomboBox.getSelectedItem().toString().compareTo("Female") == 0)
+					sex = "F";
+				
+				try {
+					empCont.updateSex(sex);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				//empCont.updateAdmin(value);
+				
 				dispose();
 				
 				

@@ -176,7 +176,7 @@ public class MainMenuJFrame extends JFrame {
 				if (ScanEmp != null){
 					ScanEmp.dispose();
 				}
-				ScanEmp = new SearchSalesRepJFrame();
+				ScanEmp = new SearchSalesRepJFrame(Admin_Status);
 				
 				ScanEmp.setVisible(true);
 			

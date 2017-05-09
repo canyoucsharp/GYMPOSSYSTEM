@@ -39,9 +39,9 @@ public class ViewEmployeeJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ViewEmployeeJFrame(EmployeeController empCont, EditEmployeeJFrame EditFrame) {
+	public ViewEmployeeJFrame(int Admin_Status, EmployeeController empCont, EditEmployeeJFrame EditFrame) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 219, 359);
+		setBounds(100, 100, 219, 388);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -83,12 +83,34 @@ public class ViewEmployeeJFrame extends JFrame {
 		lblSex.setBounds(10, 236, 183, 14);
 		contentPane.add(lblSex);
 		
-		btnEdit.setBounds(54, 286, 89, 23);
+		btnEdit.setBounds(54, 305, 89, 23);
 		contentPane.add(btnEdit);
+		
+		
 		
 		JLabel lblPhoneNumber = new JLabel("Phone Number: " + empCont.displayPhoneNumber());
 		lblPhoneNumber.setBounds(10, 86, 183, 14);
 		contentPane.add(lblPhoneNumber);
+		
+		
+		String Admin = null;
+		switch(Admin_Status){
+		case 0:{
+			Admin = "Not Admin";
+			break;
+		}
+		case 1:{
+			Admin = "Is Admin";
+			break;
+		}
+		}
+		JLabel lblAdmin = new JLabel("Admin: " + Admin);
+		lblAdmin.setBounds(10, 263, 179, 16);
+		contentPane.add(lblAdmin);
+		
+		
+		
+		
 		btnEdit.addActionListener(new ActionListener(){
 
 			@Override
@@ -99,5 +121,4 @@ public class ViewEmployeeJFrame extends JFrame {
 			
 		});
 	}
-
 }

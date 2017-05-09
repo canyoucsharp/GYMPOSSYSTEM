@@ -35,7 +35,7 @@ public class SearchSalesRepJFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SearchSalesRepJFrame frame = new SearchSalesRepJFrame();
+					SearchSalesRepJFrame frame = new SearchSalesRepJFrame(1);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class SearchSalesRepJFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SearchSalesRepJFrame() {
+	public SearchSalesRepJFrame(int Admin_Status) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 460, 164);
 		contentPane = new JPanel();
@@ -82,7 +82,10 @@ public class SearchSalesRepJFrame extends JFrame {
 		    	try {
 					try {
 						empCont.searchEmployee(key);
-						EmpView = new ViewEmployeeJFrame(empCont, EditFrame);
+						EmpView = new ViewEmployeeJFrame(Admin_Status, empCont, EditFrame);
+						if (Admin_Status != 1){
+							EmpView.btnEdit.setEnabled(false);
+						}
 				    	if (empCont.displayFirstName().compareTo("null") != 0)
 				    		EmpView.setVisible(true);
 				    	EmpView.btnEdit.addActionListener(new ActionListener(){
@@ -94,7 +97,7 @@ public class SearchSalesRepJFrame extends JFrame {
 									EditFrame.dispose();
 								}
 								EditFrame = new EditEmployeeJFrame(empCont);
-								EditFrame.setVisible(true);								
+								EditFrame.setVisible(true);					
 							}
 				    		
 				    	});
