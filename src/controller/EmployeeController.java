@@ -129,6 +129,10 @@ public class EmployeeController {
 		empDbObj.pushSales(sales, empObj);
 	}
 	
+	public void updateDob(String dob) throws SQLException{
+		empObj.setDob(dob);
+		empDbObj.pushDob(dob);
+	}
 	//DISPLAY FUNCTIONS
 	
 	/**
@@ -194,6 +198,12 @@ public class EmployeeController {
 		return(empObj.getAge());
 	}
 	
+	public String displayDob(){
+		return (empObj.getDob());
+	}
+	public String displayLicense(){
+		return(empObj.getLicenseNum());
+	}
 	/**
 	 * Display sex.
 	 *
