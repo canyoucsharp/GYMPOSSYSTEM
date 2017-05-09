@@ -7,6 +7,11 @@ import java.util.concurrent.TimeUnit;
 
 import com.sun.org.apache.xpath.internal.operations.Number;
 
+import model.Customer;
+import model.Membership;
+import model.PaymentInfo;
+import model.Subscription;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class CustomerController.
