@@ -221,7 +221,7 @@ public class EmployeeController {
 		empObj=new Employee();
         empDbObj=new EmployeeDb();
         empObj.initNew(username,password,firstName,lastName,sex,dob,phone,address,age,lisNum,hourlyRate,admin);
-        empDbObj.registerCustomer(empObj);
+        empDbObj.registerEmployee(empObj, admin);
 	}
 	
 }
