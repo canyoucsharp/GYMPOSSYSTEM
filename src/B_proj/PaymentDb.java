@@ -44,7 +44,7 @@ public class PaymentDb {
 
 					newPayInfo.setCreditCardNum(rs.getString("creditcardnum"));
 					newPayInfo.setExpiration(rs.getString("expiration"));
-					newPayInfo.setExpiration(rs.getString("security"));
+					newPayInfo.setSecurity(rs.getString("security"));
 					newPayInfo.setProvider(rs.getInt("provider"));
 					JOptionPane.showMessageDialog(null, "PaymentInfo for " +cusObj.getFirstName() + " Found");
 
